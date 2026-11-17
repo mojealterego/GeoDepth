@@ -1,0 +1,11 @@
+{
+  "model_name": "da3-base",
+  "source": "User-supplied split ZIP archive, reconstructed and CRC-verified",
+  "weights_filename": "model.safetensors",
+  "weights_bytes": 541518028,
+  "weights_sha256": "e01067dc1659613083d9145a9a2547ccdbe6ccbbf83c4fe7b3e8a4e2bdae78b5",
+  "config_sha256": "5e34115ebc17bd2d8d43033c5f72e9446ac8833fd61d3fa160b7e67e0bb5b7b5",
+  "tensor_count": 437,
+  "weights_modified": false,
+  "authenticity_note": "SHA-256 verifies consistency with the uploaded weights; it does not establish a trusted publisher signature."
+}

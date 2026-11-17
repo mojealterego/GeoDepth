@@ -1,0 +1,117 @@
+{
+  "photo_pair": {
+    "views": 2,
+    "processed_shape": [
+      2,
+      154,
+      280
+    ],
+    "gates": {
+      "min_valid_ratio": 0.0,
+      "min_mean_consistency": 0.8,
+      "min_baseline_ratio": 0.005,
+      "min_view_coverage": 0.1,
+      "status": "passed"
+    },
+    "reprojection": {
+      "audit_stage": "final_geometry",
+      "pre_refinement": {
+        "mean_consistency": 0.8670162558555603,
+        "view_coverage": [
+          0.7214749536178108,
+          0.627435064935065
+        ]
+      },
+      "view_coverage": [
+        0.723678107606679,
+        0.6425556586270872
+      ],
+      "tested_pixels": 58912,
+      "supported_comparisons": 51327,
+      "tested_comparisons": 58912,
+      "mean_consistency": 0.8712486624717712,
+      "max_baseline_over_median_depth": 0.08283817935661786,
+      "relative_tolerance": 0.1,
+      "max_targets_per_view": 8
+    },
+    "point_cloud": {
+      "eligible": 51327,
+      "selected": 51327,
+      "sampling": "deterministic_even_indices",
+      "fused_points": 7006,
+      "voxel_size": 0.025,
+      "max_points": 100000,
+      "min_support": 1,
+      "min_score": 0.0,
+      "confidence_quantile": 0.1
+    },
+    "refinement": {
+      "status": "applied",
+      "changed_pixels": 51058,
+      "mean_relative_change": 0.007888157851994038,
+      "blend": 0.5,
+      "relative_tolerance": 0.1,
+      "note": "Geometric consensus is not independently validated accuracy improvement"
+    },
+    "bridge": {
+      "view_count": 2,
+      "model_id": "DA3-SMALL",
+      "weights_sha256": "364492e38a3a06d221ac75da7f6621ada3f2361cd24fde11ba79091e9f40efcf",
+      "time_basis": "static_assumption",
+      "units": "arbitrary_scale",
+      "qualified_samples": 3241,
+      "view_coverage": [
+        0.723678107606679,
+        0.6425556586270872
+      ],
+      "view_mean_consistency": [
+        0.8058644533157349,
+        0.9448875784873962
+      ],
+      "refinement": {
+        "status": "applied",
+        "changed_pixels": 51058,
+        "mean_relative_change": 0.007888157851994038,
+        "blend": 0.5,
+        "relative_tolerance": 0.1,
+        "note": "Geometric consensus is not independently validated accuracy improvement"
+      },
+      "interpretation": "Estimated agreement only, no independent metric or temporal accuracy evidence"
+    },
+    "metric_ground_truth": false
+  },
+  "synthetic_plane": {
+    "truth_z": 2.0,
+    "input_z": [
+      1.95,
+      2.05
+    ],
+    "pre": {
+      "valid_samples": 6144,
+      "ground_truth_valid_samples": 6144,
+      "prediction_coverage": 1.0,
+      "abs_rel": 0.02499997615814209,
+      "rmse": 0.04999995231628418,
+      "delta_1": 1.0,
+      "silog": 0.02500518643056232
+    },
+    "post": {
+      "valid_samples": 6144,
+      "ground_truth_valid_samples": 6144,
+      "prediction_coverage": 1.0,
+      "abs_rel": 0.013403334887698293,
+      "rmse": 0.027577152356702064,
+      "delta_1": 1.0,
+      "silog": 0.013785396306327826
+    },
+    "refinement": {
+      "status": "applied",
+      "changed_pixels": 5700,
+      "mean_relative_change": 0.01251106709241867,
+      "blend": 0.5,
+      "relative_tolerance": 0.1,
+      "note": "Geometric consensus is not independently validated accuracy improvement"
+    },
+    "scope": "two artificially biased depth maps; not an independent generalization benchmark"
+  }
+}

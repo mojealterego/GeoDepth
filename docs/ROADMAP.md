@@ -1,21 +1,19 @@
-# GeoDepth Ω — status v0.11.0
+# GeoDepth Ω — status v0.12.0
 
 ## Wykonane lokalnie
-- DA3 Small FP32, FP16, AQ6/AQ4 i eksperymentalny INT8 CPU; zachowane TSDF, Gaussian 4D/5D i kontrole reprojekcji.
-- Most Representations5D i pole RGB KPlanes5D, 30387 parametrów, odrzucone ekstrapolacje poza domenę, odrębne jednostki względne/metryczne, zewnętrzne kotwice bazowe.
-- Trening na syntetycznej sekwencji (odłożony cały czas) i dwóch rzeczywistych zdjęciach DA3 (odłożony kolor widoku, współrzędne dostarczone). Wyniki RGB MSE 0.000710 i 0.035303; prosty NN lepszy w obu eksperymentach.
-- Pytest w pełnym wydaniu: 152 testy; build i niezależna instalacja WHL 0.11.0. Nie oznacza pełnego audytu inżynieryjnego ani wyników produkcyjnych.
-
-## Stan dystrybucji
-- Źródła pierwszoplanowe i testy przeniesione na main; wagi, duże zasoby, licencjonowane upstream archiwa i WHL pozostają w wydaniu offline.
-- Nie przeprowadzano zdalnego CI. Weryfikacja lokalna obejmuje pełne zasoby dystrybucji.
+- DA3 Small FP32, FP16, AQ6/AQ4 oraz eksperymentalny INT8 CPU, TSDF i Gaussy 4D/5D.
+- Reprezentacje 5D, mosty i eksperymentalne pole RGB KPlanes5D. W v0.11 NN był lepszy od neuronowego pola RGB na obu testowych scenach.
+- ENGINE v1: osobny moduł quality_v1, przewidywania NPZ w dwóch schematach, walidacja przed alokacją, konsensus statyczny, per-view coverage, ponowny audyt po korekcie, kotwice, raporty i eksport bez nadpisania.
+- Testy: oryginalny ENGINE v1 — 45; adaptacja — 49; pełna regresja v0.12 — 201. Lokalny build WHL i instalacja poza źródłami.
+- Rzeczywisty Small FP32 na dwóch fotografiach: szacowana zgodność reprojekcji 86,70% → 87,12%, bez prawdziwej referencji metrycznej; 7006 wokseli, 3241 zaakceptowanych próbek statycznego pola. Pojedynczy syntetyczny test płaszczyzny RMSE 0,0500 → 0,0276. Nie utożsamiać z generalizacją na realne dane.
+- Base FP32: dostarczona konfiguracja z pinem SHA i manifestem, wybór modelu oraz test odmowy bez checkpointu. Wagi nieobecne, nie wykonano Base E2E.
 
 ## Otwarte bramki
-- Wydajność pamięci i migracja torch.ao do utrzymywanego API, natywne kernele AQ4/AQ6.
-- Oficjalne checkpointy i inferencja DA3 Base/Giant.
-- Fizyczna walidacja metryczna, wieloskalowe dane realne RGB-D z rzeczywistymi czasami i pomiarami kalibracyjnymi.
-- Wytrenowana dynamiczna radiancja/occupancy, weryfikacja na całkowicie niewidzianych widokach bez geometrii z widoku testowego; model ma pokonać NN na oddzielnym zbiorze.
-- GPU/Vulkan/Android i 400 MP.
-- Niezależny audyt pełnej specyfikacji oraz CI.
+- Oryginalne wagi DA3 Base i Giant, ich właściwa inferencja oraz przestrzeganie odrębnych licencji.
+- Natywna inferencja AQ4/AQ6, peak RSS, migracja przestarzałych API kwantyzacji.
+- Dynamiczna radiancja/occupancy, nieobserwowana geometria z niezależną walidacją; poprawa ponad baseline NN.
+- Dane RGB-D z fizyczną referencją, kalibracja niepewności, walidacja wieloscenowa.
+- GPU/Vulkan/Android, 400 MP, niezależny audyt wymagań.
+- CI: nieuruchomione; nie deklarujemy produkcyjnego wdrożenia.
 
-Historia: v0.10 — dynamiczny INT8 48 Linear, redukcja wag tych warstw 75%, brak istotnej redukcji RSS procesu; odchylenie map 3,30% względem FP32. Profil nadal eksperymentalny.
+Duże zasoby wykonawcze pozostają poza zwykłym Git.

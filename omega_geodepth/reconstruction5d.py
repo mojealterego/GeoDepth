@@ -409,10 +409,10 @@ def build_from_da3_sequence(path:Path,checkpoint:Path,model_id:str,*,device:str=
     if profile in ('aq6','aq4','int8') and not verify_reprojection:
         raise ValueError('DA3_EXPERIMENTAL_REPROJECTION_REQUIRED')
     if runtime == 'native_network':
-        if model_id != 'DA3-SMALL' or source_dir is None:
-            raise ValueError('DA3_NATIVE_RUNTIME_REQUIRES_SMALL_AND_SOURCE')
+        if model_id not in ('DA3-SMALL','DA3-BASE') or source_dir is None:
+            raise ValueError('DA3_NATIVE_RUNTIME_REQUIRES_SMALL_OR_BASE_AND_SOURCE')
         from .da3_real import DA3RealCPU
-        backend = DA3RealCPU(checkpoint,source_dir=source_dir,device=device,profile=profile,allow_experimental=allow_experimental)
+        backend = DA3RealCPU(checkpoint,source_dir=source_dir,device=device,profile=profile,allow_experimental=allow_experimental,**({'model_id':model_id} if model_id!='DA3-SMALL' else {}))
     elif runtime == 'upstream_api':
         backend=(DA3OfflineBackend(checkpoint,model_id,device=device,source_dir=source_dir)
                  if source_dir is not None else DA3OfflineBackend(checkpoint,model_id,device=device))

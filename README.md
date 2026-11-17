@@ -1,10 +1,14 @@
 # OCAF GeoDepth Ω
 
-Silnik estymacji głębi, rekonstrukcji wielowidokowej, TSDF, eksperymentalnych Gaussów 4D oraz wieloskalowych pól 5D (XYZ, czas, skala pikselowa). RGB jest cechą, nie wymiarem przestrzennym.
+Silnik DA3, rekonstrukcji wielowidokowej, TSDF, eksperymentalnych Gaussów 4D i wieloskalowych pól 5D (XYZ, czas, skala pikselowa). RGB jest cechą, nie dodatkowym wymiarem przestrzennym.
 
-## Stan v0.11.0
-Kod źródłowy GeoDepth, testy, narzędzia i dokumentacja są na main. Oficjalny DA3 Small FP32, pochodne FP16/AQ6/AQ4, eksperymentalny INT8 oraz KPlanes5D były uruchomione lokalnie. 152 testy GeoDepth w kompletnej dystrybucji przeszły. Dwa scenowe checkpointy KPlanes5D zostały wytrenowane lokalnie. Model nie przewyższył najbliższego punktu w obu testach RGB; nie stanowi pola radiancji ani modelu nieobserwowanej geometrii.
+## Stan v0.12.0
+Zintegrowano dostarczony ENGINE v1 jako odrębny moduł jakości: kontrolowany import NPZ, statyczny konsensus głębi, kontrolę pokrycia i paralaksy, kotwice metryczne, atomowy eksport oraz most do KPlanes5D. Pełna lokalna regresja wraz z zasobami AQ: 201 testów (6 ostrzeżeń deprecacji). DA3 Small FP32, pochodne FP16/AQ6/AQ4 i eksperymentalny INT8 pozostają w projekcie. Dodano konfigurację DA3 Base i obsługę wyboru Base FP32; brak rzeczywistego checkpointu Base i jego inferencji.
 
-Pełne archiwa wykonawcze są oddzielnymi artefaktami; ciężkie wagi, dane przykładowe, upstream DA3 ZIP i Representation5D WHL nie są przechowywane w zwykłym Git. Do uruchomienia pełnych testów należy uzupełnić drzewo o te zasoby z dystrybucji v0.11 oraz zainstalować zależności zgodnie z [instrukcją](docs/ZMIANY_v0.11_PL.md). Nie uruchamiano zdalnego CI. Nie nadano nowej licencji kodowi OMEGA. DA3 i upstream Representations4D: Apache-2.0; patrz NOTICE.md.
+Źródła pierwszoplanowe znajdują się na main. Duże wagi, zależności upstream, pliki przykładowe i kompletne archiwa wykonawcze są oddzielnymi artefaktami. Samo repozytorium nie zawiera wszystkich zasobów potrzebnych do pełnej regresji. Zdalnego CI nie uruchomiono.
 
-Dalsze prace: [ROADMAP](docs/ROADMAP.md). Dokumentacja: [README_PL](README_PL.md).
+- [Instrukcja v0.12](docs/ZMIANY_v0.12_PL.md)
+- [README PL](README_PL.md)
+- [Roadmap](docs/ROADMAP.md)
+
+Licencje: patrz NOTICE.md. Moduł quality_v1 zachowuje licencję Apache-2.0 dostarczonego ENGINE v1. Nie nadano nowej licencji reszcie kodu OMEGA.

@@ -1,4 +1,4 @@
-"""Genuine DA3 Small neural inference using the upstream network without export extras.
+"""Genuine DA3 Small / optional Base neural inference using the upstream network without export extras.
 
 Loads only a SHA-256 pinned, user-provided checkpoint. Heavy optional upstream
 exports (Open3D, gsplat, moviepy, COLMAP) are not imported. This is *not* a
@@ -61,9 +61,15 @@ def verify_da3_runtime_source(source_dir: Path, archive: Path) -> None:
         raise ValueError('DA3_SOURCE_INCOMPLETE')
 
 class DA3RealCPU:
-    """Run the official DA3 Small network with original weights, CPU or CUDA."""
+    """Run the pinned official DA3 network (Small or Base), CPU or CUDA."""
     def __init__(self, model_dir: Path, *, source_dir: Path, device: str = 'cpu',
-                 profile: str = 'fp32', allow_experimental: bool = False):
+                 profile: str = 'fp32', allow_experimental: bool = False,
+                 model_id: str = 'DA3-SMALL'):
+        if model_id not in OFFICIAL_WEIGHT_SHA256:
+            raise ValueError('DA3_MODEL_NOT_ALLOWED')
+        if model_id=='DA3-BASE' and profile!='fp32':
+            raise ValueError('DA3-BASE requires FP32; derived profiles are Small-only')
+        self.base_model_id=model_id
         import torch
         from safetensors import safe_open
         if device not in ('cpu', 'cuda') or (device == 'cuda' and not torch.cuda.is_available()):
@@ -73,18 +79,19 @@ class DA3RealCPU:
         model_dir = Path(model_dir).resolve(strict=True)
         source_dir = Path(source_dir).resolve(strict=True)
         model_file = model_dir/'model.safetensors'
-        config = validate_official_config(model_dir/'config.json','DA3-SMALL')
+        config = validate_official_config(model_dir/'config.json',model_id)
         if profile=='int8' and not allow_experimental:
             raise ValueError('DA3_EXPERIMENTAL_OPT_IN_REQUIRED')
         if profile=='int8' and device!='cpu':
             raise ValueError('INT8_REQUIRES_CPU_FP32')
         if profile in ('fp32','int8'):
-            validate_da3_checkpoint(model_dir,'DA3-SMALL')
-            digest=OFFICIAL_WEIGHT_SHA256['DA3-SMALL']
-            if hashlib.sha256((model_dir/'config.json').read_bytes()).hexdigest() != \
-                'a486e29e82b7ab4a7d4cefc1ea4526cfe2ae438a572c8ca98917cfbcde7447d2':
+            validate_da3_checkpoint(model_dir,model_id)
+            digest=OFFICIAL_WEIGHT_SHA256[model_id]
+            config_pin={'DA3-SMALL':'a486e29e82b7ab4a7d4cefc1ea4526cfe2ae438a572c8ca98917cfbcde7447d2',
+                        'DA3-BASE':'5e34115ebc17bd2d8d43033c5f72e9446ac8833fd61d3fa160b7e67e0bb5b7b5'}[model_id]
+            if hashlib.sha256((model_dir/'config.json').read_bytes()).hexdigest() != config_pin:
                 raise ValueError('DA3_CONFIG_PIN_MISMATCH')
-            weight_context=nullcontext((model_file,{'model_id':'DA3-SMALL','profile':'fp32',
+            weight_context=nullcontext((model_file,{'model_id':model_id,'profile':'fp32',
                 'artifact_sha256':digest,'runtime_weights_sha256':digest,'parent_sha256':digest,
                 'experimental':False,'execution_precision':'float32','units':'arbitrary_scale'}))
         else:
@@ -178,18 +185,19 @@ class DA3RealCPU:
             std=torch.tensor([.229,.224,.225],device=self.device).view(1,3,1,1)
             rgb=(tensors[0]*std+mean).clamp(0,1).permute(0,2,3,1)
             pred.processed_images=(rgb*255).round().to(torch.uint8).cpu().numpy()
-        return replace(normalize_da3_prediction(pred,model_id='DA3-SMALL',weights_sha256=self.digest),model_id=self.model_id)
+        return replace(normalize_da3_prediction(pred,model_id=self.base_model_id,weights_sha256=self.digest),model_id=self.model_id)
 
 
 def main() -> None:
-    """Offline original pretrained DA3 Small inference. Writes relative depth only."""
+    """Offline original pretrained DA3 inference. Writes relative depth only."""
     import argparse
     from io import BytesIO
     from PIL import Image
     from .infer import save_atomic
 
-    parser=argparse.ArgumentParser(description='OCAF GeoDepth Ω - authentic DA3 Small, offline')
+    parser=argparse.ArgumentParser(description='OCAF GeoDepth Ω - authentic DA3, offline')
     parser.add_argument('--model-dir',type=Path,required=True)
+    parser.add_argument('--model-id',choices=('DA3-SMALL','DA3-BASE'),default='DA3-SMALL')
     parser.add_argument('--source-dir',type=Path,required=True)
     parser.add_argument('--input',type=Path,nargs='+',required=True)
     parser.add_argument('--output',type=Path,required=True)
@@ -199,7 +207,7 @@ def main() -> None:
     parser.add_argument('--profile',choices=('fp32','fp16','aq6','aq4','int8'),default='fp32')
     parser.add_argument('--allow-experimental',action='store_true')
     args=parser.parse_args()
-    engine=DA3RealCPU(args.model_dir,source_dir=args.source_dir,device=args.device,profile=args.profile,allow_experimental=args.allow_experimental)
+    engine=DA3RealCPU(args.model_dir,source_dir=args.source_dir,device=args.device,profile=args.profile,allow_experimental=args.allow_experimental,model_id=args.model_id)
     result=engine.inference(args.input,process_res=args.process_res)
     audit=None
     if args.verify_reprojection:

@@ -32,3 +32,6 @@ Dynamiczna kwantyzacja INT8 jest wykonywana lokalnie na przypiętych oryginalnyc
 
 ## v0.11 — Representations5D
 Zachowano przekazane przez użytkownika oryginalne archiwum Representations5D, instalator, checkpoint i licencję w vendor. KPlanes5D jest osobnym komponentem, a nowe wagi `examples/v11_scene_field/*/scene.safetensors` są modelami scenowymi wytrenowanymi w GeoDepth. Nie są oryginalnym checkpointem DA3 ani checkpointem autorów Representations4D.
+
+### v0.12 — ENGINE v1
+Zaadaptowano kod `OMEGA_GeoDepth_ENGINE_v1.zip` dostarczony przez użytkownika, w odrębnym module `omega_geodepth/quality_v1`, z modyfikacjami opisanymi w `docs/ZMIANY_v0.12_PL.md`. Licencja tego modułu: Apache-2.0, oryginał w `docs/engine_v1/LICENSE` i w pakiecie Python. Nie nadano nowej licencji pozostałym kodom OMEGA. Konfiguracja i manifest DA3 Base nie zawierają wag; nie deklarujemy uruchomienia Base.

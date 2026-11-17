@@ -235,3 +235,7 @@ Eksperymentalny profil dynamic INT8 CPU dla backbone DA3. Patrz [zmiany](docs/ZM
 ## v0.11 — wieloskalowe uczone pole 5D
 
 Zobacz [dokumentację integracji](docs/ZMIANY_v0.11_PL.md). Pole RGB jest warunkowane dostarczoną geometrią. Zachowuje względne jednostki DA3 i odróżnia czas rzeczywisty od założenia statycznego. Dostarczono dwa nowo wytrenowane checkpointy, z raportami porównawczymi. Nie zastępuje dotychczasowej rekonstrukcji TSDF/Gaussians.
+
+## v0.12 — ENGINE v1, statyczny audyt jakości i bezpieczny import NPZ
+
+Nowy moduł `omega_geodepth.quality_v1` uzupełnia istniejący silnik DA3 i 5D. Nie zastępuje dotychczasowego CLI. Instrukcje, wyniki, ograniczenia oraz konfiguracja Base: [docs/ZMIANY_v0.12_PL.md](docs/ZMIANY_v0.12_PL.md). Oficjalne wagi Base nie zostały dostarczone.
