@@ -1,14 +1,16 @@
 # OCAF GeoDepth Ω
 
-Silnik DA3, rekonstrukcji wielowidokowej, TSDF, eksperymentalnych Gaussów 4D i wieloskalowych pól 5D (XYZ, czas, skala pikselowa). RGB jest cechą, nie dodatkowym wymiarem przestrzennym.
+DA3, rekonstrukcja wielowidokowa, TSDF, eksperymentalne Gaussy 4D oraz wieloskalowe pola 5D (XYZ, czas, skala pikselowa). RGB jest cechą, nie wymiarem przestrzennym.
 
-## Stan v0.12.0
-Zintegrowano dostarczony ENGINE v1 jako odrębny moduł jakości: kontrolowany import NPZ, statyczny konsensus głębi, kontrolę pokrycia i paralaksy, kotwice metryczne, atomowy eksport oraz most do KPlanes5D. Pełna lokalna regresja wraz z zasobami AQ: 201 testów (6 ostrzeżeń deprecacji). DA3 Small FP32, pochodne FP16/AQ6/AQ4 i eksperymentalny INT8 pozostają w projekcie. Dodano konfigurację DA3 Base i obsługę wyboru Base FP32; brak rzeczywistego checkpointu Base i jego inferencji.
+## Stan v0.13.0
+Oryginalne checkpointy DA3 Small i Base zostały zweryfikowane i uruchomione na CPU FP32. Base: 541518028 B, 135366599 parametrów. Dodano odtwarzanie sześciu wolumenów Base z weryfikacją SHA-256 i kontrolowany fallback rozdzielczości z obustronnym audytem wszystkich par kamer. Progi jakości pozostają niezmienione. Na dwóch fotografiach Base 280 odrzucono, 392 zaakceptowano. Nie jest to niezależna walidacja metryczna. Small pozostaje domyślnym modelem.
 
-Źródła pierwszoplanowe znajdują się na main. Duże wagi, zależności upstream, pliki przykładowe i kompletne archiwa wykonawcze są oddzielnymi artefaktami. Samo repozytorium nie zawiera wszystkich zasobów potrzebnych do pełnej regresji. Zdalnego CI nie uruchomiono.
+Pełna lokalna regresja z zasobami AQ/Representations5D i Base: 212 testów, 6 ostrzeżeń. Wagi, źródła upstream, dane przykładowe i archiwa wykonawcze są oddzielnymi artefaktami. Zdalnego CI nie uruchomiono; sam checkout repozytorium nie zawiera wszystkich zasobów pełnej regresji. Wydanie lokalne 0.13 jest nakładką na dystrybucję 0.12.
 
-- [Instrukcja v0.12](docs/ZMIANY_v0.12_PL.md)
+- [Instrukcja v0.13](docs/ZMIANY_v0.13_PL.md)
 - [README PL](README_PL.md)
 - [Roadmap](docs/ROADMAP.md)
+- [Benchmark Base](reports/v13/base.json)
+- [Benchmark Small](reports/v13/small.json)
 
-Licencje: patrz NOTICE.md. Moduł quality_v1 zachowuje licencję Apache-2.0 dostarczonego ENGINE v1. Nie nadano nowej licencji reszcie kodu OMEGA.
+Licencje: patrz NOTICE.md. DA3 i moduł quality_v1: Apache-2.0. Nie nadano nowej licencji reszcie kodu OMEGA.

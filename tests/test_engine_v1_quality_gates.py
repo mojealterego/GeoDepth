@@ -49,5 +49,6 @@ def test_quality_maps_are_written_only_when_requested(tmp_path):
 def test_output_has_completion_marker_and_no_staging_directory(tmp_path):
     output=tmp_path/'ready'
     run_pipeline(make_prediction(n=1),output)
-    assert (output/'.complete').read_text().strip()=='OMEGA-GEODEPTH-0.12.0'
+    from omega_geodepth import __version__
+    assert (output/'.complete').read_text().strip()==f'OMEGA-GEODEPTH-{__version__}'
     assert not list(tmp_path.glob('.omega-geodepth-*'))

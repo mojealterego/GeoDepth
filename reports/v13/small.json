@@ -1,0 +1,432 @@
+{
+  "model": "DA3-SMALL",
+  "checkpoint": "364492e38a3a06d221ac75da7f6621ada3f2361cd24fde11ba79091e9f40efcf",
+  "parameters": 34299463,
+  "load_seconds": 1.3085721980000358,
+  "device": "cpu",
+  "threads": 1,
+  "units": "arbitrary_scale",
+  "scope": "same two photographs; not independent metric truth",
+  "runs": [
+    {
+      "resolution": 140,
+      "shape": [
+        2,
+        84,
+        140
+      ],
+      "seconds": 0.2313829179999516,
+      "audit": {
+        "passed": true,
+        "pairs": [
+          {
+            "src": 0,
+            "dst": 1,
+            "sampled": 11760,
+            "observed": 9692,
+            "coverage": 0.8241496598639456,
+            "median_relative_residual": 0.042757650126561214,
+            "agreement_fraction": 0.9098225340487,
+            "occluded": 657,
+            "reason": "PASS",
+            "passed": true
+          },
+          {
+            "src": 1,
+            "dst": 0,
+            "sampled": 11760,
+            "observed": 8716,
+            "coverage": 0.741156462585034,
+            "median_relative_residual": 0.03956734089391531,
+            "agreement_fraction": 0.9486002753556677,
+            "occluded": 1374,
+            "reason": "PASS",
+            "passed": true
+          }
+        ],
+        "worst_coverage": 0.741156462585034,
+        "worst_agreement": 0.9098225340487,
+        "units": "arbitrary_scale",
+        "interpretation": "static self-consistency only; not metric accuracy"
+      },
+      "legacy": {
+        "passed": true,
+        "units": "arbitrary_scale",
+        "interpretation": "relative multi-view consistency, not metric measurement",
+        "thresholds": {
+          "max_relative_error": 0.1,
+          "min_coverage": 0.1,
+          "min_consistency_fraction": 0.8,
+          "min_samples": 20
+        },
+        "pairs": [
+          {
+            "src": 0,
+            "dst": 1,
+            "sampled": 11760,
+            "observed": 9692,
+            "coverage": 0.8241496598639456,
+            "median_relative_residual": 0.042757650126561214,
+            "agreement_fraction": 0.9098225340487,
+            "occluded": 657,
+            "reason": "PASS",
+            "passed": true
+          }
+        ]
+      },
+      "rss_peak_kib": 618808,
+      "geometry_export": "passed",
+      "geometry": {
+        "eligible": 17448,
+        "selected": 17448,
+        "sampling": "deterministic_even_indices",
+        "fused_points": 4398,
+        "voxel_size": 0.025,
+        "max_points": 100000,
+        "min_support": 1,
+        "min_score": 0.0,
+        "confidence_quantile": 0.1
+      },
+      "bridge": {
+        "view_count": 2,
+        "model_id": "DA3-SMALL",
+        "weights_sha256": "364492e38a3a06d221ac75da7f6621ada3f2361cd24fde11ba79091e9f40efcf",
+        "time_basis": "static_assumption",
+        "units": "arbitrary_scale",
+        "qualified_samples": 1075,
+        "view_coverage": [
+          0.8261904761904761,
+          0.7628401360544218
+        ],
+        "view_mean_consistency": [
+          0.9172499179840088,
+          0.9515104293823242
+        ],
+        "refinement": {
+          "status": "applied",
+          "changed_pixels": 17342,
+          "mean_relative_change": 0.010360032320022583,
+          "blend": 0.5,
+          "relative_tolerance": 0.1,
+          "note": "Geometric consensus is not independently validated accuracy improvement"
+        },
+        "interpretation": "Estimated agreement only, no independent metric or temporal accuracy evidence"
+      }
+    },
+    {
+      "resolution": 280,
+      "shape": [
+        2,
+        154,
+        280
+      ],
+      "seconds": 0.6213357600000222,
+      "audit": {
+        "passed": true,
+        "pairs": [
+          {
+            "src": 0,
+            "dst": 1,
+            "sampled": 10780,
+            "observed": 7851,
+            "coverage": 0.7282931354359926,
+            "median_relative_residual": 0.0337859875258615,
+            "agreement_fraction": 0.8028276652655713,
+            "occluded": 745,
+            "reason": "PASS",
+            "passed": true
+          },
+          {
+            "src": 1,
+            "dst": 0,
+            "sampled": 10780,
+            "observed": 6761,
+            "coverage": 0.6271799628942486,
+            "median_relative_residual": 0.024900209703073908,
+            "agreement_fraction": 0.9411329684957846,
+            "occluded": 2147,
+            "reason": "PASS",
+            "passed": true
+          }
+        ],
+        "worst_coverage": 0.6271799628942486,
+        "worst_agreement": 0.8028276652655713,
+        "units": "arbitrary_scale",
+        "interpretation": "static self-consistency only; not metric accuracy"
+      },
+      "legacy": {
+        "passed": true,
+        "units": "arbitrary_scale",
+        "interpretation": "relative multi-view consistency, not metric measurement",
+        "thresholds": {
+          "max_relative_error": 0.1,
+          "min_coverage": 0.1,
+          "min_consistency_fraction": 0.8,
+          "min_samples": 20
+        },
+        "pairs": [
+          {
+            "src": 0,
+            "dst": 1,
+            "sampled": 10780,
+            "observed": 7851,
+            "coverage": 0.7282931354359926,
+            "median_relative_residual": 0.0337859875258615,
+            "agreement_fraction": 0.8028276652655713,
+            "occluded": 745,
+            "reason": "PASS",
+            "passed": true
+          }
+        ]
+      },
+      "rss_peak_kib": 618808,
+      "geometry_export": "passed",
+      "geometry": {
+        "eligible": 51327,
+        "selected": 51327,
+        "sampling": "deterministic_even_indices",
+        "fused_points": 7006,
+        "voxel_size": 0.025,
+        "max_points": 100000,
+        "min_support": 1,
+        "min_score": 0.0,
+        "confidence_quantile": 0.1
+      },
+      "bridge": {
+        "view_count": 2,
+        "model_id": "DA3-SMALL",
+        "weights_sha256": "364492e38a3a06d221ac75da7f6621ada3f2361cd24fde11ba79091e9f40efcf",
+        "time_basis": "static_assumption",
+        "units": "arbitrary_scale",
+        "qualified_samples": 3241,
+        "view_coverage": [
+          0.723678107606679,
+          0.6425556586270872
+        ],
+        "view_mean_consistency": [
+          0.8058644533157349,
+          0.9448875784873962
+        ],
+        "refinement": {
+          "status": "applied",
+          "changed_pixels": 51058,
+          "mean_relative_change": 0.007888157851994038,
+          "blend": 0.5,
+          "relative_tolerance": 0.1,
+          "note": "Geometric consensus is not independently validated accuracy improvement"
+        },
+        "interpretation": "Estimated agreement only, no independent metric or temporal accuracy evidence"
+      }
+    },
+    {
+      "resolution": 392,
+      "shape": [
+        2,
+        224,
+        392
+      ],
+      "seconds": 1.1230187749999914,
+      "audit": {
+        "passed": true,
+        "pairs": [
+          {
+            "src": 0,
+            "dst": 1,
+            "sampled": 10976,
+            "observed": 7740,
+            "coverage": 0.7051749271137027,
+            "median_relative_residual": 0.026682659460273997,
+            "agreement_fraction": 0.8582687338501293,
+            "occluded": 1080,
+            "reason": "PASS",
+            "passed": true
+          },
+          {
+            "src": 1,
+            "dst": 0,
+            "sampled": 10976,
+            "observed": 7543,
+            "coverage": 0.6872266763848397,
+            "median_relative_residual": 0.026976606837878604,
+            "agreement_fraction": 0.897653453533077,
+            "occluded": 1606,
+            "reason": "PASS",
+            "passed": true
+          }
+        ],
+        "worst_coverage": 0.6872266763848397,
+        "worst_agreement": 0.8582687338501293,
+        "units": "arbitrary_scale",
+        "interpretation": "static self-consistency only; not metric accuracy"
+      },
+      "legacy": {
+        "passed": true,
+        "units": "arbitrary_scale",
+        "interpretation": "relative multi-view consistency, not metric measurement",
+        "thresholds": {
+          "max_relative_error": 0.1,
+          "min_coverage": 0.1,
+          "min_consistency_fraction": 0.8,
+          "min_samples": 20
+        },
+        "pairs": [
+          {
+            "src": 0,
+            "dst": 1,
+            "sampled": 10976,
+            "observed": 7740,
+            "coverage": 0.7051749271137027,
+            "median_relative_residual": 0.026682659460273997,
+            "agreement_fraction": 0.8582687338501293,
+            "occluded": 1080,
+            "reason": "PASS",
+            "passed": true
+          }
+        ]
+      },
+      "rss_peak_kib": 686576,
+      "geometry_export": "passed",
+      "geometry": {
+        "eligible": 110101,
+        "selected": 100000,
+        "sampling": "deterministic_even_indices",
+        "fused_points": 16043,
+        "voxel_size": 0.025,
+        "max_points": 100000,
+        "min_support": 1,
+        "min_score": 0.0,
+        "confidence_quantile": 0.1
+      },
+      "bridge": {
+        "view_count": 2,
+        "model_id": "DA3-SMALL",
+        "weights_sha256": "364492e38a3a06d221ac75da7f6621ada3f2361cd24fde11ba79091e9f40efcf",
+        "time_basis": "static_assumption",
+        "units": "arbitrary_scale",
+        "qualified_samples": 6829,
+        "view_coverage": [
+          0.7065643221574344,
+          0.7092747813411079
+        ],
+        "view_mean_consistency": [
+          0.8635762929916382,
+          0.9075626134872437
+        ],
+        "refinement": {
+          "status": "applied",
+          "changed_pixels": 109295,
+          "mean_relative_change": 0.008204137906432152,
+          "blend": 0.5,
+          "relative_tolerance": 0.1,
+          "note": "Geometric consensus is not independently validated accuracy improvement"
+        },
+        "interpretation": "Estimated agreement only, no independent metric or temporal accuracy evidence"
+      }
+    },
+    {
+      "resolution": 504,
+      "shape": [
+        2,
+        280,
+        504
+      ],
+      "seconds": 2.289060615999972,
+      "audit": {
+        "passed": true,
+        "pairs": [
+          {
+            "src": 0,
+            "dst": 1,
+            "sampled": 11760,
+            "observed": 8685,
+            "coverage": 0.7385204081632653,
+            "median_relative_residual": 0.026697430259886946,
+            "agreement_fraction": 0.8360391479562465,
+            "occluded": 978,
+            "reason": "PASS",
+            "passed": true
+          },
+          {
+            "src": 1,
+            "dst": 0,
+            "sampled": 11760,
+            "observed": 7828,
+            "coverage": 0.6656462585034013,
+            "median_relative_residual": 0.02477155864881155,
+            "agreement_fraction": 0.9003576903423608,
+            "occluded": 1786,
+            "reason": "PASS",
+            "passed": true
+          }
+        ],
+        "worst_coverage": 0.6656462585034013,
+        "worst_agreement": 0.8360391479562465,
+        "units": "arbitrary_scale",
+        "interpretation": "static self-consistency only; not metric accuracy"
+      },
+      "legacy": {
+        "passed": true,
+        "units": "arbitrary_scale",
+        "interpretation": "relative multi-view consistency, not metric measurement",
+        "thresholds": {
+          "max_relative_error": 0.1,
+          "min_coverage": 0.1,
+          "min_consistency_fraction": 0.8,
+          "min_samples": 20
+        },
+        "pairs": [
+          {
+            "src": 0,
+            "dst": 1,
+            "sampled": 11760,
+            "observed": 8685,
+            "coverage": 0.7385204081632653,
+            "median_relative_residual": 0.026697430259886946,
+            "agreement_fraction": 0.8360391479562465,
+            "occluded": 978,
+            "reason": "PASS",
+            "passed": true
+          }
+        ]
+      },
+      "rss_peak_kib": 811840,
+      "geometry_export": "passed",
+      "geometry": {
+        "eligible": 174601,
+        "selected": 100000,
+        "sampling": "deterministic_even_indices",
+        "fused_points": 12677,
+        "voxel_size": 0.025,
+        "max_points": 100000,
+        "min_support": 1,
+        "min_score": 0.0,
+        "confidence_quantile": 0.1
+      },
+      "bridge": {
+        "view_count": 2,
+        "model_id": "DA3-SMALL",
+        "weights_sha256": "364492e38a3a06d221ac75da7f6621ada3f2361cd24fde11ba79091e9f40efcf",
+        "time_basis": "static_assumption",
+        "units": "arbitrary_scale",
+        "qualified_samples": 10870,
+        "view_coverage": [
+          0.729953231292517,
+          0.68484268707483
+        ],
+        "view_mean_consistency": [
+          0.8454825282096863,
+          0.905447781085968
+        ],
+        "refinement": {
+          "status": "applied",
+          "changed_pixels": 173762,
+          "mean_relative_change": 0.007329954300075769,
+          "blend": 0.5,
+          "relative_tolerance": 0.1,
+          "note": "Geometric consensus is not independently validated accuracy improvement"
+        },
+        "interpretation": "Estimated agreement only, no independent metric or temporal accuracy evidence"
+      }
+    }
+  ]
+}

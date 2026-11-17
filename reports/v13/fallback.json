@@ -1,0 +1,136 @@
+{
+  "model": "DA3-BASE",
+  "weight_profile": {
+    "model_id": "DA3-BASE",
+    "profile": "fp32",
+    "artifact_sha256": "e01067dc1659613083d9145a9a2547ccdbe6ccbbf83c4fe7b3e8a4e2bdae78b5",
+    "runtime_weights_sha256": "e01067dc1659613083d9145a9a2547ccdbe6ccbbf83c4fe7b3e8a4e2bdae78b5",
+    "parent_sha256": "e01067dc1659613083d9145a9a2547ccdbe6ccbbf83c4fe7b3e8a4e2bdae78b5",
+    "experimental": false,
+    "execution_precision": "float32",
+    "units": "arbitrary_scale"
+  },
+  "weights_sha256": "e01067dc1659613083d9145a9a2547ccdbe6ccbbf83c4fe7b3e8a4e2bdae78b5",
+  "source": "official DA3 network from pinned user-provided source ZIP",
+  "view_count": 2,
+  "depth_shape": [
+    2,
+    224,
+    392
+  ],
+  "units": "arbitrary_scale",
+  "provenance": "relative_estimated",
+  "confidence": "DA3 raw confidence, not calibrated probability",
+  "reprojection_audit": {
+    "passed": true,
+    "pairs": [
+      {
+        "src": 0,
+        "dst": 1,
+        "sampled": 10976,
+        "observed": 7902,
+        "coverage": 0.7199344023323615,
+        "median_relative_residual": 0.01773338676918849,
+        "agreement_fraction": 0.8128321943811693,
+        "occluded": 1417,
+        "reason": "PASS",
+        "passed": true
+      },
+      {
+        "src": 1,
+        "dst": 0,
+        "sampled": 10976,
+        "observed": 7059,
+        "coverage": 0.6431304664723032,
+        "median_relative_residual": 0.017182524514522946,
+        "agreement_fraction": 0.8533786655333616,
+        "occluded": 1885,
+        "reason": "PASS",
+        "passed": true
+      }
+    ],
+    "worst_coverage": 0.6431304664723032,
+    "worst_agreement": 0.8128321943811693,
+    "units": "arbitrary_scale",
+    "interpretation": "static self-consistency only; not metric accuracy"
+  },
+  "resolution_selection": {
+    "selected_resolution": 392,
+    "attempts": [
+      {
+        "resolution": 280,
+        "audit": {
+          "passed": false,
+          "pairs": [
+            {
+              "src": 0,
+              "dst": 1,
+              "sampled": 10780,
+              "observed": 8810,
+              "coverage": 0.8172541743970315,
+              "median_relative_residual": 0.03615176037762106,
+              "agreement_fraction": 0.7375709421112372,
+              "occluded": 481,
+              "reason": "DEPTH_REPROJECTION_MISMATCH",
+              "passed": false
+            },
+            {
+              "src": 1,
+              "dst": 0,
+              "sampled": 10780,
+              "observed": 6223,
+              "coverage": 0.5772727272727273,
+              "median_relative_residual": 0.02675117617168799,
+              "agreement_fraction": 0.9537200707054475,
+              "occluded": 2491,
+              "reason": "PASS",
+              "passed": true
+            }
+          ],
+          "worst_coverage": 0.5772727272727273,
+          "worst_agreement": 0.7375709421112372,
+          "units": "arbitrary_scale",
+          "interpretation": "static self-consistency only; not metric accuracy"
+        }
+      },
+      {
+        "resolution": 392,
+        "audit": {
+          "passed": true,
+          "pairs": [
+            {
+              "src": 0,
+              "dst": 1,
+              "sampled": 10976,
+              "observed": 7902,
+              "coverage": 0.7199344023323615,
+              "median_relative_residual": 0.01773338676918849,
+              "agreement_fraction": 0.8128321943811693,
+              "occluded": 1417,
+              "reason": "PASS",
+              "passed": true
+            },
+            {
+              "src": 1,
+              "dst": 0,
+              "sampled": 10976,
+              "observed": 7059,
+              "coverage": 0.6431304664723032,
+              "median_relative_residual": 0.017182524514522946,
+              "agreement_fraction": 0.8533786655333616,
+              "occluded": 1885,
+              "reason": "PASS",
+              "passed": true
+            }
+          ],
+          "worst_coverage": 0.6431304664723032,
+          "worst_agreement": 0.8128321943811693,
+          "units": "arbitrary_scale",
+          "interpretation": "static self-consistency only; not metric accuracy"
+        }
+      }
+    ],
+    "policy": "first passing resolution; unchanged thresholds"
+  },
+  "warning": "Depth is relative; do not report output in metres without a metric anchor."
+}

@@ -1,0 +1,15 @@
+{
+  "files": {
+    "README.md": "5388563071b4361b11d6d811b354d454f26aed2adba634fcf4ee3775c8eda480",
+    "config.json": "5e34115ebc17bd2d8d43033c5f72e9446ac8833fd61d3fa160b7e67e0bb5b7b5",
+    "model.safetensors": "e01067dc1659613083d9145a9a2547ccdbe6ccbbf83c4fe7b3e8a4e2bdae78b5"
+  },
+  "license": "apache-2.0",
+  "model_id": "DA3-BASE",
+  "official_weights_sha256": "e01067dc1659613083d9145a9a2547ccdbe6ccbbf83c4fe7b3e8a4e2bdae78b5",
+  "provenance": "user_supplied_checkpoint_origin_not_verified",
+  "repo_id": "depth-anything/DA3-BASE",
+  "revision": "6544606",
+  "schema_version": "omega-da3-local-v1",
+  "verified_with": "official_upstream_sha256_and_local_sha256"
+}

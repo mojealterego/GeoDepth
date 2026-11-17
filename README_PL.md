@@ -239,3 +239,6 @@ Zobacz [dokumentację integracji](docs/ZMIANY_v0.11_PL.md). Pole RGB jest warunk
 ## v0.12 — ENGINE v1, statyczny audyt jakości i bezpieczny import NPZ
 
 Nowy moduł `omega_geodepth.quality_v1` uzupełnia istniejący silnik DA3 i 5D. Nie zastępuje dotychczasowego CLI. Instrukcje, wyniki, ograniczenia oraz konfiguracja Base: [docs/ZMIANY_v0.12_PL.md](docs/ZMIANY_v0.12_PL.md). Oficjalne wagi Base nie zostały dostarczone.
+
+### Aktualizacja 0.13.0 — DA3 Base
+Weryfikacja oryginalnego Base, obustronna reprojekcja i kontrolowany fallback rozdzielczości. Instrukcje instalacji nakładki i odtwarzania sześciu części wag: [docs/ZMIANY_v0.13_PL.md](docs/ZMIANY_v0.13_PL.md). Base FP32 pozostaje opcjonalny; Small jest domyślny.

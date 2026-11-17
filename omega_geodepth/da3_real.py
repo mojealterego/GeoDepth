@@ -203,13 +203,26 @@ def main() -> None:
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--process-res',type=int,default=280)
     parser.add_argument('--device',choices=('cpu','cuda'),default='cpu')
-    parser.add_argument('--verify-reprojection',action='store_true')
+    gate=parser.add_mutually_exclusive_group()
+    gate.add_argument('--verify-reprojection',action='store_true')
+    gate.add_argument('--verify-all-pairs',action='store_true',help='Require every ordered camera pair to pass (static views only)')
+    parser.add_argument('--fallback-resolutions',type=int,nargs='+',default=[],help='Up to three alternate resolutions after --process-res; requires --verify-all-pairs')
     parser.add_argument('--profile',choices=('fp32','fp16','aq6','aq4','int8'),default='fp32')
     parser.add_argument('--allow-experimental',action='store_true')
     args=parser.parse_args()
+    if args.fallback_resolutions and not args.verify_all_pairs:
+        parser.error('--fallback-resolutions requires --verify-all-pairs')
     engine=DA3RealCPU(args.model_dir,source_dir=args.source_dir,device=args.device,profile=args.profile,allow_experimental=args.allow_experimental,model_id=args.model_id)
-    result=engine.inference(args.input,process_res=args.process_res)
-    audit=None
+    audit=None; selection=None
+    if args.verify_all_pairs:
+        from .da3_selection import infer_first_consistent
+        result,selection=infer_first_consistent(engine,args.input,[args.process_res,*args.fallback_resolutions])
+        if result is None:
+            print(json.dumps(selection,ensure_ascii=False,allow_nan=False))
+            raise ValueError('DA3_ALL_PAIRS_REPROJECTION_UNVERIFIABLE')
+        audit=selection['attempts'][-1]['audit']
+    else:
+        result=engine.inference(args.input,process_res=args.process_res)
     if args.verify_reprojection:
         from .da3_validation import verify_multiview_reprojection
         audit=verify_multiview_reprojection(result)
@@ -233,7 +246,7 @@ def main() -> None:
           'view_count':len(result.depth_z),'depth_shape':list(result.depth_z.shape),
           'units':result.units,'provenance':result.provenance,
           'confidence':'DA3 raw confidence, not calibrated probability',
-          'reprojection_audit':audit,
+          'reprojection_audit':audit,'resolution_selection':selection,
           'warning':'Depth is relative; do not report output in metres without a metric anchor.'}
     save_atomic(args.output/'metadata.json',json.dumps(meta,indent=2,ensure_ascii=False).encode())
     print(json.dumps(meta,ensure_ascii=False,indent=2))
