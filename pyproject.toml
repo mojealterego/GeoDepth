@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "omega-geodepth"
+version = "0.11.0"
+description = "Content-agnostic depth and spatiotemporal 5D scene-field reconstruction"
+readme = "README_PL.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.26,<3", "torch>=2.3,<3", "Pillow>=10,<13", "safetensors>=0.4.5,<1", "scipy>=1.12,<2"
+]
+
+[project.scripts]
+omega-geodepth = "omega_geodepth.infer:main"
+omega-geodepth-5d = "omega_geodepth.reconstruction5d:main"
+omega-geodepth-da3 = "omega_geodepth.download_da3:main"
+omega-geodepth-da3-source = "omega_geodepth.da3_source:main"
+omega-geodepth-da3-real = "omega_geodepth.da3_real:main"
+omega-geodepth-deformable = "omega_geodepth.deformable_4dgs:main"
+
+[project.optional-dependencies]
+da3 = ["huggingface_hub>=0.30,<2"]
+tsdf = ["scikit-image>=0.23,<1"]
+
+[tool.setuptools.packages.find]
+include = ["omega_geodepth*"]

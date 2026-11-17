@@ -1,0 +1,24 @@
+{
+  "DA3-SMALL": {
+    "repo_id": "depth-anything/DA3-SMALL",
+    "license": "apache-2.0",
+    "state": "NOT_DOWNLOADED",
+    "reason": "network DNS/download inaccessible from local execution environment",
+    "sha256": null,
+    "tested_with_actual_weights": false,
+    "expected_upstream_sha256": "364492e38a3a06d221ac75da7f6621ada3f2361cd24fde11ba79091e9f40efcf",
+    "source": "Hugging Face official model.safetensors LFS/Xet SHA256",
+    "registry_requires_upstream_digest": true
+  },
+  "DA3-BASE": {
+    "repo_id": "depth-anything/DA3-BASE",
+    "license": "apache-2.0",
+    "state": "NOT_DOWNLOADED",
+    "reason": "network DNS/download inaccessible from local execution environment",
+    "sha256": null,
+    "tested_with_actual_weights": false,
+    "expected_upstream_sha256": "e01067dc1659613083d9145a9a2547ccdbe6ccbbf83c4fe7b3e8a4e2bdae78b5",
+    "source": "Hugging Face official model.safetensors LFS/Xet SHA256",
+    "registry_requires_upstream_digest": true
+  }
+}

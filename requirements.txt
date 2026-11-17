@@ -1,0 +1,5 @@
+torch>=2.3,<3
+numpy>=1.26,<3
+Pillow>=10,<13
+safetensors>=0.4.5,<1
+scipy>=1.12,<2

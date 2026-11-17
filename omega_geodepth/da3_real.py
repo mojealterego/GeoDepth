@@ -1,0 +1,234 @@
+"""Genuine DA3 Small neural inference using the upstream network without export extras.
+
+Loads only a SHA-256 pinned, user-provided checkpoint. Heavy optional upstream
+exports (Open3D, gsplat, moviepy, COLMAP) are not imported. This is *not* a
+reimplementation of DA3's network; the original network code is executed.
+"""
+from __future__ import annotations
+
+from pathlib import Path
+from typing import Sequence
+from dataclasses import replace
+from contextlib import nullcontext
+import sys
+import hashlib
+import json
+import zipfile
+import numpy as np
+
+from .da3_adapter import (
+    DA3Output,
+    OFFICIAL_WEIGHT_SHA256,
+    validate_da3_checkpoint,
+    normalize_da3_prediction,
+    validate_official_config,
+)
+
+def verify_da3_runtime_source(source_dir: Path, archive: Path) -> None:
+    """Validate unchanged native DA3 source against the pinned original ZIP.
+
+    Checks actual bytes of all importable source files, not an editable local
+    manifest. Does not accept symlinks or newly added Python executables.
+    """
+    from .da3_source import inspect_da3_source_archive
+    source_dir = Path(source_dir)
+    archive = Path(archive)
+    if source_dir.is_symlink() or archive.is_symlink():
+        raise ValueError('DA3_SOURCE_UNSAFE_PATH')
+    inspect_da3_source_archive(archive)
+    verified=set()
+    with zipfile.ZipFile(archive) as z:
+        for member in z.namelist():
+            prefix='Depth-Anything-3-main/src/'
+            if not member.startswith(prefix) or not member.endswith(('.py','.yaml')):
+                continue
+            rel=member.removeprefix('Depth-Anything-3-main/')
+            target=source_dir/rel
+            if any(p.is_symlink() for p in (target, *target.parents) if p!=source_dir.parent):
+                raise ValueError('DA3_SOURCE_UNSAFE_PATH')
+            if not target.is_file():
+                raise ValueError('DA3_SOURCE_MISSING')
+            if hashlib.sha256(target.read_bytes()).digest() != hashlib.sha256(z.read(member)).digest():
+                raise ValueError('DA3_SOURCE_TAMPERED')
+            verified.add(rel)
+    for path in (source_dir/'src'/'depth_anything_3').rglob('*'):
+        if path.is_symlink():
+            raise ValueError('DA3_SOURCE_UNSAFE_PATH')
+        if path.is_file() and path.suffix.lower() in ('.py','.yaml','.pth','.so','.pyd','.dll'):
+            if path.relative_to(source_dir).as_posix() not in verified:
+                raise ValueError('DA3_SOURCE_UNDECLARED_PYTHON')
+    if len(verified)<30:
+        raise ValueError('DA3_SOURCE_INCOMPLETE')
+
+class DA3RealCPU:
+    """Run the official DA3 Small network with original weights, CPU or CUDA."""
+    def __init__(self, model_dir: Path, *, source_dir: Path, device: str = 'cpu',
+                 profile: str = 'fp32', allow_experimental: bool = False):
+        import torch
+        from safetensors import safe_open
+        if device not in ('cpu', 'cuda') or (device == 'cuda' and not torch.cuda.is_available()):
+            raise ValueError('DA3_INVALID_DEVICE')
+        if Path(model_dir).is_symlink() or Path(source_dir).is_symlink():
+            raise ValueError('DA3_UNSAFE_MODEL_OR_SOURCE_PATH')
+        model_dir = Path(model_dir).resolve(strict=True)
+        source_dir = Path(source_dir).resolve(strict=True)
+        model_file = model_dir/'model.safetensors'
+        config = validate_official_config(model_dir/'config.json','DA3-SMALL')
+        if profile=='int8' and not allow_experimental:
+            raise ValueError('DA3_EXPERIMENTAL_OPT_IN_REQUIRED')
+        if profile=='int8' and device!='cpu':
+            raise ValueError('INT8_REQUIRES_CPU_FP32')
+        if profile in ('fp32','int8'):
+            validate_da3_checkpoint(model_dir,'DA3-SMALL')
+            digest=OFFICIAL_WEIGHT_SHA256['DA3-SMALL']
+            if hashlib.sha256((model_dir/'config.json').read_bytes()).hexdigest() != \
+                'a486e29e82b7ab4a7d4cefc1ea4526cfe2ae438a572c8ca98917cfbcde7447d2':
+                raise ValueError('DA3_CONFIG_PIN_MISMATCH')
+            weight_context=nullcontext((model_file,{'model_id':'DA3-SMALL','profile':'fp32',
+                'artifact_sha256':digest,'runtime_weights_sha256':digest,'parent_sha256':digest,
+                'experimental':False,'execution_precision':'float32','units':'arbitrary_scale'}))
+        else:
+            from .da3_profiles import runtime_weights
+            weight_context=runtime_weights(model_dir,profile,allow_experimental=allow_experimental)
+        verify_da3_runtime_source(source_dir,source_dir.parent/'Depth-Anything-3-main.zip')
+        if not (source_dir/'LICENSE').is_file():
+            raise ValueError('DA3_SOURCE_MISSING')
+        # Guard against Python modules imported earlier from a different DA3 tree.
+        # Otherwise sys.modules could silently override the byte-pinned sources.
+        source_root=(source_dir/'src').resolve()
+        for name,module in tuple(sys.modules.items()):
+            if name=='depth_anything_3' or name.startswith('depth_anything_3.'):
+                filename=getattr(module,'__file__',None)
+                paths=([Path(filename)] if filename else
+                       [Path(x) for x in getattr(module,'__path__',())])
+                if not paths or any(not x.resolve().is_relative_to(source_root) for x in paths):
+                    raise RuntimeError('DA3_SOURCE_IMPORT_COLLISION')
+        # Locate the runtime compat library next to the verified source archive,
+        # not next to the installed wheel (which carries no model or vendor).
+        compat_dir=source_dir.parent/'da3_runtime_compat'
+        compat_file=compat_dir/'addict.py'
+        if compat_file.is_symlink() or not compat_file.is_file():
+            raise RuntimeError('DA3_COMPAT_NOT_AVAILABLE')
+        if hashlib.sha256(compat_file.read_bytes()).hexdigest() != '4e53bc2fd6703c9c30ce2bacaa3f2c41e205b715c17bd930591e52796b4b62a0':
+            raise RuntimeError('DA3_COMPAT_HASH_MISMATCH')
+        addon=sys.modules.get('addict')
+        if addon is not None and Path(getattr(addon,'__file__','/') or '/').resolve()!=compat_file.resolve():
+            raise RuntimeError('DA3_COMPAT_IMPORT_COLLISION')
+        compat=str(compat_dir)
+        vendor=str(source_root)
+        for item in (vendor,compat):
+            if item not in sys.path: sys.path.insert(0,item)
+        from depth_anything_3.cfg import create_object
+        from depth_anything_3.utils.io.input_processor import InputProcessor
+        from depth_anything_3.utils.io.output_processor import OutputProcessor
+        from omegaconf import OmegaConf
+        with weight_context as (runtime_file,profile_info):
+            self.net = create_object(OmegaConf.create(config['config']))
+            weights={}
+            with safe_open(runtime_file,framework='pt',device='cpu') as f:
+                md=f.metadata() or {}
+                for k in f.keys():
+                    weights[k.removeprefix('model.')]=f.get_tensor(k)
+                for alias,referent in md.items():
+                    if not alias.startswith('model.') or not referent.startswith('model.'):
+                        raise ValueError('DA3_INVALID_WEIGHT_ALIAS')
+                    target=referent.removeprefix('model.')
+                    if target not in weights:
+                        raise ValueError('DA3_INVALID_WEIGHT_ALIAS')
+                    weights[alias.removeprefix('model.')]=weights[target]
+            self.net.load_state_dict(weights,strict=True)
+            del weights
+        self.profile_info=profile_info
+        self.net.eval().to(device)
+        if profile=='int8':
+            from .int8_runtime import quantize_backbone
+            stats=quantize_backbone(self.net)
+            profile_info.update(stats, model_id='DA3-SMALL-INT8-EXPERIMENTAL',
+                                profile='int8',experimental=True,runtime_weights_sha256=None,
+                                provenance_verification='runtime_quantization_from_pinned_fp32')
+        self.processor=InputProcessor()
+        self.output_processor=OutputProcessor()
+        self.device=device
+        self.digest=profile_info['artifact_sha256']
+        self.model_id=profile_info['model_id']
+
+    def inference(self, images: Sequence[np.ndarray], *, process_res:int=140) -> DA3Output:
+        import torch
+        if not 1<=len(images)<=8 or not 112<=process_res<=504:
+            raise ValueError('DA3_RESOURCE_LIMIT')
+        validated=[]
+        from PIL import Image
+        for image in images:
+            if isinstance(image,(Path,str)):
+                with Image.open(image) as img:
+                    if img.width*img.height > 4_000_000:
+                        raise ValueError('DA3_INPUT_TOO_LARGE')
+                    image=np.asarray(img.convert('RGB'))
+            if not isinstance(image,np.ndarray) or image.ndim!=3 or image.shape[2]!=3 or image.dtype!=np.uint8:
+                raise ValueError('DA3_INVALID_INPUT_IMAGE')
+            if image.shape[0]*image.shape[1]>4_000_000:
+                raise ValueError('DA3_INPUT_TOO_LARGE')
+            validated.append(image)
+        with torch.inference_mode():
+            tensors,_,_=self.processor(validated,process_res=process_res,num_workers=1)
+            tensors=tensors.to(self.device)[None].float()
+            output=self.net(tensors,None,None,[],False,False,'middle')
+            pred=self.output_processor(output)
+            mean=torch.tensor([.485,.456,.406],device=self.device).view(1,3,1,1)
+            std=torch.tensor([.229,.224,.225],device=self.device).view(1,3,1,1)
+            rgb=(tensors[0]*std+mean).clamp(0,1).permute(0,2,3,1)
+            pred.processed_images=(rgb*255).round().to(torch.uint8).cpu().numpy()
+        return replace(normalize_da3_prediction(pred,model_id='DA3-SMALL',weights_sha256=self.digest),model_id=self.model_id)
+
+
+def main() -> None:
+    """Offline original pretrained DA3 Small inference. Writes relative depth only."""
+    import argparse
+    from io import BytesIO
+    from PIL import Image
+    from .infer import save_atomic
+
+    parser=argparse.ArgumentParser(description='OCAF GeoDepth Ω - authentic DA3 Small, offline')
+    parser.add_argument('--model-dir',type=Path,required=True)
+    parser.add_argument('--source-dir',type=Path,required=True)
+    parser.add_argument('--input',type=Path,nargs='+',required=True)
+    parser.add_argument('--output',type=Path,required=True)
+    parser.add_argument('--process-res',type=int,default=280)
+    parser.add_argument('--device',choices=('cpu','cuda'),default='cpu')
+    parser.add_argument('--verify-reprojection',action='store_true')
+    parser.add_argument('--profile',choices=('fp32','fp16','aq6','aq4','int8'),default='fp32')
+    parser.add_argument('--allow-experimental',action='store_true')
+    args=parser.parse_args()
+    engine=DA3RealCPU(args.model_dir,source_dir=args.source_dir,device=args.device,profile=args.profile,allow_experimental=args.allow_experimental)
+    result=engine.inference(args.input,process_res=args.process_res)
+    audit=None
+    if args.verify_reprojection:
+        from .da3_validation import verify_multiview_reprojection
+        audit=verify_multiview_reprojection(result)
+        if not audit['passed']:
+            raise ValueError('DA3_MULTIVIEW_REPROJECTION_UNVERIFIABLE')
+    args.output.mkdir(parents=True,exist_ok=True)
+    buff=BytesIO()
+    np.savez_compressed(buff,depth_z=result.depth_z,confidence_raw=result.confidence_raw,
+        intrinsics_k=result.intrinsics_k,pose_c2w=result.pose_c2w,rgb=result.rgb,
+        units=np.array(result.units),provenance=np.array(result.provenance))
+    save_atomic(args.output/'prediction.npz',buff.getvalue())
+    for i,depth in enumerate(result.depth_z):
+        valid=np.isfinite(depth)&(depth>0)
+        dmin,dmax=np.percentile(depth[valid],[2,98])
+        image=np.nan_to_num(np.clip((depth-dmin)/max(float(dmax-dmin),1e-8),0,1))
+        b=BytesIO()
+        Image.fromarray(np.round(image*255).astype(np.uint8)).save(b,format='PNG')
+        save_atomic(args.output/f'depth_relative_{i:02d}.png',b.getvalue())
+    meta={'model':result.model_id,'weight_profile':engine.profile_info,'weights_sha256':result.weights_sha256,
+          'source':'official DA3 network from pinned user-provided source ZIP',
+          'view_count':len(result.depth_z),'depth_shape':list(result.depth_z.shape),
+          'units':result.units,'provenance':result.provenance,
+          'confidence':'DA3 raw confidence, not calibrated probability',
+          'reprojection_audit':audit,
+          'warning':'Depth is relative; do not report output in metres without a metric anchor.'}
+    save_atomic(args.output/'metadata.json',json.dumps(meta,indent=2,ensure_ascii=False).encode())
+    print(json.dumps(meta,ensure_ascii=False,indent=2))
+
+if __name__=='__main__':
+    main()

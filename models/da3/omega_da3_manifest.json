@@ -1,0 +1,15 @@
+{
+  "files": {
+    "README.md": "0a711be055e4eb5293e31586e3176c09ce12eb2e79593f6b96a41f7fe5b415d0",
+    "config.json": "a486e29e82b7ab4a7d4cefc1ea4526cfe2ae438a572c8ca98917cfbcde7447d2",
+    "model.safetensors": "364492e38a3a06d221ac75da7f6621ada3f2361cd24fde11ba79091e9f40efcf"
+  },
+  "license": "apache-2.0",
+  "model_id": "DA3-SMALL",
+  "official_weights_sha256": "364492e38a3a06d221ac75da7f6621ada3f2361cd24fde11ba79091e9f40efcf",
+  "provenance": "user_supplied_checkpoint_origin_not_verified",
+  "repo_id": "depth-anything/DA3-SMALL",
+  "revision": "e08cab65",
+  "schema_version": "omega-da3-local-v1",
+  "verified_with": "official_upstream_sha256_and_local_sha256"
+}

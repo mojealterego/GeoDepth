@@ -1,0 +1,19 @@
+{
+  "status": "synthetic_only_calibrated",
+  "alpha": 0.1,
+  "q": 1.5828529596328735,
+  "q_scene_coverage": 2.008310556411743,
+  "min_scene_pixel_coverage": 0.9,
+  "empirical_scene_level_coverage_synthetic_audit": 0.8928571428571429,
+  "nominal_coverage": 0.9,
+  "empirical_coverage_separate_synthetic_audit": 0.8868059430803571,
+  "audit_mae_log_depth": 0.09684930741786957,
+  "calibration_samples": 112,
+  "audit_samples": 112,
+  "calibration_seed_start": 60000,
+  "audit_seed_start": 70000,
+  "score": "absolute_log_depth_error / predicted_sigma_log",
+  "coverage_scope": "pixel-marginal on procedurally generated scenes only, not real-world images",
+  "model_sha256": "936d76c0b4cdcfb9854e143d3af5e605808b415bca683b78e63806cc26564d0d",
+  "content_filter": "none"
+}
