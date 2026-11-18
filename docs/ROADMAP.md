@@ -21,3 +21,7 @@ Każda kolejna iteracja ma być zapisana na main wraz z testami i raportami. Wer
 - v0.20: natywne AQ4/AQ6, optymalizacja pamięci, GPU/Vulkan/Android i 400 MP.
 - DA3 Giant/Large: brak checkpointów; ograniczenia licencyjne przed integracją.
 - Dystrybucja binarna, niezależny audyt końcowy, CI, brak certyfikacji produkcyjnej.
+
+### Aktualizacja dystrybucji
+- OMEGA v0.1/v0.2 Safetensors i TorchScript: 44 części, wszystkie zapisane w GitHub; instrukcje odtworzenia i sumy SHA-256.
+- DA3 FP32/FP16/AQ4/AQ6: pełne checkpointy oczekują na transfer. Rejestr: models/repository_inventory.json.

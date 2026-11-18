@@ -1,0 +1,67 @@
+{
+  "schema": "geodepth.repository-model-inventory/1",
+  "release": "0.16.0",
+  "published": [
+    {
+      "name": "OMEGA synthetic v0.1 Safetensors",
+      "path": "models/omega_geodepth_synthetic_v0.1.safetensors.parts",
+      "bytes": 2313464,
+      "sha256": "93bd2c91ab36bb095c7f6bd950bbce1c332834bb27e22f20a6285e77ab349338",
+      "parts": 7
+    },
+    {
+      "name": "OMEGA synthetic v0.1 TorchScript",
+      "path": "models/omega_geodepth_synthetic_v0.1.torchscript.pt.parts",
+      "bytes": 2336433,
+      "sha256": "aa34155dddd4286dd4d0ac5fad8659481ad340fd42b721a30d342cf0e4a26562",
+      "parts": 7
+    },
+    {
+      "name": "OMEGA synthetic v0.2 Safetensors",
+      "path": "models/omega_geodepth_synthetic_v0.2.parts",
+      "bytes": 5187384,
+      "sha256": "936d76c0b4cdcfb9854e143d3af5e605808b415bca683b78e63806cc26564d0d",
+      "parts": 15
+    },
+    {
+      "name": "OMEGA synthetic v0.2 TorchScript",
+      "path": "models/omega_geodepth_synthetic_v0.2.torchscript.pt.parts",
+      "bytes": 5222767,
+      "sha256": "7df967f9303329935a9410ad381845eb3b15085414c42fe5433bd22540f81df5",
+      "parts": 15
+    }
+  ],
+  "pending": [
+    {
+      "name": "DA3 Small FP32",
+      "path": "models/da3/model.safetensors",
+      "bytes": 137248940,
+      "sha256": "364492e38a3a06d221ac75da7f6621ada3f2361cd24fde11ba79091e9f40efcf"
+    },
+    {
+      "name": "DA3 Base FP32",
+      "path": "models/da3_base/model.safetensors",
+      "bytes": 541518028,
+      "sha256": "e01067dc1659613083d9145a9a2547ccdbe6ccbbf83c4fe7b3e8a4e2bdae78b5"
+    },
+    {
+      "name": "DA3 Small FP16",
+      "path": "models/da3_profiles/fp16/model.safetensors",
+      "bytes": 68649566,
+      "sha256": "388b86c06bae986d0166e35c72813993574efdaa33b0d9ec469e52caae9f98d5"
+    },
+    {
+      "name": "DA3 Small AQ4",
+      "path": "models/da3_profiles/aq4/model.safetensors",
+      "bytes": 29142924,
+      "sha256": "cf905633897e8899bc1e318c0f01ac88578c421b4f23d50035011d865c723bbe"
+    },
+    {
+      "name": "DA3 Small AQ6",
+      "path": "models/da3_profiles/aq6/model.safetensors",
+      "bytes": 33882700,
+      "sha256": "9d0a64860243d7a142669bc96c37d41eb2507e2c5d50e1650c622aeed88c9a14"
+    }
+  ],
+  "note": "Inventory covers the four historical OMEGA artifacts and five DA3 weight files, not all other repository assets. Pending entries are not published bytes and are not LFS pointers. Existing per-part SHA-1 and SHA-256 manifests are authoritative for restoration."
+}

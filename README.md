@@ -17,3 +17,6 @@ Każda kolejna iteracja ma trafiać na main: źródła, testy, dokumentacja, roa
 - [Roadmap](docs/ROADMAP.md)
 
 Licencje: NOTICE.md; DA3 i quality_v1 Apache-2.0. Nie nadano nowej licencji reszcie kodu OMEGA.
+
+## Dystrybucja modeli
+Oryginalne wagi i eksporty TorchScript OMEGA v0.1/v0.2 są już zapisane w repozytorium w numerowanych częściach. Zobacz [status dystrybucji](docs/MODEL_DISTRIBUTION.md) i [manifest](models/repository_inventory.json). Pięć dużych checkpointów DA3 nadal oczekuje na transfer pełnych bajtów.
