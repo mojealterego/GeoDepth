@@ -1,15 +1,18 @@
 # OCAF GeoDepth Ω
 
-DA3, rekonstrukcja wielowidokowa, TSDF, eksperymentalne Gaussy 4D i wieloskalowe pola 5D (XYZ, czas, skala pikselowa). RGB jest cechą, nie wymiarem przestrzennym.
+DA3, rekonstrukcja wielowidokowa, TSDF, eksperymentalne Gaussy 4D oraz wieloskalowe pola 5D (XYZ, czas, skala pikselowa). RGB jest cechą, nie wymiarem przestrzennym.
 
-## Stan v0.15.0
-Autentyczne DA3 Small i Base są uruchomione lokalnie w FP32 CPU. Opcjonalne profile Small FP16/AQ6/AQ4/INT8, kontrola metryki, TSDF, modele 4D/5D i bramki jakości pozostają zachowane.
-v0.14 wprowadziło benchmark referencyjny i pose conditioning; v0.15 dodaje natywny dekoder ray, audyt kierunku/origin/Z oraz ściślejsze dopasowanie Sim(3). Dekoder tokenowy pozostaje domyślny. 230 testów lokalnie, 6 ostrzeżeń; zbudowano WHL 0.15.0 i uruchomiono CLI ray na 2 fotografiach spoza źródeł. Wynik syntetyczny nie potwierdza fizycznej dokładności ani przewagi modelu.
+## Stan v0.16.0
+Oryginalne DA3 Small i Base działają lokalnie w FP32 CPU. Zachowano opcjonalne profile Small FP16/AQ6/AQ4/INT8, kontrolę metryki, TSDF, modele 4D/5D i bramki jakości. v0.16 dodaje eksperymentalny fast_ray, globalny graf Sim(3) i obsługę statycznej rekonstrukcji okienkowej. Dekoder tokenowy pozostaje domyślny. Na jednej scenie przy 140 px fast_ray przyspieszył inferencję 3,17–8,07× względem natywnego ray. Graf zredukował koszt optymalizacji, ale oba rzeczywiste zestawy predykcji zostały odrzucone przez bramki jakości. Nie jest to dowód dokładności metrycznej.
 
-Kod i testy są na main. Pełne raporty v0.15, wagi i zależności upstream pozostają w lokalnej dystrybucji; sam checkout nie wystarcza do pełnej regresji. Zdalnego CI nie uruchomiono.
+242 testy lokalnie, 12 nowych; WHL z niezależnym uruchomieniem Small. Kod, testy, dokumentacja i raport v0.16 są na main. Duże wagi i zależności upstream są nadal poza Git; sam checkout nie zawiera wszystkich zasobów pełnej lokalnej regresji. Zdalnego CI nie uruchomiono.
 
+## Zasady publikacji
+Każda kolejna iteracja ma trafiać na main: źródła, testy, dokumentacja, roadmapa i dostępne raporty. Publikacja wymaga weryfikacji plików i odczytu końcowego SHA gałęzi. Zasoby binarne wymagają osobnego mechanizmu transferu (Git LFS lub Releases); nie należy ich zastępować pustymi wskaźnikami. Nie deklarować publikacji plików, których repozytorium rzeczywiście nie zawiera.
+
+- [Instrukcja v0.16](docs/ZMIANY_v0.16_PL.md)
+- [Benchmark v0.16](reports/v16/benchmark_140.json)
 - [Instrukcja v0.15](docs/ZMIANY_v0.15_PL.md)
-- [Instrukcja v0.14](docs/ZMIANY_v0.14_PL.md)
 - [README PL](README_PL.md)
 - [Roadmap](docs/ROADMAP.md)
 

@@ -197,7 +197,7 @@ class DA3RealCPU:
                   camera_poses_c2w:np.ndarray|None=None, camera_intrinsics:np.ndarray|None=None,
                   pose_decoder:str="token", audit_depth_rays:bool=False) -> DA3Output:
         import torch
-        if pose_decoder not in ("token","ray") or not isinstance(audit_depth_rays,bool):
+        if pose_decoder not in ("token","ray","fast_ray") or not isinstance(audit_depth_rays,bool):
             raise ValueError("DA3_INVALID_POSE_DECODER")
         if not 1<=len(images)<=8 or not 112<=process_res<=504:
             raise ValueError('DA3_RESOURCE_LIMIT')
@@ -226,7 +226,7 @@ class DA3RealCPU:
                     # Copy before the native decoder removes rays/mutates confidence.
                     captured['ray']=raw['ray'][0].detach().cpu().clone().numpy()
                     captured['conf']=raw['ray_conf'][0].detach().cpu().clone().numpy()
-                hook=self.net.head.register_forward_hook(capture) if audit_depth_rays else None
+                hook=self.net.head.register_forward_hook(capture) if audit_depth_rays or pose_decoder=="fast_ray" else None
                 try:
                     # Upstream ray RANSAC draws from global RNG; preserve caller state.
                     devices=[torch.cuda.current_device()] if self.device=='cuda' else []
@@ -238,16 +238,26 @@ class DA3RealCPU:
                 finally:
                     if hook is not None:hook.remove()
             pred=self.output_processor(output)
+            fast_fit=None
+            if pose_decoder=="fast_ray":
+                from .fast_rays import fit_ray_cameras
+                conf=captured['conf']
+                if conf.ndim==4 and conf.shape[-1]==1:conf=conf[...,0]
+                poses,k,fast_fit=fit_ray_cameras(captured['ray'],conf,image_shape=pred.depth.shape[-2:])
+                pred.extrinsics=np.linalg.inv(poses)
+                pred.intrinsics=k
             mean=torch.tensor([.485,.456,.406],device=self.device).view(1,3,1,1)
             std=torch.tensor([.229,.224,.225],device=self.device).view(1,3,1,1)
             rgb=(tensors[0]*std+mean).clamp(0,1).permute(0,2,3,1)
             pred.processed_images=(rgb*255).round().to(torch.uint8).cpu().numpy()
         result=replace(normalize_da3_prediction(pred,model_id=self.base_model_id,weights_sha256=self.digest),model_id=self.model_id,pose_conditioned=exts is not None,pose_decoder=pose_decoder)
-        if audit_depth_rays:
+        if audit_depth_rays or pose_decoder=="fast_ray":
             from .ray_consistency import audit_rays
             conf=captured['conf']
             if conf.ndim==4 and conf.shape[-1]==1:conf=conf[...,0]
-            result=replace(result,ray_audit=audit_rays(result,captured['ray'],conf))
+            audit=audit_rays(result,captured['ray'],conf)
+            if fast_fit is not None:audit['fast_fit']=fast_fit
+            result=replace(result,ray_audit=audit)
         return result
 
 
@@ -272,7 +282,7 @@ def main() -> None:
     parser.add_argument('--fallback-resolutions',type=int,nargs='+',default=[],help='Up to three alternate resolutions after --process-res; requires --verify-all-pairs')
     parser.add_argument('--profile',choices=('fp32','fp16','aq6','aq4','int8'),default='fp32')
     parser.add_argument('--allow-experimental',action='store_true')
-    parser.add_argument('--pose-decoder',choices=('token','ray'),default='token')
+    parser.add_argument('--pose-decoder',choices=('token','ray','fast_ray'),default='token')
     parser.add_argument('--audit-depth-rays',action='store_true')
     args=parser.parse_args()
     if args.fallback_resolutions and not args.verify_all_pairs:

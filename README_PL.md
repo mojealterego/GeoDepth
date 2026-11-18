@@ -1,6 +1,6 @@
-# OMEGA GeoDepth Ω v0.9.0 — DA3 FP32 / FP16 / AQ6 / AQ4
+# OMEGA GeoDepth Ω v0.16.0 — DA3 / 4D / 5D / globalna geometria
 
-Aktualna instrukcja: **`docs/ZMIANY_v0.9_PL.md`**. Oficjalny FP32 i pochodny FP16 są w głównej paczce; AQ6/AQ4 w osobnym dodatku. Wszystkie profile wykonują inferencję FP32. Poniżej zachowano historię poprzednich wydań.
+Aktualna instrukcja: **`docs/ZMIANY_v0.16_PL.md`**. Oficjalny FP32 i pochodny FP16 są w głównej paczce; AQ6/AQ4 w osobnym dodatku. Wszystkie profile wykonują inferencję FP32. Poniżej zachowano historię poprzednich wydań.
 
 ---
 
@@ -250,3 +250,7 @@ Moduł Visual Geometry Benchmark, Sim(3), AUC3/30, Chamfer i F1, oraz opcjonalne
 ## v0.15.0 — Depth–Ray
 
 Nowy opcjonalny dekoder promieni i audyt kierunku, początku i składowej Z; osobna rygorystyczna kalibracja Sim(3) z odłożonymi kamerami. Domyślna inferencja pozostaje tokenowa. 230 testów lokalnych; szczegóły i ograniczenia w [docs/ZMIANY_v0.15_PL.md](docs/ZMIANY_v0.15_PL.md). Nakładka kumulatywna zawiera również zmiany źródłowe v0.14.
+
+## v0.16 — szybki dekoder i globalna synchronizacja
+
+[Dokumentacja v0.16](docs/ZMIANY_v0.16_PL.md). Opcjonalny fast_ray, statyczny graf nakładających się okien, rygorystyczna kontrola kamer i głębi. Nowe testy 12, pełna regresja 242. Oba rzeczywiste benchmarki grafu zostały odrzucone, nie deklarujemy ukończonej globalnej rekonstrukcji.

@@ -1,0 +1,1823 @@
+{
+  "scope": "Single analytic seed 11 (previous v15 family), 8 context views; reference cameras 0..3 alignment, 4..7 evaluation. Timings sequential CPU wall clock incl preprocessing, native/fast decoder and ray audit, not decoder-only. Warm-up excluded. Not external or real-world metrics.",
+  "resolution": 140,
+  "repeats": 1,
+  "models": {
+    "DA3-SMALL": {
+      "decoder_comparison": [
+        {
+          "conditioned": false,
+          "decoder": "ray",
+          "seconds": [
+            7.461597479999909
+          ],
+          "rays": {
+            "views": 8,
+            "ray_grid": [
+              80,
+              80
+            ],
+            "per_view": [
+              {
+                "view": 0,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.5556194553877478,
+                "origin_p90_over_depth": 0.011133484917401014,
+                "z_normalization_p90": 0.028982456228321796
+              },
+              {
+                "view": 1,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.7311215071339809,
+                "origin_p90_over_depth": 0.011790549668014816,
+                "z_normalization_p90": 0.05728550882759087
+              },
+              {
+                "view": 2,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.5737790101753426,
+                "origin_p90_over_depth": 0.00935647412886725,
+                "z_normalization_p90": 0.017705100399765472
+              },
+              {
+                "view": 3,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.5977696882820605,
+                "origin_p90_over_depth": 0.011521773422858969,
+                "z_normalization_p90": 0.051017430705080746
+              },
+              {
+                "view": 4,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.34992401505566323,
+                "origin_p90_over_depth": 0.0031142763097281997,
+                "z_normalization_p90": 0.004515630583097008
+              },
+              {
+                "view": 5,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.6160617258930848,
+                "origin_p90_over_depth": 0.011125681204973679,
+                "z_normalization_p90": 0.03155972075830754
+              },
+              {
+                "view": 6,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.5668327886745594,
+                "origin_p90_over_depth": 0.015044708625188544,
+                "z_normalization_p90": 0.03892754377888796
+              },
+              {
+                "view": 7,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.49691437880322087,
+                "origin_p90_over_depth": 0.009614637460244699,
+                "z_normalization_p90": 0.02613734036432419
+              }
+            ],
+            "worst_direction_p90_deg": 0.7311215071339809,
+            "worst_origin_p90_over_depth": 0.015044708625188544,
+            "worst_z_normalization_p90": 0.05728550882759087,
+            "scope": "internal consistency; not calibrated confidence or physical accuracy"
+          },
+          "status": "inferred",
+          "reference": {
+            "reference_units": "m",
+            "alignment_kind": "reference_camera_centres_sim3_evaluation_only",
+            "calibration_indices": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "evaluation_indices": [
+              4,
+              5,
+              6,
+              7
+            ],
+            "alignment": {
+              "scale": 3.583649200303911,
+              "rotation": [
+                [
+                  0.9428096211919719,
+                  -0.22779786281848427,
+                  0.24334780024315156
+                ],
+                [
+                  0.25448190267668525,
+                  0.9634142570719082,
+                  -0.08409477082813879
+                ],
+                [
+                  -0.2152881311124788,
+                  0.14121297024676635,
+                  0.9662866643166417
+                ]
+              ],
+              "translation": [
+                -0.5953817584700092,
+                -0.12087600351613131,
+                -0.2465974397029781
+              ],
+              "inlier_indices": [
+                0,
+                1,
+                2,
+                3
+              ]
+            },
+            "heldout_center_rmse": 0.4517997308570491,
+            "pose": {
+              "total_pairs": 6,
+              "translation_pairs": 6,
+              "predicted_nonzero_pairs": 6,
+              "rotation_mean_deg": 9.431125122897605,
+              "translation_mean_deg": 15.224839149030368,
+              "auc_3": 0.0,
+              "auc_30": 0.439047771996143
+            },
+            "cloud": {
+              "predicted_points": 4900,
+              "reference_points": 4900,
+              "threshold": 0.1,
+              "accuracy": 0.22791606747128731,
+              "completeness": 2.562508905305523,
+              "chamfer": 1.3952124863884052,
+              "precision": 0.1710204081632653,
+              "recall": 0.03306122448979592,
+              "f1": 0.055410612244897954
+            },
+            "caution": "Reference aligned evaluation, not metric inference. Caller must ensure point clouds use evaluation views only; not novel-view synthesis."
+          },
+          "median_seconds": 7.461597479999909
+        },
+        {
+          "conditioned": false,
+          "decoder": "fast_ray",
+          "seconds": [
+            1.0126198959997055
+          ],
+          "rays": {
+            "views": 8,
+            "ray_grid": [
+              80,
+              80
+            ],
+            "per_view": [
+              {
+                "view": 0,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.5418078344820226,
+                "origin_p90_over_depth": 0.011263583325641178,
+                "z_normalization_p90": 0.052008367320024895
+              },
+              {
+                "view": 1,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.5540011568835159,
+                "origin_p90_over_depth": 0.012459703706325542,
+                "z_normalization_p90": 0.08242545065371137
+              },
+              {
+                "view": 2,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.5348755786682371,
+                "origin_p90_over_depth": 0.009329329321035007,
+                "z_normalization_p90": 0.05104719237905392
+              },
+              {
+                "view": 3,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.553872384409006,
+                "origin_p90_over_depth": 0.01166174646283287,
+                "z_normalization_p90": 0.0735345690852709
+              },
+              {
+                "view": 4,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.3364393683367863,
+                "origin_p90_over_depth": 0.0031509616579233303,
+                "z_normalization_p90": 0.016301230265298616
+              },
+              {
+                "view": 5,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.5254070195597076,
+                "origin_p90_over_depth": 0.011317449828162345,
+                "z_normalization_p90": 0.038402420667239756
+              },
+              {
+                "view": 6,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.4608033475288328,
+                "origin_p90_over_depth": 0.01525204775394796,
+                "z_normalization_p90": 0.05243288267381507
+              },
+              {
+                "view": 7,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.48719614066622197,
+                "origin_p90_over_depth": 0.009778281222314267,
+                "z_normalization_p90": 0.03397869722364322
+              }
+            ],
+            "worst_direction_p90_deg": 0.5540011568835159,
+            "worst_origin_p90_over_depth": 0.01525204775394796,
+            "worst_z_normalization_p90": 0.08242545065371137,
+            "scope": "internal consistency; not calibrated confidence or physical accuracy",
+            "fast_fit": {
+              "per_view": [
+                {
+                  "view": 0,
+                  "samples": 2025,
+                  "valid": 2025,
+                  "angular_p90_deg": 0.5489391541768119,
+                  "origin_p90": 0.013046164668391964
+                },
+                {
+                  "view": 1,
+                  "samples": 2025,
+                  "valid": 2025,
+                  "angular_p90_deg": 0.579970644703789,
+                  "origin_p90": 0.01415671210551694
+                },
+                {
+                  "view": 2,
+                  "samples": 2025,
+                  "valid": 2025,
+                  "angular_p90_deg": 0.5539179570000272,
+                  "origin_p90": 0.010783287151844078
+                },
+                {
+                  "view": 3,
+                  "samples": 2025,
+                  "valid": 2025,
+                  "angular_p90_deg": 0.5712604353654108,
+                  "origin_p90": 0.014420607630498003
+                },
+                {
+                  "view": 4,
+                  "samples": 2025,
+                  "valid": 2025,
+                  "angular_p90_deg": 0.35039173769395604,
+                  "origin_p90": 0.004056873765882717
+                },
+                {
+                  "view": 5,
+                  "samples": 2025,
+                  "valid": 2025,
+                  "angular_p90_deg": 0.5524953558715849,
+                  "origin_p90": 0.012532068947691658
+                },
+                {
+                  "view": 6,
+                  "samples": 2025,
+                  "valid": 2025,
+                  "angular_p90_deg": 0.4690845818920816,
+                  "origin_p90": 0.017550712894619062
+                },
+                {
+                  "view": 7,
+                  "samples": 2025,
+                  "valid": 2025,
+                  "angular_p90_deg": 0.515226163424191,
+                  "origin_p90": 0.011614769600860393
+                }
+              ],
+              "worst_angular_p90_deg": 0.579970644703789,
+              "scope": "internal ray fit only; relative gauge; not physical accuracy"
+            }
+          },
+          "status": "inferred",
+          "reference": {
+            "reference_units": "m",
+            "alignment_kind": "reference_camera_centres_sim3_evaluation_only",
+            "calibration_indices": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "evaluation_indices": [
+              4,
+              5,
+              6,
+              7
+            ],
+            "alignment": {
+              "scale": 3.5687186636261212,
+              "rotation": [
+                [
+                  0.9430913593585096,
+                  -0.2287964379189773,
+                  0.24131074965468452
+                ],
+                [
+                  0.25505037528104085,
+                  0.9633222423559722,
+                  -0.08342399805368919
+                ],
+                [
+                  -0.21337289887030758,
+                  0.1402228489863519,
+                  0.966855500397982
+                ]
+              ],
+              "translation": [
+                -0.5934625575961257,
+                -0.11893921970508997,
+                -0.24710348068284343
+              ],
+              "inlier_indices": [
+                0,
+                1,
+                2,
+                3
+              ]
+            },
+            "heldout_center_rmse": 0.4496838769033244,
+            "pose": {
+              "total_pairs": 6,
+              "translation_pairs": 6,
+              "predicted_nonzero_pairs": 6,
+              "rotation_mean_deg": 8.005601323082375,
+              "translation_mean_deg": 15.546459741667958,
+              "auc_3": 0.0,
+              "auc_30": 0.4438138741353397
+            },
+            "cloud": {
+              "predicted_points": 4900,
+              "reference_points": 4900,
+              "threshold": 0.1,
+              "accuracy": 0.2274193003170183,
+              "completeness": 2.533426005833144,
+              "chamfer": 1.3804226530750812,
+              "precision": 0.16795918367346938,
+              "recall": 0.03489795918367347,
+              "f1": 0.05778877345706894
+            },
+            "caution": "Reference aligned evaluation, not metric inference. Caller must ensure point clouds use evaluation views only; not novel-view synthesis."
+          },
+          "median_seconds": 1.0126198959997055
+        },
+        {
+          "conditioned": true,
+          "decoder": "ray",
+          "seconds": [
+            7.7431155039998885
+          ],
+          "rays": {
+            "views": 8,
+            "ray_grid": [
+              80,
+              80
+            ],
+            "per_view": [
+              {
+                "view": 0,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.9427103553895215,
+                "origin_p90_over_depth": 0.0027753745391988966,
+                "z_normalization_p90": 0.01599827171142465
+              },
+              {
+                "view": 1,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.6615565841787916,
+                "origin_p90_over_depth": 0.0050660599774663756,
+                "z_normalization_p90": 0.021397973446057428
+              },
+              {
+                "view": 2,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.8928746663408486,
+                "origin_p90_over_depth": 0.004230390046957504,
+                "z_normalization_p90": 0.01587829499516691
+              },
+              {
+                "view": 3,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.702884559332098,
+                "origin_p90_over_depth": 0.005405787651441656,
+                "z_normalization_p90": 0.020493167420005842
+              },
+              {
+                "view": 4,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.9151636743630691,
+                "origin_p90_over_depth": 0.003896819085618973,
+                "z_normalization_p90": 0.018447481959129375
+              },
+              {
+                "view": 5,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.7248327959194067,
+                "origin_p90_over_depth": 0.0049377894762726365,
+                "z_normalization_p90": 0.01877562803892685
+              },
+              {
+                "view": 6,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.7336662221064566,
+                "origin_p90_over_depth": 0.005365418021436834,
+                "z_normalization_p90": 0.02043625511942837
+              },
+              {
+                "view": 7,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.9164228913094699,
+                "origin_p90_over_depth": 0.004572109152221624,
+                "z_normalization_p90": 0.01734383224552183
+              }
+            ],
+            "worst_direction_p90_deg": 0.9427103553895215,
+            "worst_origin_p90_over_depth": 0.005405787651441656,
+            "worst_z_normalization_p90": 0.021397973446057428,
+            "scope": "internal consistency; not calibrated confidence or physical accuracy"
+          },
+          "status": "inferred",
+          "reference": {
+            "reference_units": "m",
+            "alignment_kind": "reference_camera_centres_sim3_evaluation_only",
+            "calibration_indices": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "evaluation_indices": [
+              4,
+              5,
+              6,
+              7
+            ],
+            "alignment": {
+              "scale": 3.353196142153637,
+              "rotation": [
+                [
+                  0.9904546536613565,
+                  -0.013366126588262426,
+                  0.13718937896421968
+                ],
+                [
+                  0.005148030223424675,
+                  0.9981800388904576,
+                  0.060084172170909465
+                ],
+                [
+                  -0.13774279228104985,
+                  -0.05880439286882652,
+                  0.9887208739345744
+                ]
+              ],
+              "translation": [
+                -0.6525484084578218,
+                -0.2785750642089144,
+                0.019610519112671934
+              ],
+              "inlier_indices": [
+                0,
+                1,
+                2,
+                3
+              ]
+            },
+            "heldout_center_rmse": 0.013180158726308672,
+            "pose": {
+              "total_pairs": 6,
+              "translation_pairs": 6,
+              "predicted_nonzero_pairs": 6,
+              "rotation_mean_deg": 1.2348126250905531,
+              "translation_mean_deg": 1.827438506221493,
+              "auc_3": 0.29183815816667363,
+              "auc_30": 0.9291838158166675
+            },
+            "cloud": {
+              "predicted_points": 4900,
+              "reference_points": 4900,
+              "threshold": 0.1,
+              "accuracy": 0.2524226086680097,
+              "completeness": 2.7226775768909564,
+              "chamfer": 1.487550092779483,
+              "precision": 0.15326530612244899,
+              "recall": 0.049591836734693875,
+              "f1": 0.07493655812425574
+            },
+            "caution": "Reference aligned evaluation, not metric inference. Caller must ensure point clouds use evaluation views only; not novel-view synthesis."
+          },
+          "median_seconds": 7.7431155039998885
+        },
+        {
+          "conditioned": true,
+          "decoder": "fast_ray",
+          "seconds": [
+            0.9596919470000103
+          ],
+          "rays": {
+            "views": 8,
+            "ray_grid": [
+              80,
+              80
+            ],
+            "per_view": [
+              {
+                "view": 0,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.60898156323556,
+                "origin_p90_over_depth": 0.0027875502637875168,
+                "z_normalization_p90": 0.019410005815549303
+              },
+              {
+                "view": 1,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.6487061129870562,
+                "origin_p90_over_depth": 0.00556732227412263,
+                "z_normalization_p90": 0.0199290822333823
+              },
+              {
+                "view": 2,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.691544271497397,
+                "origin_p90_over_depth": 0.004386148522135076,
+                "z_normalization_p90": 0.028708513501636945
+              },
+              {
+                "view": 3,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.697061592674795,
+                "origin_p90_over_depth": 0.005434702083154678,
+                "z_normalization_p90": 0.01937330789812608
+              },
+              {
+                "view": 4,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.6570462049140589,
+                "origin_p90_over_depth": 0.003963999299419705,
+                "z_normalization_p90": 0.029041775161002148
+              },
+              {
+                "view": 5,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.6982509463171435,
+                "origin_p90_over_depth": 0.005351548165570421,
+                "z_normalization_p90": 0.019077596383926587
+              },
+              {
+                "view": 6,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.6430295826964678,
+                "origin_p90_over_depth": 0.0056665327223975005,
+                "z_normalization_p90": 0.020198682186104988
+              },
+              {
+                "view": 7,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.6949581167196541,
+                "origin_p90_over_depth": 0.004795355801928833,
+                "z_normalization_p90": 0.02340272684690381
+              }
+            ],
+            "worst_direction_p90_deg": 0.6982509463171435,
+            "worst_origin_p90_over_depth": 0.0056665327223975005,
+            "worst_z_normalization_p90": 0.029041775161002148,
+            "scope": "internal consistency; not calibrated confidence or physical accuracy",
+            "fast_fit": {
+              "per_view": [
+                {
+                  "view": 0,
+                  "samples": 2025,
+                  "valid": 2025,
+                  "angular_p90_deg": 0.6171106437530818,
+                  "origin_p90": 0.0028696346808623685
+                },
+                {
+                  "view": 1,
+                  "samples": 2025,
+                  "valid": 2025,
+                  "angular_p90_deg": 0.672454331538217,
+                  "origin_p90": 0.005625006151651725
+                },
+                {
+                  "view": 2,
+                  "samples": 2025,
+                  "valid": 2025,
+                  "angular_p90_deg": 0.6994908689694145,
+                  "origin_p90": 0.0047320858054401786
+                },
+                {
+                  "view": 3,
+                  "samples": 2025,
+                  "valid": 2025,
+                  "angular_p90_deg": 0.7165876011934208,
+                  "origin_p90": 0.00561842152085813
+                },
+                {
+                  "view": 4,
+                  "samples": 2025,
+                  "valid": 2025,
+                  "angular_p90_deg": 0.6650138364302352,
+                  "origin_p90": 0.004132652252918127
+                },
+                {
+                  "view": 5,
+                  "samples": 2025,
+                  "valid": 2025,
+                  "angular_p90_deg": 0.7280120342557368,
+                  "origin_p90": 0.0054173956055588906
+                },
+                {
+                  "view": 6,
+                  "samples": 2025,
+                  "valid": 2025,
+                  "angular_p90_deg": 0.6603518834990759,
+                  "origin_p90": 0.005837823108714875
+                },
+                {
+                  "view": 7,
+                  "samples": 2025,
+                  "valid": 2025,
+                  "angular_p90_deg": 0.7172575815286539,
+                  "origin_p90": 0.005023556527528752
+                }
+              ],
+              "worst_angular_p90_deg": 0.7280120342557368,
+              "scope": "internal ray fit only; relative gauge; not physical accuracy"
+            }
+          },
+          "status": "inferred",
+          "reference": {
+            "reference_units": "m",
+            "alignment_kind": "reference_camera_centres_sim3_evaluation_only",
+            "calibration_indices": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "evaluation_indices": [
+              4,
+              5,
+              6,
+              7
+            ],
+            "alignment": {
+              "scale": 3.3514845273308063,
+              "rotation": [
+                [
+                  0.9905335407408382,
+                  -0.013044611048581616,
+                  0.136649708342206
+                ],
+                [
+                  0.004869513134771737,
+                  0.998187131008615,
+                  0.059989493501944935
+                ],
+                [
+                  -0.1371845199330049,
+                  -0.05875618785609641,
+                  0.9888013541047408
+                ]
+              ],
+              "translation": [
+                -0.6529620920107876,
+                -0.2780153104099196,
+                0.01963369505569741
+              ],
+              "inlier_indices": [
+                0,
+                1,
+                2,
+                3
+              ]
+            },
+            "heldout_center_rmse": 0.013058547048173962,
+            "pose": {
+              "total_pairs": 6,
+              "translation_pairs": 6,
+              "predicted_nonzero_pairs": 6,
+              "rotation_mean_deg": 1.9288862311477484,
+              "translation_mean_deg": 2.005937233508336,
+              "auc_3": 0.22113871199847754,
+              "auc_30": 0.9219559863919148
+            },
+            "cloud": {
+              "predicted_points": 4900,
+              "reference_points": 4900,
+              "threshold": 0.1,
+              "accuracy": 0.26458261211316103,
+              "completeness": 2.720938779366423,
+              "chamfer": 1.4927606957397919,
+              "precision": 0.12918367346938775,
+              "recall": 0.044489795918367346,
+              "f1": 0.06618575985035613
+            },
+            "caution": "Reference aligned evaluation, not metric inference. Caller must ensure point clouds use evaluation views only; not novel-view synthesis."
+          },
+          "median_seconds": 0.9596919470000103
+        }
+      ],
+      "chunk_graph": {
+        "status": "rejected",
+        "groups": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          [
+            0,
+            1,
+            4,
+            5,
+            6,
+            7
+          ]
+        ],
+        "thresholds": {
+          "center_first_chunk_units": 0.15,
+          "rotation_deg": 5,
+          "depth_log_p90": 0.2,
+          "intrinsics_relative": 0.05,
+          "min_depth_overlap": 0.7
+        },
+        "scales": [
+          1.0,
+          0.9776139050087815,
+          1.272180411844672
+        ],
+        "audit": {
+          "passed": false,
+          "camera_graph_passed": false,
+          "initial_cost": 323.7750508653873,
+          "final_cost": 9.27175781599653,
+          "max_center_error_first_chunk_units": 0.08691795987372211,
+          "max_rotation_error_deg": 6.5398532165391305,
+          "shared_observations": [
+            {
+              "chunk_a": 0,
+              "chunk_b": 1,
+              "camera_id": 2,
+              "depth_overlap": 1.0,
+              "depth_log_p90": 0.06576049912895482,
+              "intrinsics_delta_normalized": 0.3710073979504935,
+              "passed": false
+            },
+            {
+              "chunk_a": 0,
+              "chunk_b": 1,
+              "camera_id": 3,
+              "depth_overlap": 1.0,
+              "depth_log_p90": 0.03265579763543357,
+              "intrinsics_delta_normalized": 0.38297179889138583,
+              "passed": false
+            },
+            {
+              "chunk_a": 0,
+              "chunk_b": 1,
+              "camera_id": 4,
+              "depth_overlap": 1.0,
+              "depth_log_p90": 0.06285282044692173,
+              "intrinsics_delta_normalized": 0.41361947678233424,
+              "passed": false
+            },
+            {
+              "chunk_a": 0,
+              "chunk_b": 1,
+              "camera_id": 5,
+              "depth_overlap": 1.0,
+              "depth_log_p90": 0.1512111954660802,
+              "intrinsics_delta_normalized": 0.34100138039104105,
+              "passed": false
+            },
+            {
+              "chunk_a": 0,
+              "chunk_b": 2,
+              "camera_id": 0,
+              "depth_overlap": 1.0,
+              "depth_log_p90": 0.3074505174786567,
+              "intrinsics_delta_normalized": 0.3000341530782527,
+              "passed": false
+            },
+            {
+              "chunk_a": 0,
+              "chunk_b": 2,
+              "camera_id": 1,
+              "depth_overlap": 1.0,
+              "depth_log_p90": 0.2932615230125967,
+              "intrinsics_delta_normalized": 0.1879340001621672,
+              "passed": false
+            },
+            {
+              "chunk_a": 0,
+              "chunk_b": 2,
+              "camera_id": 4,
+              "depth_overlap": 1.0,
+              "depth_log_p90": 0.3010845454874039,
+              "intrinsics_delta_normalized": 0.40916217037090985,
+              "passed": false
+            },
+            {
+              "chunk_a": 0,
+              "chunk_b": 2,
+              "camera_id": 5,
+              "depth_overlap": 1.0,
+              "depth_log_p90": 0.3630706156582069,
+              "intrinsics_delta_normalized": 0.2002570714531362,
+              "passed": false
+            },
+            {
+              "chunk_a": 1,
+              "chunk_b": 2,
+              "camera_id": 4,
+              "depth_overlap": 1.0,
+              "depth_log_p90": 0.256363550225912,
+              "intrinsics_delta_normalized": 0.4172636197722447,
+              "passed": false
+            },
+            {
+              "chunk_a": 1,
+              "chunk_b": 2,
+              "camera_id": 5,
+              "depth_overlap": 1.0,
+              "depth_log_p90": 0.25698599420568724,
+              "intrinsics_delta_normalized": 0.25888345414318586,
+              "passed": false
+            },
+            {
+              "chunk_a": 1,
+              "chunk_b": 2,
+              "camera_id": 6,
+              "depth_overlap": 1.0,
+              "depth_log_p90": 0.2465718424348703,
+              "intrinsics_delta_normalized": 0.5483447773214046,
+              "passed": false
+            },
+            {
+              "chunk_a": 1,
+              "chunk_b": 2,
+              "camera_id": 7,
+              "depth_overlap": 1.0,
+              "depth_log_p90": 0.2638438972003195,
+              "intrinsics_delta_normalized": 0.313886389142838,
+              "passed": false
+            }
+          ],
+          "units": "arbitrary_scale",
+          "scope": "internal agreement of static repeated captures; not independent physical validation"
+        }
+      }
+    },
+    "DA3-BASE": {
+      "decoder_comparison": [
+        {
+          "conditioned": false,
+          "decoder": "ray",
+          "seconds": [
+            9.925327009999819
+          ],
+          "rays": {
+            "views": 8,
+            "ray_grid": [
+              80,
+              80
+            ],
+            "per_view": [
+              {
+                "view": 0,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.5469920389346945,
+                "origin_p90_over_depth": 0.004702692415075916,
+                "z_normalization_p90": 0.006153844312064116
+              },
+              {
+                "view": 1,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.6007951730464318,
+                "origin_p90_over_depth": 0.007494717303004961,
+                "z_normalization_p90": 0.015997541976102037
+              },
+              {
+                "view": 2,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.6627014893160421,
+                "origin_p90_over_depth": 0.005950341646224321,
+                "z_normalization_p90": 0.009138484807611702
+              },
+              {
+                "view": 3,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.5084110201683014,
+                "origin_p90_over_depth": 0.005015741184766415,
+                "z_normalization_p90": 0.010604387557163475
+              },
+              {
+                "view": 4,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.4783613296318028,
+                "origin_p90_over_depth": 0.0020397538960779072,
+                "z_normalization_p90": 0.007616448182986679
+              },
+              {
+                "view": 5,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.4595528246121865,
+                "origin_p90_over_depth": 0.004252365671284904,
+                "z_normalization_p90": 0.008366788177830153
+              },
+              {
+                "view": 6,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.45113485888130644,
+                "origin_p90_over_depth": 0.0051820456840373594,
+                "z_normalization_p90": 0.006349202538501297
+              },
+              {
+                "view": 7,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.42521852923509673,
+                "origin_p90_over_depth": 0.004399667739448006,
+                "z_normalization_p90": 0.007777097202175842
+              }
+            ],
+            "worst_direction_p90_deg": 0.6627014893160421,
+            "worst_origin_p90_over_depth": 0.007494717303004961,
+            "worst_z_normalization_p90": 0.015997541976102037,
+            "scope": "internal consistency; not calibrated confidence or physical accuracy"
+          },
+          "status": "inferred",
+          "reference": {
+            "reference_units": "m",
+            "alignment_kind": "reference_camera_centres_sim3_evaluation_only",
+            "calibration_indices": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "evaluation_indices": [
+              4,
+              5,
+              6,
+              7
+            ],
+            "alignment": {
+              "scale": 3.8381159344580293,
+              "rotation": [
+                [
+                  0.9991552971190233,
+                  -0.02361779985836131,
+                  0.03362873427363765
+                ],
+                [
+                  0.03301070152866584,
+                  0.9486734574065445,
+                  -0.3145297518469429
+                ],
+                [
+                  -0.024474186882956703,
+                  0.3153741757692985,
+                  0.9486517503458547
+                ]
+              ],
+              "translation": [
+                -0.30556249640716915,
+                0.256829711798383,
+                -0.051995952710752344
+              ],
+              "inlier_indices": [
+                1,
+                2,
+                3
+              ]
+            },
+            "heldout_center_rmse": 0.23041403314735454,
+            "pose": {
+              "total_pairs": 6,
+              "translation_pairs": 6,
+              "predicted_nonzero_pairs": 6,
+              "rotation_mean_deg": 3.800946241844194,
+              "translation_mean_deg": 12.691378439955812,
+              "auc_3": 0.0,
+              "auc_30": 0.5769540520014728
+            },
+            "cloud": {
+              "predicted_points": 4900,
+              "reference_points": 4900,
+              "threshold": 0.1,
+              "accuracy": 0.7573306762151806,
+              "completeness": 2.5944347035952555,
+              "chamfer": 1.675882689905218,
+              "precision": 0.04653061224489796,
+              "recall": 0.006530612244897959,
+              "f1": 0.011453689167974882
+            },
+            "caution": "Reference aligned evaluation, not metric inference. Caller must ensure point clouds use evaluation views only; not novel-view synthesis."
+          },
+          "median_seconds": 9.925327009999819
+        },
+        {
+          "conditioned": false,
+          "decoder": "fast_ray",
+          "seconds": [
+            2.9946644609999566
+          ],
+          "rays": {
+            "views": 8,
+            "ray_grid": [
+              80,
+              80
+            ],
+            "per_view": [
+              {
+                "view": 0,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.4187695858934733,
+                "origin_p90_over_depth": 0.0047658753171443006,
+                "z_normalization_p90": 0.008843198384274942
+              },
+              {
+                "view": 1,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.4359209469179625,
+                "origin_p90_over_depth": 0.007581215381075238,
+                "z_normalization_p90": 0.03275791057177019
+              },
+              {
+                "view": 2,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.41190167327276966,
+                "origin_p90_over_depth": 0.006303926037297039,
+                "z_normalization_p90": 0.013325135955876921
+              },
+              {
+                "view": 3,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.4940661394314948,
+                "origin_p90_over_depth": 0.005279407299633122,
+                "z_normalization_p90": 0.014709185259883073
+              },
+              {
+                "view": 4,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.4142596030900736,
+                "origin_p90_over_depth": 0.0021527341189363997,
+                "z_normalization_p90": 0.012912619158635952
+              },
+              {
+                "view": 5,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.3919508133323668,
+                "origin_p90_over_depth": 0.00486093087532074,
+                "z_normalization_p90": 0.020898443644835785
+              },
+              {
+                "view": 6,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.3721608606994201,
+                "origin_p90_over_depth": 0.00563189791716876,
+                "z_normalization_p90": 0.011419046754327866
+              },
+              {
+                "view": 7,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.4020903283840155,
+                "origin_p90_over_depth": 0.004514743592104244,
+                "z_normalization_p90": 0.010899816892638081
+              }
+            ],
+            "worst_direction_p90_deg": 0.4940661394314948,
+            "worst_origin_p90_over_depth": 0.007581215381075238,
+            "worst_z_normalization_p90": 0.03275791057177019,
+            "scope": "internal consistency; not calibrated confidence or physical accuracy",
+            "fast_fit": {
+              "per_view": [
+                {
+                  "view": 0,
+                  "samples": 2025,
+                  "valid": 2025,
+                  "angular_p90_deg": 0.45775815880091586,
+                  "origin_p90": 0.0051498014455816045
+                },
+                {
+                  "view": 1,
+                  "samples": 2025,
+                  "valid": 2025,
+                  "angular_p90_deg": 0.45810252452264594,
+                  "origin_p90": 0.007920398177040721
+                },
+                {
+                  "view": 2,
+                  "samples": 2025,
+                  "valid": 2025,
+                  "angular_p90_deg": 0.4375570710578024,
+                  "origin_p90": 0.006858298829836331
+                },
+                {
+                  "view": 3,
+                  "samples": 2025,
+                  "valid": 2025,
+                  "angular_p90_deg": 0.5111005712434782,
+                  "origin_p90": 0.006022470176004509
+                },
+                {
+                  "view": 4,
+                  "samples": 2025,
+                  "valid": 2025,
+                  "angular_p90_deg": 0.43445689158230993,
+                  "origin_p90": 0.002233093415587316
+                },
+                {
+                  "view": 5,
+                  "samples": 2025,
+                  "valid": 2025,
+                  "angular_p90_deg": 0.4276105563449728,
+                  "origin_p90": 0.005372694941216651
+                },
+                {
+                  "view": 6,
+                  "samples": 2025,
+                  "valid": 2025,
+                  "angular_p90_deg": 0.4129481339991642,
+                  "origin_p90": 0.00599971394856096
+                },
+                {
+                  "view": 7,
+                  "samples": 2025,
+                  "valid": 2025,
+                  "angular_p90_deg": 0.43185682730907005,
+                  "origin_p90": 0.004982051710706544
+                }
+              ],
+              "worst_angular_p90_deg": 0.5111005712434782,
+              "scope": "internal ray fit only; relative gauge; not physical accuracy"
+            }
+          },
+          "status": "inferred",
+          "reference": {
+            "reference_units": "m",
+            "alignment_kind": "reference_camera_centres_sim3_evaluation_only",
+            "calibration_indices": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "evaluation_indices": [
+              4,
+              5,
+              6,
+              7
+            ],
+            "alignment": {
+              "scale": 3.839992584992414,
+              "rotation": [
+                [
+                  0.9992364232046147,
+                  -0.021630273327473994,
+                  0.032537698397795106
+                ],
+                [
+                  0.03079796195356518,
+                  0.9485031303720226,
+                  -0.3152670252563366
+                ],
+                [
+                  -0.02404279685797517,
+                  0.31602838946881295,
+                  0.948445043726306
+                ]
+              ],
+              "translation": [
+                -0.3058886177034862,
+                0.25798592091654293,
+                -0.05047100722654256
+              ],
+              "inlier_indices": [
+                1,
+                2,
+                3
+              ]
+            },
+            "heldout_center_rmse": 0.23122569655224398,
+            "pose": {
+              "total_pairs": 6,
+              "translation_pairs": 6,
+              "predicted_nonzero_pairs": 6,
+              "rotation_mean_deg": 4.860700847072697,
+              "translation_mean_deg": 12.522725203820713,
+              "auc_3": 0.0,
+              "auc_30": 0.5825758265393096
+            },
+            "cloud": {
+              "predicted_points": 4900,
+              "reference_points": 4900,
+              "threshold": 0.1,
+              "accuracy": 0.7597513422667851,
+              "completeness": 2.584844466013074,
+              "chamfer": 1.6722979041399295,
+              "precision": 0.045306122448979594,
+              "recall": 0.006326530612244898,
+              "f1": 0.011102686133742035
+            },
+            "caution": "Reference aligned evaluation, not metric inference. Caller must ensure point clouds use evaluation views only; not novel-view synthesis."
+          },
+          "median_seconds": 2.9946644609999566
+        },
+        {
+          "conditioned": true,
+          "decoder": "ray",
+          "seconds": [
+            9.876967288999822
+          ],
+          "rays": {
+            "views": 8,
+            "ray_grid": [
+              80,
+              80
+            ],
+            "per_view": [
+              {
+                "view": 0,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.7179656005350054,
+                "origin_p90_over_depth": 0.0019794535996501064,
+                "z_normalization_p90": 0.019347305810536897
+              },
+              {
+                "view": 1,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.658400943327396,
+                "origin_p90_over_depth": 0.005863053815834393,
+                "z_normalization_p90": 0.024473475870890216
+              },
+              {
+                "view": 2,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.6865242190248535,
+                "origin_p90_over_depth": 0.003710825722422896,
+                "z_normalization_p90": 0.02627737368852756
+              },
+              {
+                "view": 3,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.7413390049364597,
+                "origin_p90_over_depth": 0.006636029255794543,
+                "z_normalization_p90": 0.03001667316322587
+              },
+              {
+                "view": 4,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.6648253627236973,
+                "origin_p90_over_depth": 0.0030021344618348066,
+                "z_normalization_p90": 0.026162576265176374
+              },
+              {
+                "view": 5,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.6364371893683229,
+                "origin_p90_over_depth": 0.004666229307198681,
+                "z_normalization_p90": 0.028446423586350078
+              },
+              {
+                "view": 6,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.6987104335761354,
+                "origin_p90_over_depth": 0.0033302124221299733,
+                "z_normalization_p90": 0.02471991618700531
+              },
+              {
+                "view": 7,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.696035205567356,
+                "origin_p90_over_depth": 0.005288950193650851,
+                "z_normalization_p90": 0.02854937446991923
+              }
+            ],
+            "worst_direction_p90_deg": 0.7413390049364597,
+            "worst_origin_p90_over_depth": 0.006636029255794543,
+            "worst_z_normalization_p90": 0.03001667316322587,
+            "scope": "internal consistency; not calibrated confidence or physical accuracy"
+          },
+          "status": "inferred",
+          "reference": {
+            "reference_units": "m",
+            "alignment_kind": "reference_camera_centres_sim3_evaluation_only",
+            "calibration_indices": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "evaluation_indices": [
+              4,
+              5,
+              6,
+              7
+            ],
+            "alignment": {
+              "scale": 4.372254906702815,
+              "rotation": [
+                [
+                  0.9911587544269025,
+                  0.0091601963315186,
+                  0.13236470196422861
+                ],
+                [
+                  -0.010001920661236707,
+                  0.9999337584406024,
+                  0.005695639905891169
+                ],
+                [
+                  -0.13230376074018974,
+                  -0.006969184602181816,
+                  0.9911847180823479
+                ]
+              ],
+              "translation": [
+                -0.6338639287229433,
+                -0.31867850847959894,
+                0.020888190579944232
+              ],
+              "inlier_indices": [
+                0,
+                1,
+                2,
+                3
+              ]
+            },
+            "heldout_center_rmse": 0.030709130868815094,
+            "pose": {
+              "total_pairs": 6,
+              "translation_pairs": 6,
+              "predicted_nonzero_pairs": 6,
+              "rotation_mean_deg": 1.6705040911837867,
+              "translation_mean_deg": 2.217762248843998,
+              "auc_3": 0.23799591472290282,
+              "auc_30": 0.9186848445294308
+            },
+            "cloud": {
+              "predicted_points": 4900,
+              "reference_points": 4900,
+              "threshold": 0.1,
+              "accuracy": 0.45682687961840657,
+              "completeness": 2.1663415514891047,
+              "chamfer": 1.3115842155537556,
+              "precision": 0.10244897959183673,
+              "recall": 0.04591836734693878,
+              "f1": 0.0634140864048508
+            },
+            "caution": "Reference aligned evaluation, not metric inference. Caller must ensure point clouds use evaluation views only; not novel-view synthesis."
+          },
+          "median_seconds": 9.876967288999822
+        },
+        {
+          "conditioned": true,
+          "decoder": "fast_ray",
+          "seconds": [
+            3.1140981480002665
+          ],
+          "rays": {
+            "views": 8,
+            "ray_grid": [
+              80,
+              80
+            ],
+            "per_view": [
+              {
+                "view": 0,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.5460433456868947,
+                "origin_p90_over_depth": 0.002108237484203532,
+                "z_normalization_p90": 0.025569756102435948
+              },
+              {
+                "view": 1,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.5836825692469447,
+                "origin_p90_over_depth": 0.005869812221799431,
+                "z_normalization_p90": 0.03196598538689055
+              },
+              {
+                "view": 2,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.6048299073163592,
+                "origin_p90_over_depth": 0.003847930814705222,
+                "z_normalization_p90": 0.03388671989425174
+              },
+              {
+                "view": 3,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.66761678320505,
+                "origin_p90_over_depth": 0.006772579451194232,
+                "z_normalization_p90": 0.030597648272120748
+              },
+              {
+                "view": 4,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.6106356231789325,
+                "origin_p90_over_depth": 0.0031112689223955535,
+                "z_normalization_p90": 0.02603741429146944
+              },
+              {
+                "view": 5,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.5957492306505986,
+                "origin_p90_over_depth": 0.004817219677246907,
+                "z_normalization_p90": 0.031377311586940126
+              },
+              {
+                "view": 6,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.55772371420494,
+                "origin_p90_over_depth": 0.0035604972129632375,
+                "z_normalization_p90": 0.032290250918094454
+              },
+              {
+                "view": 7,
+                "samples": 4096,
+                "valid": 4096,
+                "direction_p90_deg": 0.6601606959720193,
+                "origin_p90_over_depth": 0.005475894220126139,
+                "z_normalization_p90": 0.03128099390507666
+              }
+            ],
+            "worst_direction_p90_deg": 0.66761678320505,
+            "worst_origin_p90_over_depth": 0.006772579451194232,
+            "worst_z_normalization_p90": 0.03388671989425174,
+            "scope": "internal consistency; not calibrated confidence or physical accuracy",
+            "fast_fit": {
+              "per_view": [
+                {
+                  "view": 0,
+                  "samples": 2025,
+                  "valid": 2025,
+                  "angular_p90_deg": 0.5618146489558221,
+                  "origin_p90": 0.0019841414314934586
+                },
+                {
+                  "view": 1,
+                  "samples": 2025,
+                  "valid": 2025,
+                  "angular_p90_deg": 0.5994444500593712,
+                  "origin_p90": 0.0054827810772918465
+                },
+                {
+                  "view": 2,
+                  "samples": 2025,
+                  "valid": 2025,
+                  "angular_p90_deg": 0.6437152035011275,
+                  "origin_p90": 0.0038829304812381567
+                },
+                {
+                  "view": 3,
+                  "samples": 2025,
+                  "valid": 2025,
+                  "angular_p90_deg": 0.6838849547011884,
+                  "origin_p90": 0.00652518751199055
+                },
+                {
+                  "view": 4,
+                  "samples": 2025,
+                  "valid": 2025,
+                  "angular_p90_deg": 0.6223783668638596,
+                  "origin_p90": 0.0031020578670116327
+                },
+                {
+                  "view": 5,
+                  "samples": 2025,
+                  "valid": 2025,
+                  "angular_p90_deg": 0.6112473636379708,
+                  "origin_p90": 0.00454511518790007
+                },
+                {
+                  "view": 6,
+                  "samples": 2025,
+                  "valid": 2025,
+                  "angular_p90_deg": 0.5718667740557479,
+                  "origin_p90": 0.0034291882953888324
+                },
+                {
+                  "view": 7,
+                  "samples": 2025,
+                  "valid": 2025,
+                  "angular_p90_deg": 0.675552431292664,
+                  "origin_p90": 0.005438582728853849
+                }
+              ],
+              "worst_angular_p90_deg": 0.6838849547011884,
+              "scope": "internal ray fit only; relative gauge; not physical accuracy"
+            }
+          },
+          "status": "inferred",
+          "reference": {
+            "reference_units": "m",
+            "alignment_kind": "reference_camera_centres_sim3_evaluation_only",
+            "calibration_indices": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "evaluation_indices": [
+              4,
+              5,
+              6,
+              7
+            ],
+            "alignment": {
+              "scale": 4.3765997339744365,
+              "rotation": [
+                [
+                  0.9911812070750692,
+                  0.009681347301752147,
+                  0.13215932148597143
+                ],
+                [
+                  -0.010571283791717373,
+                  0.9999259176436504,
+                  0.006033836549023421
+                ],
+                [
+                  -0.13209111514482894,
+                  -0.007377719087103425,
+                  0.9912101223054917
+                ]
+              ],
+              "translation": [
+                -0.6346035691836411,
+                -0.31805550933366994,
+                0.02057695416381845
+              ],
+              "inlier_indices": [
+                0,
+                1,
+                2,
+                3
+              ]
+            },
+            "heldout_center_rmse": 0.030375276950245868,
+            "pose": {
+              "total_pairs": 6,
+              "translation_pairs": 6,
+              "predicted_nonzero_pairs": 6,
+              "rotation_mean_deg": 2.7194509599623515,
+              "translation_mean_deg": 2.4250337097846684,
+              "auc_3": 0.13852452927582898,
+              "auc_30": 0.8980948139673363
+            },
+            "cloud": {
+              "predicted_points": 4900,
+              "reference_points": 4900,
+              "threshold": 0.1,
+              "accuracy": 0.46403726959356306,
+              "completeness": 2.1618773186990126,
+              "chamfer": 1.3129572941462877,
+              "precision": 0.10265306122448979,
+              "recall": 0.04551020408163265,
+              "f1": 0.06306234890650475
+            },
+            "caution": "Reference aligned evaluation, not metric inference. Caller must ensure point clouds use evaluation views only; not novel-view synthesis."
+          },
+          "median_seconds": 3.1140981480002665
+        }
+      ],
+      "chunk_graph": {
+        "status": "rejected",
+        "groups": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          [
+            0,
+            1,
+            4,
+            5,
+            6,
+            7
+          ]
+        ],
+        "thresholds": {
+          "center_first_chunk_units": 0.15,
+          "rotation_deg": 5,
+          "depth_log_p90": 0.2,
+          "intrinsics_relative": 0.05,
+          "min_depth_overlap": 0.7
+        },
+        "scales": [
+          1.0,
+          1.2078753274526532,
+          1.3088906468854202
+        ],
+        "audit": {
+          "passed": false,
+          "camera_graph_passed": false,
+          "initial_cost": 81.15785780834551,
+          "final_cost": 3.4381136663891505,
+          "max_center_error_first_chunk_units": 0.03857511060629374,
+          "max_rotation_error_deg": 5.824653171539235,
+          "shared_observations": [
+            {
+              "chunk_a": 0,
+              "chunk_b": 1,
+              "camera_id": 2,
+              "depth_overlap": 1.0,
+              "depth_log_p90": 0.25518265679026503,
+              "intrinsics_delta_normalized": 0.07052928402573784,
+              "passed": false
+            },
+            {
+              "chunk_a": 0,
+              "chunk_b": 1,
+              "camera_id": 3,
+              "depth_overlap": 1.0,
+              "depth_log_p90": 0.26452657815134006,
+              "intrinsics_delta_normalized": 0.0810181435499409,
+              "passed": false
+            },
+            {
+              "chunk_a": 0,
+              "chunk_b": 1,
+              "camera_id": 4,
+              "depth_overlap": 1.0,
+              "depth_log_p90": 0.24588526701698518,
+              "intrinsics_delta_normalized": 0.06365652456348861,
+              "passed": false
+            },
+            {
+              "chunk_a": 0,
+              "chunk_b": 1,
+              "camera_id": 5,
+              "depth_overlap": 1.0,
+              "depth_log_p90": 0.215960993759227,
+              "intrinsics_delta_normalized": 0.08466670743459385,
+              "passed": false
+            },
+            {
+              "chunk_a": 0,
+              "chunk_b": 2,
+              "camera_id": 0,
+              "depth_overlap": 1.0,
+              "depth_log_p90": 0.3464864031144896,
+              "intrinsics_delta_normalized": 0.0655656592870643,
+              "passed": false
+            },
+            {
+              "chunk_a": 0,
+              "chunk_b": 2,
+              "camera_id": 1,
+              "depth_overlap": 1.0,
+              "depth_log_p90": 0.326613040308022,
+              "intrinsics_delta_normalized": 0.1099299753630103,
+              "passed": false
+            },
+            {
+              "chunk_a": 0,
+              "chunk_b": 2,
+              "camera_id": 4,
+              "depth_overlap": 1.0,
+              "depth_log_p90": 0.3269469071619648,
+              "intrinsics_delta_normalized": 0.08921364612432764,
+              "passed": false
+            },
+            {
+              "chunk_a": 0,
+              "chunk_b": 2,
+              "camera_id": 5,
+              "depth_overlap": 1.0,
+              "depth_log_p90": 0.30510495558893463,
+              "intrinsics_delta_normalized": 0.10184399116306915,
+              "passed": false
+            },
+            {
+              "chunk_a": 1,
+              "chunk_b": 2,
+              "camera_id": 4,
+              "depth_overlap": 1.0,
+              "depth_log_p90": 0.08275315004132483,
+              "intrinsics_delta_normalized": 0.03484475307309448,
+              "passed": true
+            },
+            {
+              "chunk_a": 1,
+              "chunk_b": 2,
+              "camera_id": 5,
+              "depth_overlap": 1.0,
+              "depth_log_p90": 0.09174495506457454,
+              "intrinsics_delta_normalized": 0.04603561058091736,
+              "passed": true
+            },
+            {
+              "chunk_a": 1,
+              "chunk_b": 2,
+              "camera_id": 6,
+              "depth_overlap": 1.0,
+              "depth_log_p90": 0.08677661004182934,
+              "intrinsics_delta_normalized": 0.04086124690970416,
+              "passed": true
+            },
+            {
+              "chunk_a": 1,
+              "chunk_b": 2,
+              "camera_id": 7,
+              "depth_overlap": 1.0,
+              "depth_log_p90": 0.08890824252993854,
+              "intrinsics_delta_normalized": 0.02796495155862796,
+              "passed": true
+            }
+          ],
+          "units": "arbitrary_scale",
+          "scope": "internal agreement of static repeated captures; not independent physical validation"
+        }
+      }
+    }
+  }
+}

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "omega-geodepth"
-version = "0.15.0"
+version = "0.16.0"
 description = "Content-agnostic depth and spatiotemporal 5D scene-field reconstruction"
 readme = "README_PL.md"
 requires-python = ">=3.10"
@@ -20,6 +20,7 @@ omega-geodepth-da3-source = "omega_geodepth.da3_source:main"
 omega-geodepth-da3-real = "omega_geodepth.da3_real:main"
 omega-geodepth-deformable = "omega_geodepth.deformable_4dgs:main"
 omega-geodepth-quality = "omega_geodepth.quality_v1.__main__:main"
+omega-geodepth-chunks = "omega_geodepth.chunk_graph:main"
 
 [project.optional-dependencies]
 da3 = ["huggingface_hub>=0.30,<2"]

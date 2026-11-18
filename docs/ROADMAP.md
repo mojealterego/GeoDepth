@@ -1,19 +1,23 @@
-# GeoDepth Ω — status v0.15.0
+# GeoDepth Ω — status v0.16.0
 
 ## Potwierdzone lokalnie
 - Oryginalne DA3 Small i Base FP32, kontrola SHA-256 i strict-load; Small FP16/AQ4/AQ6, eksperymentalny dynamiczny INT8 CPU.
 - TSDF, eksperymentalne Gaussy 4D/5D, Representations5D, KPlanes5D: nie wykazano przewagi pola RGB nad NN.
 - ENGINE v1, secure NPZ, konsensus, odtwarzanie Base z sześciu wolumenów, fallback rozdzielczości.
 - v0.14: benchmark referencyjny Sim(3), F1/Chamfer/AUC, rzeczywiste pose conditioning, 223 testy.
-- v0.15: natywny ray decoder opcjonalnie, audyt p90 kierunku/początku i normalizacji osi Z, dodatkowa kontrola rotacji i centrów na rozłącznych kotwicach; 230 testów, 6 ostrzeżeń, rzeczywista inferencja z niezależnie zainstalowanego WHL.
-- 8 przebiegów syntetycznych przy 140 px: native ray poprawia p90 kątowe, ale F1 pozostaje niskie. W obu trybach Small ze znanymi kamerami przeszedł nową bramkę kamer. Ustawienia domyślne nie zmienione. Dodatkowy 280 px nieukończony (3/4).
-- Szczegółowe wyniki tabelaryczne: docs/ZMIANY_v0.15_PL.md; surowy JSON v0.15 w ZIP. Nie uruchamiano zdalnego CI.
+- v0.15: natywny ray decoder, audyt p90 kierunku/początku i osi Z, kontrola rotacji i centrów na rozłącznych kotwicach; 230 testów. 8 przebiegów 140 px, dodatkowy 280 px nieukończony (3/4).
+- v0.16: fast_ray, graf Sim(3), weryfikacja nakładających się widoków, statyczna rekonstrukcja okienkowa i odmowa eksportu niespójnej sceny. 242 testy, 12 nowych. WHL z niezależną inferencją Small.
+- Benchmark 140 px: Small 7,462→1,013 s, Small+kamery 7,743→0,960 s, Base 9,925→2,995 s, Base+kamery 9,877→3,114 s. Pojedyncze pomiary na jednej scenie. Domyślny token decoder bez zmian; F1 nie poprawiło się konsekwentnie.
+- Graf: koszt Small 323,775→9,272, Base 81,158→3,438; oba zestawy realnych predykcji odrzucono. Dokładne transformacje syntetyczne odzyskane w testach.
+- Raport: reports/v16/benchmark_140.json. Instrukcja: docs/ZMIANY_v0.16_PL.md. Zdalnego CI nie uruchamiano.
+
+## Publikacja
+Każda kolejna iteracja ma być zapisana na main wraz z testami i raportami. Weryfikować Git blob SHA i stan gałęzi po zapisie. Wagi i pliki binarne niewprowadzone do repozytorium są nadal otwartą bramką dystrybucji; docelowo użyć Git LFS lub Releases bez naruszania licencji.
 
 ## Otwarte bramki
-- v0.16: ograniczony koszt dekodera promieni, globalna optymalizacja pozy/geometrii (bez obniżania progów i bez fałszywej skali).
 - v0.17: trenowana głowica GS-DPT / osobny eksperymentalny moduł, walidacja NVS z rozłącznymi widokami.
 - v0.18: pełniejsza dynamiczna rekonstrukcja 4D/5D.
 - v0.19: niezależne realne RGB-D z fizyczną referencją, wieloscenowa dokładność, kalibracja niepewności.
 - v0.20: natywne AQ4/AQ6, optymalizacja pamięci, GPU/Vulkan/Android i 400 MP.
 - DA3 Giant/Large: brak checkpointów; ograniczenia licencyjne przed integracją.
-- Niezależny audyt końcowy, CI, brak certyfikacji produkcyjnej.
+- Dystrybucja binarna, niezależny audyt końcowy, CI, brak certyfikacji produkcyjnej.
