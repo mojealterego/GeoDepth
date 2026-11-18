@@ -14,6 +14,7 @@ import sys
 import hashlib
 import json
 import zipfile
+import threading
 import numpy as np
 
 from .da3_adapter import (
@@ -59,6 +60,38 @@ def verify_da3_runtime_source(source_dir: Path, archive: Path) -> None:
                 raise ValueError('DA3_SOURCE_UNDECLARED_PYTHON')
     if len(verified)<30:
         raise ValueError('DA3_SOURCE_INCOMPLETE')
+
+def validate_camera_conditions(camera_poses_c2w, camera_intrinsics, count):
+    """Validate original-pixel camera K and C2W, returning upstream W2C and K.
+
+    Conditions are hints to DA3, not independent depth measurements.
+    """
+    if camera_poses_c2w is None and camera_intrinsics is None:
+        return None, None
+    if camera_poses_c2w is None or camera_intrinsics is None:
+        raise ValueError('DA3_CAMERA_CONDITIONS_REQUIRE_POSES_AND_INTRINSICS')
+    from .geometry import validate_pose_c2w
+    poses=np.asarray(camera_poses_c2w,dtype=np.float64)
+    k=np.asarray(camera_intrinsics,dtype=np.float64)
+    if poses.shape!=(count,4,4) or k.shape!=(count,3,3):
+        raise ValueError('DA3_CAMERA_CONDITION_SHAPE')
+    if not np.isfinite(k).all() or np.any(k[:,0,0]<=0) or np.any(k[:,1,1]<=0) or not np.allclose(k[:,2,:],[0,0,1],atol=1e-7,rtol=0) or not np.allclose(k[:,1,0],0,atol=1e-7,rtol=0) or not np.allclose(k[:,0,1],0,atol=1e-7,rtol=0):
+        raise ValueError('DA3_CAMERA_CONDITION_INVALID_K')
+    for pose in poses:validate_pose_c2w(pose)
+    if np.max(np.abs(poses))>1e8 or np.max(np.abs(k))>1e8:
+        raise ValueError('DA3_CAMERA_CONDITION_RANGE')
+    return np.linalg.inv(poses),k.copy()
+
+
+def normalize_camera_conditions(w2c):
+    """Match upstream API first-camera gauge and median baseline normalization."""
+    import torch
+    norm=w2c@torch.linalg.inv(w2c[:,:1])
+    cameras=torch.linalg.inv(norm)
+    median_dist=torch.median(cameras[...,:3,3].norm(dim=-1)).clamp(min=.1)
+    norm=norm.clone();norm[...,:3,3]/=median_dist
+    return norm
+
 
 class DA3RealCPU:
     """Run the pinned official DA3 network (Small or Base), CPU or CUDA."""
@@ -156,13 +189,19 @@ class DA3RealCPU:
         self.processor=InputProcessor()
         self.output_processor=OutputProcessor()
         self.device=device
+        self._forward_lock=threading.Lock()
         self.digest=profile_info['artifact_sha256']
         self.model_id=profile_info['model_id']
 
-    def inference(self, images: Sequence[np.ndarray], *, process_res:int=140) -> DA3Output:
+    def inference(self, images: Sequence[np.ndarray], *, process_res:int=140,
+                  camera_poses_c2w:np.ndarray|None=None, camera_intrinsics:np.ndarray|None=None,
+                  pose_decoder:str="token", audit_depth_rays:bool=False) -> DA3Output:
         import torch
+        if pose_decoder not in ("token","ray") or not isinstance(audit_depth_rays,bool):
+            raise ValueError("DA3_INVALID_POSE_DECODER")
         if not 1<=len(images)<=8 or not 112<=process_res<=504:
             raise ValueError('DA3_RESOURCE_LIMIT')
+        exts, intr=validate_camera_conditions(camera_poses_c2w,camera_intrinsics,len(images))
         validated=[]
         from PIL import Image
         for image in images:
@@ -177,15 +216,39 @@ class DA3RealCPU:
                 raise ValueError('DA3_INPUT_TOO_LARGE')
             validated.append(image)
         with torch.inference_mode():
-            tensors,_,_=self.processor(validated,process_res=process_res,num_workers=1)
+            tensors,ext_tensor,intr_tensor=self.processor(validated,extrinsics=exts,intrinsics=intr,process_res=process_res,num_workers=1)
             tensors=tensors.to(self.device)[None].float()
-            output=self.net(tensors,None,None,[],False,False,'middle')
+            ext_tensor=normalize_camera_conditions(ext_tensor.to(self.device)[None].float()) if ext_tensor is not None else None
+            intr_tensor=intr_tensor.to(self.device)[None].float() if intr_tensor is not None else None
+            with self._forward_lock:
+                captured={}
+                def capture(_module,_inputs,raw):
+                    # Copy before the native decoder removes rays/mutates confidence.
+                    captured['ray']=raw['ray'][0].detach().cpu().clone().numpy()
+                    captured['conf']=raw['ray_conf'][0].detach().cpu().clone().numpy()
+                hook=self.net.head.register_forward_hook(capture) if audit_depth_rays else None
+                try:
+                    # Upstream ray RANSAC draws from global RNG; preserve caller state.
+                    devices=[torch.cuda.current_device()] if self.device=='cuda' else []
+                    with torch.random.fork_rng(devices=devices,enabled=pose_decoder=='ray'):
+                        if pose_decoder=='ray':
+                            torch.random.default_generator.manual_seed(42)
+                            if devices:torch.cuda.manual_seed(42)
+                        output=self.net(tensors,ext_tensor,intr_tensor,[],False,pose_decoder=='ray','middle')
+                finally:
+                    if hook is not None:hook.remove()
             pred=self.output_processor(output)
             mean=torch.tensor([.485,.456,.406],device=self.device).view(1,3,1,1)
             std=torch.tensor([.229,.224,.225],device=self.device).view(1,3,1,1)
             rgb=(tensors[0]*std+mean).clamp(0,1).permute(0,2,3,1)
             pred.processed_images=(rgb*255).round().to(torch.uint8).cpu().numpy()
-        return replace(normalize_da3_prediction(pred,model_id=self.base_model_id,weights_sha256=self.digest),model_id=self.model_id)
+        result=replace(normalize_da3_prediction(pred,model_id=self.base_model_id,weights_sha256=self.digest),model_id=self.model_id,pose_conditioned=exts is not None,pose_decoder=pose_decoder)
+        if audit_depth_rays:
+            from .ray_consistency import audit_rays
+            conf=captured['conf']
+            if conf.ndim==4 and conf.shape[-1]==1:conf=conf[...,0]
+            result=replace(result,ray_audit=audit_rays(result,captured['ray'],conf))
+        return result
 
 
 def main() -> None:
@@ -209,6 +272,8 @@ def main() -> None:
     parser.add_argument('--fallback-resolutions',type=int,nargs='+',default=[],help='Up to three alternate resolutions after --process-res; requires --verify-all-pairs')
     parser.add_argument('--profile',choices=('fp32','fp16','aq6','aq4','int8'),default='fp32')
     parser.add_argument('--allow-experimental',action='store_true')
+    parser.add_argument('--pose-decoder',choices=('token','ray'),default='token')
+    parser.add_argument('--audit-depth-rays',action='store_true')
     args=parser.parse_args()
     if args.fallback_resolutions and not args.verify_all_pairs:
         parser.error('--fallback-resolutions requires --verify-all-pairs')
@@ -216,13 +281,13 @@ def main() -> None:
     audit=None; selection=None
     if args.verify_all_pairs:
         from .da3_selection import infer_first_consistent
-        result,selection=infer_first_consistent(engine,args.input,[args.process_res,*args.fallback_resolutions])
+        result,selection=infer_first_consistent(engine,args.input,[args.process_res,*args.fallback_resolutions],inference_options={"pose_decoder":args.pose_decoder,"audit_depth_rays":args.audit_depth_rays})
         if result is None:
             print(json.dumps(selection,ensure_ascii=False,allow_nan=False))
             raise ValueError('DA3_ALL_PAIRS_REPROJECTION_UNVERIFIABLE')
         audit=selection['attempts'][-1]['audit']
     else:
-        result=engine.inference(args.input,process_res=args.process_res)
+        result=engine.inference(args.input,process_res=args.process_res,pose_decoder=args.pose_decoder,audit_depth_rays=args.audit_depth_rays)
     if args.verify_reprojection:
         from .da3_validation import verify_multiview_reprojection
         audit=verify_multiview_reprojection(result)
@@ -247,6 +312,7 @@ def main() -> None:
           'units':result.units,'provenance':result.provenance,
           'confidence':'DA3 raw confidence, not calibrated probability',
           'reprojection_audit':audit,'resolution_selection':selection,
+          'pose_decoder':result.pose_decoder,'ray_audit':result.ray_audit,
           'warning':'Depth is relative; do not report output in metres without a metric anchor.'}
     save_atomic(args.output/'metadata.json',json.dumps(meta,indent=2,ensure_ascii=False).encode())
     print(json.dumps(meta,ensure_ascii=False,indent=2))

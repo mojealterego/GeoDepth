@@ -242,3 +242,11 @@ Nowy moduł `omega_geodepth.quality_v1` uzupełnia istniejący silnik DA3 i 5D. 
 
 ### Aktualizacja 0.13.0 — DA3 Base
 Weryfikacja oryginalnego Base, obustronna reprojekcja i kontrolowany fallback rozdzielczości. Instrukcje instalacji nakładki i odtwarzania sześciu części wag: [docs/ZMIANY_v0.13_PL.md](docs/ZMIANY_v0.13_PL.md). Base FP32 pozostaje opcjonalny; Small jest domyślny.
+
+## v0.14 — niezależny audyt geometrii
+
+Moduł Visual Geometry Benchmark, Sim(3), AUC3/30, Chamfer i F1, oraz opcjonalne pose conditioning DA3. Zobacz [instrukcję](docs/ZMIANY_v0.14_PL.md).
+
+## v0.15.0 — Depth–Ray
+
+Nowy opcjonalny dekoder promieni i audyt kierunku, początku i składowej Z; osobna rygorystyczna kalibracja Sim(3) z odłożonymi kamerami. Domyślna inferencja pozostaje tokenowa. 230 testów lokalnych; szczegóły i ograniczenia w [docs/ZMIANY_v0.15_PL.md](docs/ZMIANY_v0.15_PL.md). Nakładka kumulatywna zawiera również zmiany źródłowe v0.14.

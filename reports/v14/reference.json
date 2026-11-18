@@ -1,0 +1,628 @@
+{
+  "protocol": "analytic_reference_v14",
+  "scope": "3 procedural variants of the same scene family, 8 views each, all input to DA3. Calibration indices 0..3 only; geometry/pose audit 4..7. Not real-world data or NVS.",
+  "inlier_threshold_m": 0.25,
+  "f1_threshold_m": 0.1,
+  "seeds": [
+    11,
+    29,
+    53
+  ],
+  "models": {
+    "DA3-SMALL": [
+      {
+        "seed": 11,
+        "seconds": 4.728952630999629,
+        "input_shape": [
+          280,
+          280,
+          3
+        ],
+        "predicted_shape": [
+          8,
+          280,
+          280
+        ],
+        "pose_without_alignment": {
+          "total_pairs": 6,
+          "translation_pairs": 6,
+          "predicted_nonzero_pairs": 6,
+          "rotation_mean_deg": 2.2988909942880293,
+          "translation_mean_deg": 7.617274314817816,
+          "auc_3": 0.0,
+          "auc_30": 0.7455227775912067
+        },
+        "status": "aligned",
+        "audit": {
+          "reference_units": "m",
+          "alignment_kind": "reference_camera_centres_sim3_evaluation_only",
+          "calibration_indices": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "evaluation_indices": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "alignment": {
+            "scale": 5.807841280873762,
+            "rotation": [
+              [
+                0.9939767659134652,
+                0.0702787174023861,
+                0.08408977764558048
+              ],
+              [
+                -0.06247933636576507,
+                0.9937933447934918,
+                -0.09203868953574157
+              ],
+              [
+                -0.09003622244131078,
+                0.08623044546120938,
+                0.9921984624680995
+              ]
+            ],
+            "translation": [
+              -0.4402713687875302,
+              0.07216630903675726,
+              -0.08135269919647194
+            ],
+            "inlier_indices": [
+              0,
+              1,
+              2,
+              3
+            ]
+          },
+          "heldout_center_rmse": 0.11163523085507078,
+          "pose": {
+            "total_pairs": 6,
+            "translation_pairs": 6,
+            "predicted_nonzero_pairs": 6,
+            "rotation_mean_deg": 2.2988909942880293,
+            "translation_mean_deg": 7.617274314817816,
+            "auc_3": 0.0,
+            "auc_30": 0.7455227775912067
+          },
+          "cloud": {
+            "predicted_points": 19600,
+            "reference_points": 19600,
+            "threshold": 0.1,
+            "accuracy": 0.42890907125008604,
+            "completeness": 0.7615491682953601,
+            "chamfer": 0.5952291197727231,
+            "precision": 0.022551020408163265,
+            "recall": 0.02872448979591837,
+            "f1": 0.025266118387653566
+          },
+          "caution": "Reference aligned evaluation, not metric inference. Caller must ensure point clouds use evaluation views only; not novel-view synthesis."
+        },
+        "depth": {
+          "valid_samples": 313600,
+          "ground_truth_valid_samples": 313600,
+          "prediction_coverage": 1.0,
+          "abs_rel": 0.1050754679386298,
+          "rmse": 0.6121645342336478,
+          "delta_1": 0.8498405612244898,
+          "silog": 0.14147528521542738
+        }
+      },
+      {
+        "seed": 29,
+        "seconds": 4.749472894000064,
+        "input_shape": [
+          280,
+          280,
+          3
+        ],
+        "predicted_shape": [
+          8,
+          280,
+          280
+        ],
+        "pose_without_alignment": {
+          "total_pairs": 6,
+          "translation_pairs": 6,
+          "predicted_nonzero_pairs": 6,
+          "rotation_mean_deg": 1.0692981150634189,
+          "translation_mean_deg": 4.37133478343761,
+          "auc_3": 0.06453569620365623,
+          "auc_30": 0.8542888405520798
+        },
+        "status": "aligned",
+        "audit": {
+          "reference_units": "m",
+          "alignment_kind": "reference_camera_centres_sim3_evaluation_only",
+          "calibration_indices": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "evaluation_indices": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "alignment": {
+            "scale": 4.307947120453385,
+            "rotation": [
+              [
+                0.9916052013423302,
+                -0.09311899381905127,
+                0.08971052146188938
+              ],
+              [
+                0.08765467327521395,
+                0.9941539169424385,
+                0.06304480693144213
+              ],
+              [
+                -0.09505673528925825,
+                -0.054652012022749975,
+                0.9939705099538986
+              ]
+            ],
+            "translation": [
+              -0.24886541212835836,
+              -0.013819478979608682,
+              -0.1415763534968278
+            ],
+            "inlier_indices": [
+              0,
+              1,
+              2,
+              3
+            ]
+          },
+          "heldout_center_rmse": 0.07967649296645322,
+          "pose": {
+            "total_pairs": 6,
+            "translation_pairs": 6,
+            "predicted_nonzero_pairs": 6,
+            "rotation_mean_deg": 1.0692981150634189,
+            "translation_mean_deg": 4.37133478343761,
+            "auc_3": 0.06453569620365623,
+            "auc_30": 0.8542888405520798
+          },
+          "cloud": {
+            "predicted_points": 19600,
+            "reference_points": 19600,
+            "threshold": 0.1,
+            "accuracy": 0.7364827049399927,
+            "completeness": 1.7291984223442145,
+            "chamfer": 1.2328405636421036,
+            "precision": 0.0413265306122449,
+            "recall": 0.025510204081632654,
+            "f1": 0.03154696993301138
+          },
+          "caution": "Reference aligned evaluation, not metric inference. Caller must ensure point clouds use evaluation views only; not novel-view synthesis."
+        },
+        "depth": {
+          "valid_samples": 313600,
+          "ground_truth_valid_samples": 313600,
+          "prediction_coverage": 1.0,
+          "abs_rel": 0.24948059872527506,
+          "rmse": 1.5149362690906438,
+          "delta_1": 0.1756951530612245,
+          "silog": 0.18357163765128373
+        }
+      },
+      {
+        "seed": 53,
+        "seconds": 4.81780969600004,
+        "input_shape": [
+          280,
+          280,
+          3
+        ],
+        "predicted_shape": [
+          8,
+          280,
+          280
+        ],
+        "pose_without_alignment": {
+          "total_pairs": 6,
+          "translation_pairs": 6,
+          "predicted_nonzero_pairs": 6,
+          "rotation_mean_deg": 1.6006097532841024,
+          "translation_mean_deg": 6.9103864709461265,
+          "auc_3": 0.008689884996008276,
+          "auc_30": 0.7696537843017958
+        },
+        "status": "aligned",
+        "audit": {
+          "reference_units": "m",
+          "alignment_kind": "reference_camera_centres_sim3_evaluation_only",
+          "calibration_indices": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "evaluation_indices": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "alignment": {
+            "scale": 5.563316719619319,
+            "rotation": [
+              [
+                0.993223954515952,
+                -0.060036488138320514,
+                0.09950776988613193
+              ],
+              [
+                0.06235719881762946,
+                0.9978458934071305,
+                -0.02037529793999489
+              ],
+              [
+                -0.09807015820988926,
+                0.02644225978509097,
+                0.9948281514744869
+              ]
+            ],
+            "translation": [
+              -0.4622990888708057,
+              0.055188447632479154,
+              -0.09629941912331816
+            ],
+            "inlier_indices": [
+              0,
+              1,
+              2,
+              3
+            ]
+          },
+          "heldout_center_rmse": 0.0903798696761252,
+          "pose": {
+            "total_pairs": 6,
+            "translation_pairs": 6,
+            "predicted_nonzero_pairs": 6,
+            "rotation_mean_deg": 1.6006097532841024,
+            "translation_mean_deg": 6.9103864709461265,
+            "auc_3": 0.008689884996008276,
+            "auc_30": 0.7696537843017958
+          },
+          "cloud": {
+            "predicted_points": 19600,
+            "reference_points": 19600,
+            "threshold": 0.1,
+            "accuracy": 0.5463359003388404,
+            "completeness": 0.8418748998097797,
+            "chamfer": 0.6941054000743101,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "caution": "Reference aligned evaluation, not metric inference. Caller must ensure point clouds use evaluation views only; not novel-view synthesis."
+        },
+        "depth": {
+          "valid_samples": 313600,
+          "ground_truth_valid_samples": 313600,
+          "prediction_coverage": 1.0,
+          "abs_rel": 0.15004768762321766,
+          "rmse": 0.7453278963480209,
+          "delta_1": 0.7857238520408163,
+          "silog": 0.17692529398607384
+        }
+      }
+    ],
+    "DA3-BASE": [
+      {
+        "seed": 11,
+        "seconds": 16.40037548700002,
+        "input_shape": [
+          280,
+          280,
+          3
+        ],
+        "predicted_shape": [
+          8,
+          280,
+          280
+        ],
+        "pose_without_alignment": {
+          "total_pairs": 6,
+          "translation_pairs": 6,
+          "predicted_nonzero_pairs": 6,
+          "rotation_mean_deg": 2.820549067325414,
+          "translation_mean_deg": 17.102528858312258,
+          "auc_3": 0.0,
+          "auc_30": 0.4288471673457746
+        },
+        "status": "aligned",
+        "audit": {
+          "reference_units": "m",
+          "alignment_kind": "reference_camera_centres_sim3_evaluation_only",
+          "calibration_indices": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "evaluation_indices": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "alignment": {
+            "scale": 4.466481030803432,
+            "rotation": [
+              [
+                0.9782871265661433,
+                -0.046298345220761934,
+                0.20201673501167736
+              ],
+              [
+                0.04565503699947646,
+                0.9989264572098213,
+                0.007845424323250895
+              ],
+              [
+                -0.20216309156603127,
+                0.0015480038935863276,
+                0.9793506461387615
+              ]
+            ],
+            "translation": [
+              -0.4849113129082483,
+              0.10244130586721875,
+              -0.11799948705930953
+            ],
+            "inlier_indices": [
+              0,
+              2,
+              3
+            ]
+          },
+          "heldout_center_rmse": 0.19471686229879606,
+          "pose": {
+            "total_pairs": 6,
+            "translation_pairs": 6,
+            "predicted_nonzero_pairs": 6,
+            "rotation_mean_deg": 2.820549067325414,
+            "translation_mean_deg": 17.102528858312258,
+            "auc_3": 0.0,
+            "auc_30": 0.4288471673457746
+          },
+          "cloud": {
+            "predicted_points": 19600,
+            "reference_points": 19600,
+            "threshold": 0.1,
+            "accuracy": 0.5748470353066429,
+            "completeness": 1.8867227722651154,
+            "chamfer": 1.2307849037858791,
+            "precision": 0.04137755102040816,
+            "recall": 0.03709183673469388,
+            "f1": 0.03911765876701786
+          },
+          "caution": "Reference aligned evaluation, not metric inference. Caller must ensure point clouds use evaluation views only; not novel-view synthesis."
+        },
+        "depth": {
+          "valid_samples": 313600,
+          "ground_truth_valid_samples": 313600,
+          "prediction_coverage": 1.0,
+          "abs_rel": 0.28998093969570987,
+          "rmse": 1.8053908159092773,
+          "delta_1": 0.15381696428571429,
+          "silog": 0.10517021666493888
+        }
+      },
+      {
+        "seed": 29,
+        "seconds": 15.678809678000107,
+        "input_shape": [
+          280,
+          280,
+          3
+        ],
+        "predicted_shape": [
+          8,
+          280,
+          280
+        ],
+        "pose_without_alignment": {
+          "total_pairs": 6,
+          "translation_pairs": 6,
+          "predicted_nonzero_pairs": 6,
+          "rotation_mean_deg": 2.6320927522560438,
+          "translation_mean_deg": 11.50227008820166,
+          "auc_3": 0.02355523509252838,
+          "auc_30": 0.602211641118385
+        },
+        "status": "aligned",
+        "audit": {
+          "reference_units": "m",
+          "alignment_kind": "reference_camera_centres_sim3_evaluation_only",
+          "calibration_indices": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "evaluation_indices": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "alignment": {
+            "scale": 4.093938916531118,
+            "rotation": [
+              [
+                0.9892420957044264,
+                -0.019810514461598573,
+                0.14494005520587241
+              ],
+              [
+                0.007967746155480515,
+                0.9966139084481138,
+                0.0818366208306275
+              ],
+              [
+                -0.1460705004698634,
+                -0.07980138472821673,
+                0.986050276551831
+              ]
+            ],
+            "translation": [
+              -0.4189988531035982,
+              0.01691449525545826,
+              -0.11605947995447759
+            ],
+            "inlier_indices": [
+              0,
+              1,
+              2,
+              3
+            ]
+          },
+          "heldout_center_rmse": 0.11714424818593162,
+          "pose": {
+            "total_pairs": 6,
+            "translation_pairs": 6,
+            "predicted_nonzero_pairs": 6,
+            "rotation_mean_deg": 2.6320927522560438,
+            "translation_mean_deg": 11.50227008820166,
+            "auc_3": 0.02355523509252838,
+            "auc_30": 0.602211641118385
+          },
+          "cloud": {
+            "predicted_points": 19600,
+            "reference_points": 19600,
+            "threshold": 0.1,
+            "accuracy": 0.528240553485313,
+            "completeness": 1.9360934593217578,
+            "chamfer": 1.2321670064035355,
+            "precision": 0.04806122448979592,
+            "recall": 0.03857142857142857,
+            "f1": 0.042796567390206965
+          },
+          "caution": "Reference aligned evaluation, not metric inference. Caller must ensure point clouds use evaluation views only; not novel-view synthesis."
+        },
+        "depth": {
+          "valid_samples": 313600,
+          "ground_truth_valid_samples": 313600,
+          "prediction_coverage": 1.0,
+          "abs_rel": 0.3029294842428447,
+          "rmse": 1.895924046243008,
+          "delta_1": 0.19357142857142856,
+          "silog": 0.126814084654368
+        }
+      },
+      {
+        "seed": 53,
+        "seconds": 15.121544851999715,
+        "input_shape": [
+          280,
+          280,
+          3
+        ],
+        "predicted_shape": [
+          8,
+          280,
+          280
+        ],
+        "pose_without_alignment": {
+          "total_pairs": 6,
+          "translation_pairs": 6,
+          "predicted_nonzero_pairs": 6,
+          "rotation_mean_deg": 2.901641317548704,
+          "translation_mean_deg": 13.85876286071298,
+          "auc_3": 0.0,
+          "auc_30": 0.5270487641996913
+        },
+        "status": "aligned",
+        "audit": {
+          "reference_units": "m",
+          "alignment_kind": "reference_camera_centres_sim3_evaluation_only",
+          "calibration_indices": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "evaluation_indices": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "alignment": {
+            "scale": 4.118034904269086,
+            "rotation": [
+              [
+                0.9861910552245581,
+                0.022430315884908764,
+                0.16408559816259605
+              ],
+              [
+                -0.018126079958001022,
+                0.9994524197115704,
+                -0.027682231811107134
+              ],
+              [
+                -0.16461666932734928,
+                0.024325740728515136,
+                0.9860576101413039
+              ]
+            ],
+            "translation": [
+              -0.4628404371776903,
+              0.0619772954812923,
+              -0.08281998008741503
+            ],
+            "inlier_indices": [
+              0,
+              1,
+              2,
+              3
+            ]
+          },
+          "heldout_center_rmse": 0.14710184630346132,
+          "pose": {
+            "total_pairs": 6,
+            "translation_pairs": 6,
+            "predicted_nonzero_pairs": 6,
+            "rotation_mean_deg": 2.901641317548704,
+            "translation_mean_deg": 13.85876286071298,
+            "auc_3": 0.0,
+            "auc_30": 0.5270487641996913
+          },
+          "cloud": {
+            "predicted_points": 19600,
+            "reference_points": 19600,
+            "threshold": 0.1,
+            "accuracy": 0.5467594786871645,
+            "completeness": 1.7678767792502712,
+            "chamfer": 1.1573181289687178,
+            "precision": 0.035408163265306124,
+            "recall": 0.02489795918367347,
+            "f1": 0.029237197417037883
+          },
+          "caution": "Reference aligned evaluation, not metric inference. Caller must ensure point clouds use evaluation views only; not novel-view synthesis."
+        },
+        "depth": {
+          "valid_samples": 313600,
+          "ground_truth_valid_samples": 313600,
+          "prediction_coverage": 1.0,
+          "abs_rel": 0.28177746173420876,
+          "rmse": 1.7207417920763646,
+          "delta_1": 0.1949170918367347,
+          "silog": 0.09800738137508717
+        }
+      }
+    ]
+  }
+}

@@ -153,6 +153,9 @@ class DA3Output:
     provenance:str
     model_id:str
     weights_sha256:str
+    pose_conditioned:bool=False
+    pose_decoder:str="token"
+    ray_audit:dict|None=None
 
 
 def normalize_da3_prediction(prediction:Any,*,model_id:str,weights_sha256:str)->DA3Output:

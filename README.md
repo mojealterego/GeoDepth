@@ -1,16 +1,16 @@
 # OCAF GeoDepth Ω
 
-DA3, rekonstrukcja wielowidokowa, TSDF, eksperymentalne Gaussy 4D oraz wieloskalowe pola 5D (XYZ, czas, skala pikselowa). RGB jest cechą, nie wymiarem przestrzennym.
+DA3, rekonstrukcja wielowidokowa, TSDF, eksperymentalne Gaussy 4D i wieloskalowe pola 5D (XYZ, czas, skala pikselowa). RGB jest cechą, nie wymiarem przestrzennym.
 
-## Stan v0.13.0
-Oryginalne checkpointy DA3 Small i Base zostały zweryfikowane i uruchomione na CPU FP32. Base: 541518028 B, 135366599 parametrów. Dodano odtwarzanie sześciu wolumenów Base z weryfikacją SHA-256 i kontrolowany fallback rozdzielczości z obustronnym audytem wszystkich par kamer. Progi jakości pozostają niezmienione. Na dwóch fotografiach Base 280 odrzucono, 392 zaakceptowano. Nie jest to niezależna walidacja metryczna. Small pozostaje domyślnym modelem.
+## Stan v0.15.0
+Autentyczne DA3 Small i Base są uruchomione lokalnie w FP32 CPU. Opcjonalne profile Small FP16/AQ6/AQ4/INT8, kontrola metryki, TSDF, modele 4D/5D i bramki jakości pozostają zachowane.
+v0.14 wprowadziło benchmark referencyjny i pose conditioning; v0.15 dodaje natywny dekoder ray, audyt kierunku/origin/Z oraz ściślejsze dopasowanie Sim(3). Dekoder tokenowy pozostaje domyślny. 230 testów lokalnie, 6 ostrzeżeń; zbudowano WHL 0.15.0 i uruchomiono CLI ray na 2 fotografiach spoza źródeł. Wynik syntetyczny nie potwierdza fizycznej dokładności ani przewagi modelu.
 
-Pełna lokalna regresja z zasobami AQ/Representations5D i Base: 212 testów, 6 ostrzeżeń. Wagi, źródła upstream, dane przykładowe i archiwa wykonawcze są oddzielnymi artefaktami. Zdalnego CI nie uruchomiono; sam checkout repozytorium nie zawiera wszystkich zasobów pełnej regresji. Wydanie lokalne 0.13 jest nakładką na dystrybucję 0.12.
+Kod i testy są na main. Pełne raporty v0.15, wagi i zależności upstream pozostają w lokalnej dystrybucji; sam checkout nie wystarcza do pełnej regresji. Zdalnego CI nie uruchomiono.
 
-- [Instrukcja v0.13](docs/ZMIANY_v0.13_PL.md)
+- [Instrukcja v0.15](docs/ZMIANY_v0.15_PL.md)
+- [Instrukcja v0.14](docs/ZMIANY_v0.14_PL.md)
 - [README PL](README_PL.md)
 - [Roadmap](docs/ROADMAP.md)
-- [Benchmark Base](reports/v13/base.json)
-- [Benchmark Small](reports/v13/small.json)
 
-Licencje: patrz NOTICE.md. DA3 i moduł quality_v1: Apache-2.0. Nie nadano nowej licencji reszcie kodu OMEGA.
+Licencje: NOTICE.md; DA3 i quality_v1 Apache-2.0. Nie nadano nowej licencji reszcie kodu OMEGA.

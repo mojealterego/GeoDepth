@@ -49,15 +49,17 @@ def select_consistent(candidates: Sequence[tuple[str,DA3Output]]) -> dict:
             'candidates':reports,'policy':'first passing candidate in supplied priority order; abstain if none'}
 
 
-def infer_first_consistent(engine, images, resolutions: Sequence[int]):
+def infer_first_consistent(engine, images, resolutions: Sequence[int], *, inference_options=None):
     """Lazy, bounded fallback in declared priority order; no partial exports."""
     resolutions=list(resolutions)
     if (not 1<=len(resolutions)<=4 or any(type(r) is not int or not 112<=r<=504 for r in resolutions)
         or len(set(resolutions))!=len(resolutions) or not 2<=len(images)<=8):
         raise ValueError('invalid fallback resolutions or view count')
+    options=dict(inference_options or {})
+    if set(options)-{"pose_decoder","audit_depth_rays"}:raise ValueError("unexpected inference options")
     attempts=[]
     for res in resolutions:
-        raw=engine.inference(images,process_res=res)
+        raw=engine.inference(images,process_res=res,**options)
         audit=audit_bidirectional(raw)
         attempts.append({'resolution':res,'audit':audit})
         if audit['passed']:
