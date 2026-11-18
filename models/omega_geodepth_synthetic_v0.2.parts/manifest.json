@@ -1,0 +1,83 @@
+{
+  "format": "ordered-raw-parts-v1",
+  "filename": "omega_geodepth_synthetic_v0.2.safetensors",
+  "bytes": 5187384,
+  "sha256": "936d76c0b4cdcfb9854e143d3af5e605808b415bca683b78e63806cc26564d0d",
+  "parts": [
+    {
+      "name": "part-000.bin",
+      "git_blob_sha1": "aad2b86279302e562a8639ff2efa9a2b5666b3fc",
+      "bytes": 360000
+    },
+    {
+      "name": "part-001.bin",
+      "git_blob_sha1": "a332cd197af1a3452742ecc47880cffa58767df9",
+      "bytes": 360000
+    },
+    {
+      "name": "part-002.bin",
+      "git_blob_sha1": "0465794bf1420dcbeee3812c67f46ec3b9d4bfcb",
+      "bytes": 360000
+    },
+    {
+      "name": "part-003.bin",
+      "git_blob_sha1": "5de7315c668ab257c78ace034652b1f237c446c9",
+      "bytes": 360000
+    },
+    {
+      "name": "part-004.bin",
+      "git_blob_sha1": "16c3a0d3404e40d3ad1a1568a4e9e11ea7193919",
+      "bytes": 360000
+    },
+    {
+      "name": "part-005.bin",
+      "git_blob_sha1": "5c63a1e07470551e32e685427ee2cad781836843",
+      "bytes": 360000
+    },
+    {
+      "name": "part-006.bin",
+      "git_blob_sha1": "8d5fa6e6d5bf08f1636249525d6d50bdd01a65ae",
+      "bytes": 360000
+    },
+    {
+      "name": "part-007.bin",
+      "git_blob_sha1": "658fff7d2f7804e420e534f137978c337999d11c",
+      "bytes": 360000
+    },
+    {
+      "name": "part-008.bin",
+      "git_blob_sha1": "f3d295ae3e951e259a65f731fec9e0f532e902d3",
+      "bytes": 360000
+    },
+    {
+      "name": "part-009.bin",
+      "git_blob_sha1": "d82194e75308190c6af8fb05840ef40048c9175e",
+      "bytes": 360000
+    },
+    {
+      "name": "part-010.bin",
+      "git_blob_sha1": "6c1ba86e95261693da3400a082f1c22b4cf02d19",
+      "bytes": 360000
+    },
+    {
+      "name": "part-011.bin",
+      "git_blob_sha1": "7bb929d7dd8052fcbf0497d9186b233a8dd61fcf",
+      "bytes": 360000
+    },
+    {
+      "name": "part-012.bin",
+      "git_blob_sha1": "21420318dd7ea7bb6c84ce2576417cbe3b3f66f8",
+      "bytes": 360000
+    },
+    {
+      "name": "part-013.bin",
+      "git_blob_sha1": "ec65ede53587912fb328926966bc9013ad1c21c0",
+      "bytes": 360000
+    },
+    {
+      "name": "part-014.bin",
+      "git_blob_sha1": "63426a89afc8e50dadde56ebba34ff6fbbbe6c1b",
+      "bytes": 147384
+    }
+  ]
+}
