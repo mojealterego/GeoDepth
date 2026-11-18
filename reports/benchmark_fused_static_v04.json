@@ -1,0 +1,13 @@
+{
+  "voxel_grid": [
+    29,
+    28,
+    8
+  ],
+  "surface_faces": 840,
+  "surface_height_z_expected": 2.0,
+  "surface_mae_z": 0.0,
+  "multi_observation_voxels": 3244,
+  "triple_observation_voxels": 3094,
+  "ground_truth": "procedural_plane_not_real_camera"
+}

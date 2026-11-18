@@ -1,0 +1,14 @@
+{
+  "model_id": "DA3-SMALL-AQ4-EXPERIMENTAL",
+  "profile": "aq4",
+  "parent_sha256": "364492e38a3a06d221ac75da7f6621ada3f2361cd24fde11ba79091e9f40efcf",
+  "artifact_sha256": "cf905633897e8899bc1e318c0f01ac88578c421b4f23d50035011d865c723bbe",
+  "config_sha256": "39888df953f0cb75ae8486e1d9168bdcbf3c74cb1234b93a0cf3b98386d79578",
+  "descriptor_sha256": "882508c2d6b49a8cc3697417e7f268e124e1229fcc1ca660e71defb83bb7da2f",
+  "license": "Apache-2.0",
+  "experimental": true,
+  "units": "arbitrary_scale",
+  "execution_precision": "float32",
+  "storage_format": "packed_aq",
+  "provenance_verification": "pinned_user_supplied_derivative_not_official_checkpoint"
+}

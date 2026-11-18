@@ -1,0 +1,64 @@
+{
+  "model": "OMEGA GeoDepth Ω synthetic-trained relative depth model",
+  "model_provenance": "trained_from_scratch_synthetic_raycast_v0.2",
+  "input_sha256": "2be5bf4eaa5de5dd3fe188eca3528ebebae9b19c05f18a2333e9b326fde828e0",
+  "image_original_size": [
+    128,
+    128
+  ],
+  "inference_size": [
+    128,
+    128
+  ],
+  "geometry_definition": "optical_z",
+  "units": "arbitrary_scale",
+  "provenance": "relative_estimated",
+  "metric_scale_factor": null,
+  "anchor_diagnostics": null,
+  "processing_mode": "tiled_global_local",
+  "processing_settings": {
+    "tile_size": 64,
+    "overlap": 24,
+    "global_side": 64
+  },
+  "pointcloud_status": "exported",
+  "uncertainty": "sigma(log depth); synthetic-trained, calibration only for direct 64x64 synthetic scenes",
+  "conformal_calibration": "not_available",
+  "content_classification": "not_performed",
+  "nsfw_filter": "none",
+  "depth_range": [
+    0.4794599711894989,
+    1.5321111679077148
+  ],
+  "camera_intrinsics_status": "assumed_for_viz_only",
+  "k": [
+    [
+      153.6,
+      0.0,
+      63.5
+    ],
+    [
+      0.0,
+      153.6,
+      63.5
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "model_sha256": "936d76c0b4cdcfb9854e143d3af5e605808b415bca683b78e63806cc26564d0d",
+  "output_sha256": {
+    "depth_preview.png": "2f27e705caaad28e5b5b58a9fc93217709cf226a539059dc9f4197c2e6cc7336",
+    "depth_geometry.npz": "c33f214849d4a6ab214cd17e7da7dd28e8335d8e714828d563d293df9a3ef7ea",
+    "pointcloud.ply": "4e73b3b85f83e2da333640f0b8fd81a27b4b8f5f3c1f1506539485abcacb14af"
+  },
+  "limitations": [
+    "procedural training only",
+    "no real-world accuracy guarantees",
+    "no measured metric depth",
+    "uncertainty is not conformally calibrated",
+    "single-image depth only, no 4D or camera pose"
+  ]
+}

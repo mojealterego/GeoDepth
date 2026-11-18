@@ -1,0 +1,113 @@
+{
+  "method": "two supplied photographs; nominal times only; shared median scale across both views; first camera gauge; no physical ground truth",
+  "process_res": 280,
+  "profiles": {
+    "fp32": {
+      "profile": {
+        "model_id": "DA3-SMALL",
+        "profile": "fp32",
+        "artifact_sha256": "364492e38a3a06d221ac75da7f6621ada3f2361cd24fde11ba79091e9f40efcf",
+        "runtime_weights_sha256": "364492e38a3a06d221ac75da7f6621ada3f2361cd24fde11ba79091e9f40efcf",
+        "parent_sha256": "364492e38a3a06d221ac75da7f6621ada3f2361cd24fde11ba79091e9f40efcf",
+        "experimental": false,
+        "execution_precision": "float32",
+        "units": "arbitrary_scale"
+      },
+      "seconds_load_and_infer": 2.4688839519999988,
+      "point_count": 2707,
+      "common_scale_to_fp32": 1.0,
+      "relative_depth_mae_percent": 0.0,
+      "max_k_delta_px": 0.0,
+      "relative_rotation_delta_deg": 0.0,
+      "relative_translation_error_normalized": 0.0,
+      "symmetric_chamfer_normalized": 0.0,
+      "reprojection_passed": true
+    },
+    "fp16": {
+      "profile": {
+        "model_id": "DA3-SMALL-FP16",
+        "profile": "fp16",
+        "parent_sha256": "364492e38a3a06d221ac75da7f6621ada3f2361cd24fde11ba79091e9f40efcf",
+        "artifact_sha256": "388b86c06bae986d0166e35c72813993574efdaa33b0d9ec469e52caae9f98d5",
+        "config_sha256": "39888df953f0cb75ae8486e1d9168bdcbf3c74cb1234b93a0cf3b98386d79578",
+        "descriptor_sha256": null,
+        "license": "Apache-2.0",
+        "experimental": false,
+        "units": "arbitrary_scale",
+        "execution_precision": "float32",
+        "storage_format": "safetensors_fp16",
+        "provenance_verification": "pinned_user_supplied_derivative_not_official_checkpoint",
+        "runtime_weights_sha256": "388b86c06bae986d0166e35c72813993574efdaa33b0d9ec469e52caae9f98d5"
+      },
+      "seconds_load_and_infer": 0.795351721999964,
+      "point_count": 2710,
+      "common_scale_to_fp32": 0.9990203976631165,
+      "relative_depth_mae_percent": 0.02676209551282227,
+      "max_k_delta_px": 0.022430419921875,
+      "relative_rotation_delta_deg": 0.006514983286264736,
+      "relative_translation_error_normalized": 4.755973897349991e-05,
+      "symmetric_chamfer_normalized": 0.0018414997387120745,
+      "reprojection_passed": true
+    },
+    "aq6": {
+      "profile": {
+        "model_id": "DA3-SMALL-AQ6-EXPERIMENTAL",
+        "profile": "aq6",
+        "parent_sha256": "364492e38a3a06d221ac75da7f6621ada3f2361cd24fde11ba79091e9f40efcf",
+        "artifact_sha256": "9d0a64860243d7a142669bc96c37d41eb2507e2c5d50e1650c622aeed88c9a14",
+        "config_sha256": "39888df953f0cb75ae8486e1d9168bdcbf3c74cb1234b93a0cf3b98386d79578",
+        "descriptor_sha256": "c35654fd789f6243ef3eb066bb04815b2b1101a4fcd68de3153351be48e4e082",
+        "license": "Apache-2.0",
+        "experimental": true,
+        "units": "arbitrary_scale",
+        "execution_precision": "float32",
+        "storage_format": "packed_aq",
+        "provenance_verification": "pinned_user_supplied_derivative_not_official_checkpoint",
+        "runtime_weights_sha256": "b6305bac760d744144b395dd0e43ee4b54b4c26425a971e46a5a18f104ab2eb2"
+      },
+      "seconds_load_and_infer": 1.5830162739999878,
+      "point_count": 2415,
+      "common_scale_to_fp32": 1.1092264652252197,
+      "relative_depth_mae_percent": 2.8194474056363106,
+      "max_k_delta_px": 4.9072113037109375,
+      "relative_rotation_delta_deg": 0.2440248544435147,
+      "relative_translation_error_normalized": 0.0010437358271626293,
+      "symmetric_chamfer_normalized": 0.02868369508182555,
+      "reprojection_passed": true
+    },
+    "aq4": {
+      "profile": {
+        "model_id": "DA3-SMALL-AQ4-EXPERIMENTAL",
+        "profile": "aq4",
+        "parent_sha256": "364492e38a3a06d221ac75da7f6621ada3f2361cd24fde11ba79091e9f40efcf",
+        "artifact_sha256": "cf905633897e8899bc1e318c0f01ac88578c421b4f23d50035011d865c723bbe",
+        "config_sha256": "39888df953f0cb75ae8486e1d9168bdcbf3c74cb1234b93a0cf3b98386d79578",
+        "descriptor_sha256": "882508c2d6b49a8cc3697417e7f268e124e1229fcc1ca660e71defb83bb7da2f",
+        "license": "Apache-2.0",
+        "experimental": true,
+        "units": "arbitrary_scale",
+        "execution_precision": "float32",
+        "storage_format": "packed_aq",
+        "provenance_verification": "pinned_user_supplied_derivative_not_official_checkpoint",
+        "runtime_weights_sha256": "1fdd518d261b1e30c051501c1f66ae3f927611c707176c0e51066cf84094a823"
+      },
+      "seconds_load_and_infer": 1.5271531189999905,
+      "point_count": 2329,
+      "common_scale_to_fp32": 1.0043790340423584,
+      "relative_depth_mae_percent": 5.037224665284157,
+      "max_k_delta_px": 33.281402587890625,
+      "relative_rotation_delta_deg": 0.6012402763395397,
+      "relative_translation_error_normalized": 0.007665662079169887,
+      "symmetric_chamfer_normalized": 0.03357413075522802,
+      "reprojection_passed": true
+    }
+  },
+  "fp16_regression_gate": {
+    "passed": true,
+    "limits": {
+      "depth_mae_percent": 0.5,
+      "k_delta_px": 0.5,
+      "chamfer_normalized": 0.02
+    }
+  }
+}

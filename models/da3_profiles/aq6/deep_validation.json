@@ -1,0 +1,71 @@
+{
+  "checkpoint_sha256": "487710dc409faab5e39de2874fdcaa4357ff42e264ebcb9ab5aaa6c3c0af0c79",
+  "ok": true,
+  "operator_error": {
+    "layers": {
+      "model.backbone.pretrained.blocks.0.attn.qkv.weight": {
+        "max_absolute_error": 0.09416413307189941,
+        "operation": "linear",
+        "relative_l2": 0.03239880092600788
+      },
+      "model.backbone.pretrained.blocks.9.mlp.fc1.weight": {
+        "max_absolute_error": 0.1122051477432251,
+        "operation": "linear",
+        "relative_l2": 0.024561193974102665
+      },
+      "model.backbone.pretrained.patch_embed.proj.weight": {
+        "max_absolute_error": 0.06839388608932495,
+        "operation": "conv2d",
+        "relative_l2": 0.02641024617890752
+      },
+      "model.cam_dec.backbone.0.weight": {
+        "max_absolute_error": 0.0,
+        "operation": "linear",
+        "relative_l2": 0.0
+      },
+      "model.cam_enc.trunk.0.attn.qkv.weight": {
+        "max_absolute_error": 0.07461625337600708,
+        "operation": "linear",
+        "relative_l2": 0.02291019784251985
+      },
+      "model.head.projects.0.weight": {
+        "max_absolute_error": 0.21514356136322021,
+        "operation": "conv2d",
+        "relative_l2": 0.026078897428099337
+      },
+      "model.head.scratch.output_conv2.0.weight": {
+        "max_absolute_error": 0.0,
+        "operation": "conv2d",
+        "relative_l2": 0.0
+      }
+    },
+    "limit": 0.075,
+    "max_layer_relative_l2": 0.03239880092600788,
+    "note": "Synthetic operator input only; no image dataset and no full-model inference",
+    "passed": true
+  },
+  "profile": "aq6",
+  "restoration": {
+    "bytes": 72379332,
+    "output": "build/aq6-restored.safetensors",
+    "sha256": "a2dd852802cd76ab0f15ef92f9b0e491b47a89693f2a8631f7647b8e6733e74b",
+    "tensor_count": 437
+  },
+  "tensors": 437,
+  "v2_gate_threshold": 0.018,
+  "v2_weight_gate": true,
+  "weight_error": {
+    "max_absolute_error": 0.020110808312892914,
+    "ok": true,
+    "relative_l2": 0.014249659330612079,
+    "tensors_by_dtype": {
+      "torch.float16": 136,
+      "torch.float32": 301
+    },
+    "threshold": 0.03,
+    "worst_tensor": {
+      "name": "model.head.scratch.refinenet1.resConfUnit2.conv1.weight",
+      "relative_l2": 0.03623302476961303
+    }
+  }
+}

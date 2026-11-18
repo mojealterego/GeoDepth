@@ -1,0 +1,62 @@
+{
+  "schema_version": "OMEGA-GeoDepth-5D-v0.3",
+  "field_definition": "(world_x, world_y, world_z, time_seconds, sRGB_luma_proxy)",
+  "units": "arbitrary_scale",
+  "provenance": "relative_estimated",
+  "frames": 2,
+  "total_points": 3327,
+  "matched_points": 1268,
+  "voxel_size": 0.08,
+  "neighbor_radius": 0.12,
+  "tsdf_time_slices": [],
+  "fused_static_tsdf": null,
+  "gaussian5d": null,
+  "interpolated_renders": [],
+  "source": "input depth and poses, not a learned 5D model",
+  "limitations": [
+    "appearance is luma proxy, not physical radiance",
+    "scene-flow is approximate nearest-neighbor and unverified",
+    "meshes only cover observed depth surfaces; no occluded geometry",
+    "relative inputs yield arbitrary-scale outputs",
+    "no training/optimization of dynamic 4D Gaussian splats",
+    "static multiview fusion requires known inter-frame scale and masks for moving objects"
+  ],
+  "artifacts_sha256": {
+    "scene5d.npz": "8b0c4a9d651523a3f87aecf9167c9e439fd8573c9a08e46efea2d14ab8357fff",
+    "scene5d.ply": "787d6a48d4311cc64c4a31d9318393bd41925a0fb4de5dbae1398e274c77c55a",
+    "meshes/frame_0000.obj": "34b7a4bbda45c380d026fae1d2a5f997175da3568407e52c2e077b9d5ee1b738",
+    "meshes/frame_0001.obj": "a0e00b88ff13acd1e337380d9676b5907de5b131ad9f4a529cba1abbb66a1c71"
+  },
+  "input_metadata": {
+    "units": "arbitrary_scale",
+    "provenance": "relative_estimated",
+    "da3_model": "DA3-SMALL",
+    "weights_sha256": "364492e38a3a06d221ac75da7f6621ada3f2361cd24fde11ba79091e9f40efcf",
+    "camera_poses": "estimated_by_da3",
+    "multiview_reprojection_audit": {
+      "passed": true,
+      "units": "arbitrary_scale",
+      "interpretation": "relative multi-view consistency, not metric measurement",
+      "thresholds": {
+        "max_relative_error": 0.15,
+        "min_coverage": 0.1,
+        "min_consistency_fraction": 0.8,
+        "min_samples": 20
+      },
+      "pairs": [
+        {
+          "src": 0,
+          "dst": 1,
+          "sampled": 10780,
+          "observed": 7947,
+          "coverage": 0.7371985157699443,
+          "median_relative_residual": 0.03465516659061046,
+          "agreement_fraction": 0.8685038379262615,
+          "occluded": 649,
+          "reason": "PASS",
+          "passed": true
+        }
+      ]
+    }
+  }
+}

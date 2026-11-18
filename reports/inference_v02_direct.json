@@ -1,0 +1,78 @@
+{
+  "model": "OMEGA GeoDepth Ω synthetic-trained relative depth model",
+  "model_provenance": "trained_from_scratch_synthetic_raycast_v0.2",
+  "input_sha256": "2be5bf4eaa5de5dd3fe188eca3528ebebae9b19c05f18a2333e9b326fde828e0",
+  "image_original_size": [
+    128,
+    128
+  ],
+  "inference_size": [
+    64,
+    64
+  ],
+  "geometry_definition": "optical_z",
+  "units": "arbitrary_scale",
+  "provenance": "relative_estimated",
+  "metric_scale_factor": null,
+  "anchor_diagnostics": null,
+  "processing_mode": "direct",
+  "processing_settings": {},
+  "pointcloud_status": "exported",
+  "uncertainty": "sigma(log depth); synthetic-trained, calibration only for direct 64x64 synthetic scenes",
+  "conformal_calibration": {
+    "status": "synthetic_only_calibrated",
+    "alpha": 0.1,
+    "q": 1.5828529596328735,
+    "q_scene_coverage": 2.008310556411743,
+    "min_scene_pixel_coverage": 0.9,
+    "empirical_scene_level_coverage_synthetic_audit": 0.8928571428571429,
+    "nominal_coverage": 0.9,
+    "empirical_coverage_separate_synthetic_audit": 0.8868059430803571,
+    "audit_mae_log_depth": 0.09684930741786957,
+    "calibration_samples": 112,
+    "audit_samples": 112,
+    "calibration_seed_start": 60000,
+    "audit_seed_start": 70000,
+    "score": "absolute_log_depth_error / predicted_sigma_log",
+    "coverage_scope": "pixel-marginal on procedurally generated scenes only, not real-world images",
+    "model_sha256": "936d76c0b4cdcfb9854e143d3af5e605808b415bca683b78e63806cc26564d0d",
+    "content_filter": "none"
+  },
+  "content_classification": "not_performed",
+  "nsfw_filter": "none",
+  "depth_range": [
+    0.48138609528541565,
+    1.3977205753326416
+  ],
+  "camera_intrinsics_status": "assumed_for_viz_only",
+  "k": [
+    [
+      76.8,
+      0.0,
+      31.5
+    ],
+    [
+      0.0,
+      76.8,
+      31.5
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "model_sha256": "936d76c0b4cdcfb9854e143d3af5e605808b415bca683b78e63806cc26564d0d",
+  "output_sha256": {
+    "depth_preview.png": "f41c04139746071d1a200dcaec6b435de9a88eb6b503cdc01d9f9538e635f3aa",
+    "depth_geometry.npz": "3626da54e1bf633266558987a85dcf64e7d2bbc7d10e1a95c783b3468b4ee904",
+    "pointcloud.ply": "147441e7eef1077031bee65a58993a8174b15234af83e5dbd33b2e649b92f8bb"
+  },
+  "limitations": [
+    "procedural training only",
+    "no real-world accuracy guarantees",
+    "no measured metric depth",
+    "uncertainty is not conformally calibrated",
+    "single-image depth only, no 4D or camera pose"
+  ]
+}

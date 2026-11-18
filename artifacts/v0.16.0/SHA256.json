@@ -1,0 +1,215 @@
+{
+  "version": "0.16.0",
+  "files": [
+    {
+      "path": "artifacts/v0.16.0/OMEGA_GeoDepth_Omega_v0.16.0_Global_Geometry_Update.zip",
+      "bytes": 172060,
+      "sha256": "2889f757355a559bdd6b578f8f42a7747174aa144a7d7a7c92e0aee6d549be50"
+    },
+    {
+      "path": "artifacts/v0.16.0/omega_geodepth-0.16.0-py3-none-any.whl",
+      "bytes": 135656,
+      "sha256": "781642c0efdaaea4eae45b5c50a9d59fe9931a0164fea206e82d9761c3ae73dc"
+    },
+    {
+      "path": "artifacts/v0.16.0/regression.log",
+      "bytes": 2868,
+      "sha256": "5e0f218ab9ebdc8059a5b951bdf3dc0d1f2c9c56b95807a8c44bb2ee64dc4126"
+    },
+    {
+      "path": "examples/v06_deformable/checkpoint/gaussians.safetensors",
+      "bytes": 612,
+      "sha256": "40b5d8318bbdba268703fdb76b45a1e8e5321e61671ac90279e469457f38fba2"
+    },
+    {
+      "path": "examples/v11_scene_field/da3/scene.safetensors",
+      "bytes": 125372,
+      "sha256": "4bf09e81364139bc31edfa7d0ec9dd6b3a5490e13d92fca6dbb0cfdcc8dd73da"
+    },
+    {
+      "path": "examples/v11_scene_field/synthetic/scene.safetensors",
+      "bytes": 124740,
+      "sha256": "d9710d64d2a969daa2739d7ab6c25454a224fa5b3a34b87433ff8213c04d2f4e"
+    },
+    {
+      "path": "models/da3_profiles/aq4/config.json",
+      "bytes": 1203,
+      "sha256": "39888df953f0cb75ae8486e1d9168bdcbf3c74cb1234b93a0cf3b98386d79578"
+    },
+    {
+      "path": "models/da3_profiles/aq4/deep_validation.json",
+      "bytes": 2247,
+      "sha256": "36b35664c18a6c6b3ffa98cd80e5572f6d6e29364223f5465df9c8e3776a178b"
+    },
+    {
+      "path": "models/da3_profiles/aq4/profile_manifest.json",
+      "bytes": 659,
+      "sha256": "4c75442c28482acf29eeb67d8e6d1415e47cebed77f6770cca5b7c469d89b280"
+    },
+    {
+      "path": "models/da3_profiles/aq4/quantization.json",
+      "bytes": 78737,
+      "sha256": "882508c2d6b49a8cc3697417e7f268e124e1229fcc1ca660e71defb83bb7da2f"
+    },
+    {
+      "path": "models/da3_profiles/aq6/config.json",
+      "bytes": 1203,
+      "sha256": "39888df953f0cb75ae8486e1d9168bdcbf3c74cb1234b93a0cf3b98386d79578"
+    },
+    {
+      "path": "models/da3_profiles/aq6/deep_validation.json",
+      "bytes": 2258,
+      "sha256": "39796925221b7051cb8c8dc090d1b37e1ddd878a8b9b4817b664ff4b12361bd8"
+    },
+    {
+      "path": "models/da3_profiles/aq6/profile_manifest.json",
+      "bytes": 659,
+      "sha256": "48d71266ae4e8918141fec561ee67f8a99fd44fa1c5d14715c561ae284e5310f"
+    },
+    {
+      "path": "models/da3_profiles/aq6/quantization.json",
+      "bytes": 78737,
+      "sha256": "c35654fd789f6243ef3eb066bb04815b2b1101a4fcd68de3153351be48e4e082"
+    },
+    {
+      "path": "models/da3_profiles/fp16/config.json",
+      "bytes": 1203,
+      "sha256": "39888df953f0cb75ae8486e1d9168bdcbf3c74cb1234b93a0cf3b98386d79578"
+    },
+    {
+      "path": "models/da3_profiles/fp16/profile_manifest.json",
+      "bytes": 594,
+      "sha256": "f6674743e25d5a53a69ea5f2434f29ceb30cc148beb28119f58a1cbfe4163018"
+    },
+    {
+      "path": "models/da3_profiles/fp16/validation_v2.json",
+      "bytes": 290,
+      "sha256": "3f60385450c0dbc9974270b5086186230a5fc22c0b32b78d41436c2a6317d2ed"
+    },
+    {
+      "path": "reports/DA3_SOURCE_AUDIT_v07.json",
+      "bytes": 399,
+      "sha256": "c26acd898094460e5ff18339a198251cec63cb764c94e5fba28d54bb6b079220"
+    },
+    {
+      "path": "reports/OMEGA_DA3_V2.1_wyniki_audytu.json",
+      "bytes": 859,
+      "sha256": "4cb68051d39ca73a482482df06ad8214c126973055842b1bdf4d06448bf1b26d"
+    },
+    {
+      "path": "reports/benchmark_fused_static_v04.json",
+      "bytes": 258,
+      "sha256": "c2cd3948fd991e6b652eedea62bebc9c0eee9df3428cc2ef509705bf596375c8"
+    },
+    {
+      "path": "reports/benchmark_v02.json",
+      "bytes": 922,
+      "sha256": "c75d1f73fa5a74be9ada13d90fde5cb6637e707a3f204e74bd504ad10210da1b"
+    },
+    {
+      "path": "reports/extracted_zip_v03_verified.json",
+      "bytes": 589,
+      "sha256": "4d5707d35f2f3a91516f898f2bdf9faca8610b5bb9133b0142e91ba39ba21775"
+    },
+    {
+      "path": "reports/inference_v02_direct.json",
+      "bytes": 2489,
+      "sha256": "08d1c07a9fae1a6d3330e44e4134ef166d6f93c88dc65ec13e9efa8e2b7839b4"
+    },
+    {
+      "path": "reports/inference_v02_tiled.json",
+      "bytes": 1780,
+      "sha256": "bb5ac4d39a429d5fac453c984c763c437cab9a39e44ec515d26eed0200c9a849"
+    },
+    {
+      "path": "reports/reconstruction5d_demo.json",
+      "bytes": 5040,
+      "sha256": "952c3aadbef1732614603afd42d7182ff337a839fa40f85ed61ed35bf480573b"
+    },
+    {
+      "path": "reports/v04_dynamic_demo.json",
+      "bytes": 4446,
+      "sha256": "94e54b904ed94ff3f34160c16c62b52127e0e5c477a0a60179bec628a053b4b1"
+    },
+    {
+      "path": "reports/v05_holdout/holdout_report.json",
+      "bytes": 1258,
+      "sha256": "f9a5a0368c8cd986bde4af2bd6df74c8a40ddca50379f2926a8a5a07f16909f8"
+    },
+    {
+      "path": "reports/v08_real_5d_cli.json",
+      "bytes": 2279,
+      "sha256": "4cc652de96c83f3868474b02ead5619023a9eb5b3cc8100412f3dfbbb8c69c97"
+    },
+    {
+      "path": "reports/v08_real_cli.json",
+      "bytes": 1139,
+      "sha256": "06edb894299902c404ea8774ec2655015d82861999e76e1f170cde695a4acbaa"
+    },
+    {
+      "path": "reports/v09_profile_geometry.json",
+      "bytes": 5132,
+      "sha256": "a3717d1085fcd430bfbf9b35a61bad5c5991cd7db6c28fa956616d98da2c6111"
+    },
+    {
+      "path": "reports/v10_int8_geometry.json",
+      "bytes": 3199,
+      "sha256": "1c3ab93275e4a1b7f8fcd42fc0e92c087488e47e53324ce26cd39365272f41d3"
+    },
+    {
+      "path": "reports/v13/base.json",
+      "bytes": 11981,
+      "sha256": "c4422ea40783c0abfbacd1380b2d7831cc23f45fac177512a9a1114310fac8c6"
+    },
+    {
+      "path": "reports/v13/fallback.json",
+      "bytes": 4315,
+      "sha256": "0c850d13e673c6c7c506fcbd3f6ab3cc93ab885af0bf9b9815e537584d9f2eaa"
+    },
+    {
+      "path": "reports/v13/small.json",
+      "bytes": 13135,
+      "sha256": "1d9d2d14ea3ddaf8c734b0c186589ff07775195ee33618435d95ce0e48bff05c"
+    },
+    {
+      "path": "reports/v14/conditioned.json",
+      "bytes": 18394,
+      "sha256": "fa91dca0e1cfb8e2df3a0efe10187a65e2c0cfb1f543356771fb03ef9e41bc67"
+    },
+    {
+      "path": "reports/v14/reference.json",
+      "bytes": 18346,
+      "sha256": "a364ab22578e65914400a259eeb7928cb4c088eaaecc80d6b1f9c7d7e1785335"
+    },
+    {
+      "path": "reports/v15/paired_140.json",
+      "bytes": 41627,
+      "sha256": "f47b3af964a9e1176d629806b9ece3f3b7e43365a9e45e2c380e8618f9c74ad6"
+    },
+    {
+      "path": "reports/v15/small.json",
+      "bytes": 15858,
+      "sha256": "f59e95fba45ccb6a64dacb1a27b6353832934af841fc27d61be94278ea495487"
+    },
+    {
+      "path": "reports/v16/benchmark_140.json",
+      "bytes": 61656,
+      "sha256": "a7a87f3893570036ead72aa144fba159ebe83212d3d5a7c68108c1d65f722b00"
+    },
+    {
+      "path": "reports/verification_v07.json",
+      "bytes": 830,
+      "sha256": "4da05d6b8f5a00b88fa70128d06a457fcd1ea6fafc02e85ce4110edbf4a4baae"
+    },
+    {
+      "path": "vendor/omega5d_synthetic.safetensors",
+      "bytes": 45116,
+      "sha256": "d005e39aa15dfd2475ab80bc77ee811d05549c54cd2725dc5a6b846fb9d9a999"
+    },
+    {
+      "path": "vendor/representations4d-0.2.0+omega.5d-py3-none-any.whl",
+      "bytes": 117135,
+      "sha256": "660646e5e23d35b04528ce74961405898941cf2281ded2f32126153aafd42526"
+    }
+  ]
+}

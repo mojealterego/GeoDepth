@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "relative_l2": 0.00020211946893954592,
+  "max_absolute_error": 0.0073566436767578125,
+  "worst_tensor": {
+    "name": "model.cam_dec.fc_fov.0.bias",
+    "relative_l2": 0.0002965863174227024
+  },
+  "tensors_by_dtype": {
+    "torch.float16": 437
+  },
+  "threshold": 0.005
+}

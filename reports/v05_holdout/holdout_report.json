@@ -1,0 +1,51 @@
+{
+  "dataset": "analytical_moving_sphere_holdout_not_real_photographs",
+  "training_times_s": [
+    0.0,
+    0.4,
+    0.8
+  ],
+  "heldout_times_s": [
+    0.2,
+    0.6
+  ],
+  "rgb_mae_mean": {
+    "initial": 0.11563648897058824,
+    "trained": 0.018435329861111113
+  },
+  "relative_improvement_pct": 84.0575150411216,
+  "individual": [
+    {
+      "time_s": 0.2,
+      "model": "initial",
+      "rgb_mae_normalized": 0.08865527982026145,
+      "psnr_db": 16.72362765624751,
+      "depth_mae_visible_units": 0.430484801530838,
+      "coverage_ratio": 0.99609375
+    },
+    {
+      "time_s": 0.2,
+      "model": "trained",
+      "rgb_mae_normalized": 0.01898233251633987,
+      "psnr_db": 26.93424174023243,
+      "depth_mae_visible_units": 0.1031685620546341,
+      "coverage_ratio": 1.0
+    },
+    {
+      "time_s": 0.6,
+      "model": "initial",
+      "rgb_mae_normalized": 0.14261769812091504,
+      "psnr_db": 13.618635329322743,
+      "depth_mae_visible_units": 0.8316802382469177,
+      "coverage_ratio": 0.99609375
+    },
+    {
+      "time_s": 0.6,
+      "model": "trained",
+      "rgb_mae_normalized": 0.017888327205882352,
+      "psnr_db": 27.5548284383909,
+      "depth_mae_visible_units": 0.09982971101999283,
+      "coverage_ratio": 1.0
+    }
+  ]
+}

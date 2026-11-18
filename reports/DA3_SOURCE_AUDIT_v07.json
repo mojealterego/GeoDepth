@@ -1,0 +1,12 @@
+{
+  "sha256": "6d2ba1d07a69f3d260394e49c7545aed8f3cc7df8633469ae79782ee34978d42",
+  "entry_count": 163,
+  "file_count": 133,
+  "unpacked_bytes": 25008449,
+  "source_only": true,
+  "api_contract_verified": true,
+  "source_provenance": "user_supplied_source_zip_not_independently_verified",
+  "upstream_commit_verified": false,
+  "license_file_present": true,
+  "contains_pretrained_weights": false
+}

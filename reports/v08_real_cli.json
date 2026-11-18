@@ -1,0 +1,40 @@
+{
+  "model": "DA3-SMALL",
+  "weights_sha256": "364492e38a3a06d221ac75da7f6621ada3f2361cd24fde11ba79091e9f40efcf",
+  "source": "official DA3 network from pinned user-provided source ZIP",
+  "view_count": 2,
+  "depth_shape": [
+    2,
+    154,
+    280
+  ],
+  "units": "arbitrary_scale",
+  "provenance": "relative_estimated",
+  "confidence": "DA3 raw confidence, not calibrated probability",
+  "reprojection_audit": {
+    "passed": true,
+    "units": "arbitrary_scale",
+    "interpretation": "relative multi-view consistency, not metric measurement",
+    "thresholds": {
+      "max_relative_error": 0.1,
+      "min_coverage": 0.1,
+      "min_consistency_fraction": 0.8,
+      "min_samples": 20
+    },
+    "pairs": [
+      {
+        "src": 0,
+        "dst": 1,
+        "sampled": 10780,
+        "observed": 7851,
+        "coverage": 0.7282931354359926,
+        "median_relative_residual": 0.03378590859761996,
+        "agreement_fraction": 0.8028276652655713,
+        "occluded": 745,
+        "reason": "PASS",
+        "passed": true
+      }
+    ]
+  },
+  "warning": "Depth is relative; do not report output in metres without a metric anchor."
+}

@@ -1,0 +1,162 @@
+{
+  "schema_version": "OMEGA-GeoDepth-5D-v0.3",
+  "field_definition": "(world_x, world_y, world_z, time_seconds, sRGB_luma_proxy)",
+  "units": "arbitrary_scale",
+  "provenance": "relative_estimated",
+  "frames": 3,
+  "total_points": 15568,
+  "matched_points": 12904,
+  "voxel_size": 0.05,
+  "neighbor_radius": 0.12,
+  "tsdf_time_slices": [],
+  "fused_static_tsdf": null,
+  "gaussian5d": {
+    "primitive_count": 15568,
+    "method": "bounded_CPU_gaussian_surfels",
+    "trained_4dgs": false,
+    "renders": [
+      {
+        "time_s": 0.2,
+        "raster_covered_pixels": 9216
+      },
+      {
+        "time_s": 0.6000000000000001,
+        "raster_covered_pixels": 9216
+      }
+    ]
+  },
+  "interpolated_renders": [
+    {
+      "time_s": 0.2,
+      "observed_pixels": 5200,
+      "name": "between_0000_0001"
+    },
+    {
+      "time_s": 0.6000000000000001,
+      "observed_pixels": 5174,
+      "name": "between_0001_0001"
+    }
+  ],
+  "source": "input depth and poses, not a learned 5D model",
+  "limitations": [
+    "appearance is luma proxy, not physical radiance",
+    "scene-flow is approximate nearest-neighbor and unverified",
+    "meshes only cover observed depth surfaces; no occluded geometry",
+    "relative inputs yield arbitrary-scale outputs",
+    "no training/optimization of dynamic 4D Gaussian splats",
+    "static multiview fusion requires known inter-frame scale and masks for moving objects"
+  ],
+  "artifacts_sha256": {
+    "scene5d.npz": "d425ef606b35638f20f601b5e8583d836612cca104e202b44dce147b43a34df0",
+    "scene5d.ply": "a495cbb31f4d47e917ff386f6529516e098dfd36dfd4faca3844dc0c1fa23b4e",
+    "meshes/frame_0000.obj": "b4ede52f38aa0a904cc4717c68580e1fb74dfa5838cf898e5fcfa7e39c827dbf",
+    "meshes/frame_0001.obj": "88821b90bad58b4c920b2d3731e40ae366a5710daf5a1a2165d997bfb8863511",
+    "meshes/frame_0002.obj": "3630b8b6393f529ba4ecae450a3d08b15251826756af64d62c2d7bfd201b7fc3",
+    "renders/between_0000_0001.png": "85da9bb45347dde4077db375fc7e9bc5dce8465f6a3bb8b167b029ee4ebe85e2",
+    "renders/between_0000_0001.npz": "eaaa84cbfc502ea365fd9a5a54568ec9680f44f57e0d8e21e297b83bdfdd1a1e",
+    "renders/between_0001_0001.png": "8c97516ce5f3a9a1ecb827826021eb899095240e0c668aced47c0b7fc9a1faec",
+    "renders/between_0001_0001.npz": "cc4bc30a3963f0bbdc6be4e606b9784bbd230e99768373901ddc70ca39b83700",
+    "gaussian5d.npz": "922b73bf93379176aee39b51411e3c63c0b54ef879bbaad2912bcd873da8aa0f",
+    "gaussian_renders/between_0000.png": "85c486b1c7d917a72cda9ceac2f9a1611053bc6d0a07a7b12dfb6cc6d362961a",
+    "gaussian_renders/between_0000.npz": "f0c4d26667bf5a95e0f74843c16829a9db4488bc1de645d00c9b6b45f19321f6",
+    "gaussian_renders/between_0001.png": "78ada98f1d926583970060277c714246306279d49c721bda7c748b2bf7b63443",
+    "gaussian_renders/between_0001.npz": "f3665c48ed6d9aa843756f986bcb6ead3a89577f672a74141476ccb4aa8c025c"
+  },
+  "input_metadata": {
+    "units": "arbitrary_scale",
+    "provenance": "relative_estimated",
+    "schema_version": "OMEGA-GeoDepth-5D-input-v1",
+    "frames": [
+      {
+        "time_s": 0.0,
+        "npz": "frame_0000.npz",
+        "pose_c2w": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "time_s": 0.4,
+        "npz": "frame_0001.npz",
+        "pose_c2w": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "time_s": 0.8,
+        "npz": "frame_0002.npz",
+        "pose_c2w": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,3657 @@
+{
+  "checkpoint_sha256": "cf905633897e8899bc1e318c0f01ac88578c421b4f23d50035011d865c723bbe",
+  "entries": {
+    "model.backbone.pretrained.blocks.0.attn.proj.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.0.attn.proj.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.097907614,
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.0.attn.qkv.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1152
+      ]
+    },
+    "model.backbone.pretrained.blocks.0.attn.qkv.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.11396918,
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.0.ls1.gamma": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.0.ls2.gamma": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.0.mlp.fc1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1536
+      ]
+    },
+    "model.backbone.pretrained.blocks.0.mlp.fc1.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.108651733,
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.0.mlp.fc2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.0.mlp.fc2.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.110135145,
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    "model.backbone.pretrained.blocks.0.norm1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.0.norm1.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.0.norm2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.0.norm2.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.1.attn.proj.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.1.attn.proj.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.095017337,
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.1.attn.qkv.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1152
+      ]
+    },
+    "model.backbone.pretrained.blocks.1.attn.qkv.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.119819333,
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.1.ls1.gamma": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.1.ls2.gamma": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.1.mlp.fc1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1536
+      ]
+    },
+    "model.backbone.pretrained.blocks.1.mlp.fc1.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.108284637,
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.1.mlp.fc2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.1.mlp.fc2.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.103484668,
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    "model.backbone.pretrained.blocks.1.norm1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.1.norm1.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.1.norm2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.1.norm2.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.10.attn.k_norm.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.backbone.pretrained.blocks.10.attn.k_norm.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.backbone.pretrained.blocks.10.attn.proj.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.10.attn.proj.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.095042191,
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.10.attn.q_norm.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.backbone.pretrained.blocks.10.attn.q_norm.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.backbone.pretrained.blocks.10.attn.qkv.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1152
+      ]
+    },
+    "model.backbone.pretrained.blocks.10.attn.qkv.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.094720829,
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.10.ls1.gamma": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.10.ls2.gamma": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.10.mlp.fc1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1536
+      ]
+    },
+    "model.backbone.pretrained.blocks.10.mlp.fc1.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.09490996,
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.10.mlp.fc2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.10.mlp.fc2.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.105535529,
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    "model.backbone.pretrained.blocks.10.norm1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.10.norm1.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.10.norm2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.10.norm2.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.11.attn.k_norm.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.backbone.pretrained.blocks.11.attn.k_norm.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.backbone.pretrained.blocks.11.attn.proj.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.11.attn.proj.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.095550471,
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.11.attn.q_norm.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.backbone.pretrained.blocks.11.attn.q_norm.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.backbone.pretrained.blocks.11.attn.qkv.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1152
+      ]
+    },
+    "model.backbone.pretrained.blocks.11.attn.qkv.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.100014152,
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.11.ls1.gamma": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.11.ls2.gamma": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.11.mlp.fc1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1536
+      ]
+    },
+    "model.backbone.pretrained.blocks.11.mlp.fc1.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.095136925,
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.11.mlp.fc2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.11.mlp.fc2.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.107035908,
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    "model.backbone.pretrained.blocks.11.norm1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.11.norm1.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.11.norm2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.11.norm2.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.2.attn.proj.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.2.attn.proj.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.094825187,
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.2.attn.qkv.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1152
+      ]
+    },
+    "model.backbone.pretrained.blocks.2.attn.qkv.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.106710555,
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.2.ls1.gamma": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.2.ls2.gamma": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.2.mlp.fc1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1536
+      ]
+    },
+    "model.backbone.pretrained.blocks.2.mlp.fc1.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.102934963,
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.2.mlp.fc2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.2.mlp.fc2.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.099844884,
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    "model.backbone.pretrained.blocks.2.norm1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.2.norm1.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.2.norm2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.2.norm2.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.3.attn.proj.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.3.attn.proj.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.094061614,
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.3.attn.qkv.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1152
+      ]
+    },
+    "model.backbone.pretrained.blocks.3.attn.qkv.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.102694853,
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.3.ls1.gamma": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.3.ls2.gamma": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.3.mlp.fc1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1536
+      ]
+    },
+    "model.backbone.pretrained.blocks.3.mlp.fc1.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.098088407,
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.3.mlp.fc2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.3.mlp.fc2.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.098504642,
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    "model.backbone.pretrained.blocks.3.norm1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.3.norm1.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.3.norm2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.3.norm2.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.4.attn.k_norm.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.backbone.pretrained.blocks.4.attn.k_norm.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.backbone.pretrained.blocks.4.attn.proj.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.4.attn.proj.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.093645936,
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.4.attn.q_norm.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.backbone.pretrained.blocks.4.attn.q_norm.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.backbone.pretrained.blocks.4.attn.qkv.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1152
+      ]
+    },
+    "model.backbone.pretrained.blocks.4.attn.qkv.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.098507628,
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.4.ls1.gamma": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.4.ls2.gamma": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.4.mlp.fc1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1536
+      ]
+    },
+    "model.backbone.pretrained.blocks.4.mlp.fc1.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.0961769,
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.4.mlp.fc2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.4.mlp.fc2.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.099745555,
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    "model.backbone.pretrained.blocks.4.norm1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.4.norm1.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.4.norm2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.4.norm2.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.5.attn.k_norm.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.backbone.pretrained.blocks.5.attn.k_norm.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.backbone.pretrained.blocks.5.attn.proj.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.5.attn.proj.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.092869125,
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.5.attn.q_norm.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.backbone.pretrained.blocks.5.attn.q_norm.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.backbone.pretrained.blocks.5.attn.qkv.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1152
+      ]
+    },
+    "model.backbone.pretrained.blocks.5.attn.qkv.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.099057014,
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.5.ls1.gamma": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.5.ls2.gamma": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.5.mlp.fc1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1536
+      ]
+    },
+    "model.backbone.pretrained.blocks.5.mlp.fc1.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.095287832,
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.5.mlp.fc2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.5.mlp.fc2.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.098470489,
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    "model.backbone.pretrained.blocks.5.norm1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.5.norm1.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.5.norm2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.5.norm2.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.6.attn.k_norm.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.backbone.pretrained.blocks.6.attn.k_norm.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.backbone.pretrained.blocks.6.attn.proj.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.6.attn.proj.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.092591406,
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.6.attn.q_norm.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.backbone.pretrained.blocks.6.attn.q_norm.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.backbone.pretrained.blocks.6.attn.qkv.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1152
+      ]
+    },
+    "model.backbone.pretrained.blocks.6.attn.qkv.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.095816451,
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.6.ls1.gamma": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.6.ls2.gamma": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.6.mlp.fc1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1536
+      ]
+    },
+    "model.backbone.pretrained.blocks.6.mlp.fc1.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.093615862,
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.6.mlp.fc2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.6.mlp.fc2.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.097390372,
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    "model.backbone.pretrained.blocks.6.norm1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.6.norm1.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.6.norm2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.6.norm2.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.7.attn.k_norm.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.backbone.pretrained.blocks.7.attn.k_norm.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.backbone.pretrained.blocks.7.attn.proj.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.7.attn.proj.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.092970187,
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.7.attn.q_norm.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.backbone.pretrained.blocks.7.attn.q_norm.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.backbone.pretrained.blocks.7.attn.qkv.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1152
+      ]
+    },
+    "model.backbone.pretrained.blocks.7.attn.qkv.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.09622992,
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.7.ls1.gamma": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.7.ls2.gamma": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.7.mlp.fc1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1536
+      ]
+    },
+    "model.backbone.pretrained.blocks.7.mlp.fc1.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.093395081,
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.7.mlp.fc2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.7.mlp.fc2.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.097321206,
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    "model.backbone.pretrained.blocks.7.norm1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.7.norm1.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.7.norm2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.7.norm2.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.8.attn.k_norm.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.backbone.pretrained.blocks.8.attn.k_norm.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.backbone.pretrained.blocks.8.attn.proj.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.8.attn.proj.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.092581281,
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.8.attn.q_norm.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.backbone.pretrained.blocks.8.attn.q_norm.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.backbone.pretrained.blocks.8.attn.qkv.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1152
+      ]
+    },
+    "model.backbone.pretrained.blocks.8.attn.qkv.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.094459802,
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.8.ls1.gamma": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.8.ls2.gamma": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.8.mlp.fc1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1536
+      ]
+    },
+    "model.backbone.pretrained.blocks.8.mlp.fc1.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.093625634,
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.8.mlp.fc2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.8.mlp.fc2.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.100197299,
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    "model.backbone.pretrained.blocks.8.norm1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.8.norm1.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.8.norm2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.8.norm2.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.9.attn.k_norm.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.backbone.pretrained.blocks.9.attn.k_norm.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.backbone.pretrained.blocks.9.attn.proj.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.9.attn.proj.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.093382956,
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.9.attn.q_norm.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.backbone.pretrained.blocks.9.attn.q_norm.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.backbone.pretrained.blocks.9.attn.qkv.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1152
+      ]
+    },
+    "model.backbone.pretrained.blocks.9.attn.qkv.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.097707003,
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.9.ls1.gamma": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.9.ls2.gamma": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.9.mlp.fc1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1536
+      ]
+    },
+    "model.backbone.pretrained.blocks.9.mlp.fc1.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.093509832,
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.9.mlp.fc2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.9.mlp.fc2.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.100154301,
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    "model.backbone.pretrained.blocks.9.norm1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.9.norm1.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.9.norm2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.blocks.9.norm2.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.camera_token": {
+      "kind": "fp16",
+      "relative_weight_l2": 0.000202834,
+      "shape": [
+        1,
+        2,
+        384
+      ]
+    },
+    "model.backbone.pretrained.cls_token": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1,
+        1,
+        384
+      ]
+    },
+    "model.backbone.pretrained.norm.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.norm.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.patch_embed.proj.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.backbone.pretrained.patch_embed.proj.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.092813742,
+      "shape": [
+        384,
+        3,
+        14,
+        14
+      ]
+    },
+    "model.backbone.pretrained.pos_embed": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1,
+        1370,
+        384
+      ]
+    },
+    "model.cam_dec.backbone.0.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        768
+      ]
+    },
+    "model.cam_dec.backbone.0.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        768,
+        768
+      ]
+    },
+    "model.cam_dec.backbone.2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        768
+      ]
+    },
+    "model.cam_dec.backbone.2.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        768,
+        768
+      ]
+    },
+    "model.cam_dec.fc_fov.0.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        2
+      ]
+    },
+    "model.cam_dec.fc_fov.0.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        2,
+        768
+      ]
+    },
+    "model.cam_dec.fc_qvec.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        4
+      ]
+    },
+    "model.cam_dec.fc_qvec.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        4,
+        768
+      ]
+    },
+    "model.cam_dec.fc_t.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        3
+      ]
+    },
+    "model.cam_dec.fc_t.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        3,
+        768
+      ]
+    },
+    "model.cam_enc.pose_branch.fc1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        192
+      ]
+    },
+    "model.cam_enc.pose_branch.fc1.weight": {
+      "kind": "fp16",
+      "relative_weight_l2": 0.000210724,
+      "shape": [
+        192,
+        9
+      ]
+    },
+    "model.cam_enc.pose_branch.fc2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.pose_branch.fc2.weight": {
+      "bits": 6,
+      "group_size": 64,
+      "kind": "packed6",
+      "relative_weight_l2": 0.01893583,
+      "shape": [
+        384,
+        192
+      ]
+    },
+    "model.cam_enc.token_norm.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.token_norm.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk.0.attn.proj.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk.0.attn.proj.weight": {
+      "bits": 6,
+      "group_size": 64,
+      "kind": "packed6",
+      "relative_weight_l2": 0.021246868,
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.cam_enc.trunk.0.attn.qkv.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1152
+      ]
+    },
+    "model.cam_enc.trunk.0.attn.qkv.weight": {
+      "bits": 6,
+      "group_size": 64,
+      "kind": "packed6",
+      "relative_weight_l2": 0.022132763,
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.cam_enc.trunk.0.ls1.gamma": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk.0.ls2.gamma": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk.0.mlp.fc1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1536
+      ]
+    },
+    "model.cam_enc.trunk.0.mlp.fc1.weight": {
+      "bits": 6,
+      "group_size": 64,
+      "kind": "packed6",
+      "relative_weight_l2": 0.022341181,
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    "model.cam_enc.trunk.0.mlp.fc2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk.0.mlp.fc2.weight": {
+      "bits": 6,
+      "group_size": 64,
+      "kind": "packed6",
+      "relative_weight_l2": 0.024907162,
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    "model.cam_enc.trunk.0.norm1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk.0.norm1.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk.0.norm2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk.0.norm2.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk.1.attn.proj.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk.1.attn.proj.weight": {
+      "bits": 6,
+      "group_size": 64,
+      "kind": "packed6",
+      "relative_weight_l2": 0.021022782,
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.cam_enc.trunk.1.attn.qkv.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1152
+      ]
+    },
+    "model.cam_enc.trunk.1.attn.qkv.weight": {
+      "bits": 6,
+      "group_size": 64,
+      "kind": "packed6",
+      "relative_weight_l2": 0.022216962,
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.cam_enc.trunk.1.ls1.gamma": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk.1.ls2.gamma": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk.1.mlp.fc1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1536
+      ]
+    },
+    "model.cam_enc.trunk.1.mlp.fc1.weight": {
+      "bits": 6,
+      "group_size": 64,
+      "kind": "packed6",
+      "relative_weight_l2": 0.022587938,
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    "model.cam_enc.trunk.1.mlp.fc2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk.1.mlp.fc2.weight": {
+      "bits": 6,
+      "group_size": 64,
+      "kind": "packed6",
+      "relative_weight_l2": 0.02485274,
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    "model.cam_enc.trunk.1.norm1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk.1.norm1.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk.1.norm2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk.1.norm2.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk.2.attn.proj.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk.2.attn.proj.weight": {
+      "bits": 6,
+      "group_size": 64,
+      "kind": "packed6",
+      "relative_weight_l2": 0.021432188,
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.cam_enc.trunk.2.attn.qkv.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1152
+      ]
+    },
+    "model.cam_enc.trunk.2.attn.qkv.weight": {
+      "bits": 6,
+      "group_size": 64,
+      "kind": "packed6",
+      "relative_weight_l2": 0.022622491,
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.cam_enc.trunk.2.ls1.gamma": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk.2.ls2.gamma": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk.2.mlp.fc1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1536
+      ]
+    },
+    "model.cam_enc.trunk.2.mlp.fc1.weight": {
+      "bits": 6,
+      "group_size": 64,
+      "kind": "packed6",
+      "relative_weight_l2": 0.022593734,
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    "model.cam_enc.trunk.2.mlp.fc2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk.2.mlp.fc2.weight": {
+      "bits": 6,
+      "group_size": 64,
+      "kind": "packed6",
+      "relative_weight_l2": 0.024856109,
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    "model.cam_enc.trunk.2.norm1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk.2.norm1.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk.2.norm2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk.2.norm2.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk.3.attn.proj.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk.3.attn.proj.weight": {
+      "bits": 6,
+      "group_size": 64,
+      "kind": "packed6",
+      "relative_weight_l2": 0.021695304,
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.cam_enc.trunk.3.attn.qkv.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1152
+      ]
+    },
+    "model.cam_enc.trunk.3.attn.qkv.weight": {
+      "bits": 6,
+      "group_size": 64,
+      "kind": "packed6",
+      "relative_weight_l2": 0.022811033,
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.cam_enc.trunk.3.ls1.gamma": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk.3.ls2.gamma": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk.3.mlp.fc1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        1536
+      ]
+    },
+    "model.cam_enc.trunk.3.mlp.fc1.weight": {
+      "bits": 6,
+      "group_size": 64,
+      "kind": "packed6",
+      "relative_weight_l2": 0.022603298,
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    "model.cam_enc.trunk.3.mlp.fc2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk.3.mlp.fc2.weight": {
+      "bits": 6,
+      "group_size": 64,
+      "kind": "packed6",
+      "relative_weight_l2": 0.024593131,
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    "model.cam_enc.trunk.3.norm1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk.3.norm1.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk.3.norm2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk.3.norm2.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk_norm.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.cam_enc.trunk_norm.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.head.norm.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        768
+      ]
+    },
+    "model.head.norm.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        768
+      ]
+    },
+    "model.head.projects.0.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        48
+      ]
+    },
+    "model.head.projects.0.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.097843737,
+      "shape": [
+        48,
+        768,
+        1,
+        1
+      ]
+    },
+    "model.head.projects.1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        96
+      ]
+    },
+    "model.head.projects.1.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.094984175,
+      "shape": [
+        96,
+        768,
+        1,
+        1
+      ]
+    },
+    "model.head.projects.2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        192
+      ]
+    },
+    "model.head.projects.2.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.090631647,
+      "shape": [
+        192,
+        768,
+        1,
+        1
+      ]
+    },
+    "model.head.projects.3.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.head.projects.3.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.093065197,
+      "shape": [
+        384,
+        768,
+        1,
+        1
+      ]
+    },
+    "model.head.resize_layers.0.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        48
+      ]
+    },
+    "model.head.resize_layers.0.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.09490827,
+      "shape": [
+        48,
+        48,
+        4,
+        4
+      ]
+    },
+    "model.head.resize_layers.1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        96
+      ]
+    },
+    "model.head.resize_layers.1.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.086176796,
+      "shape": [
+        96,
+        96,
+        2,
+        2
+      ]
+    },
+    "model.head.resize_layers.3.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        384
+      ]
+    },
+    "model.head.resize_layers.3.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.100354673,
+      "shape": [
+        384,
+        384,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.layer1_rn.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.090835222,
+      "shape": [
+        64,
+        48,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.layer2_rn.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.09012049,
+      "shape": [
+        64,
+        96,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.layer3_rn.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.095916763,
+      "shape": [
+        64,
+        192,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.layer4_rn.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.09256899,
+      "shape": [
+        64,
+        384,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.output_conv1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        32
+      ]
+    },
+    "model.head.scratch.output_conv1.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.086117371,
+      "shape": [
+        32,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.0.0.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        32
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.0.0.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.078816654,
+      "shape": [
+        32,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.0.1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.0.1.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.087316727,
+      "shape": [
+        64,
+        32,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.0.2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        32
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.0.2.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.094165596,
+      "shape": [
+        32,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.0.3.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.0.3.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.079316271,
+      "shape": [
+        64,
+        32,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.0.4.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        32
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.0.4.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.080411443,
+      "shape": [
+        32,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.1.0.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        32
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.1.0.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.078154733,
+      "shape": [
+        32,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.1.1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.1.1.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.085700308,
+      "shape": [
+        64,
+        32,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.1.2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        32
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.1.2.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.085289412,
+      "shape": [
+        32,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.1.3.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.1.3.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.076794053,
+      "shape": [
+        64,
+        32,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.1.4.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        32
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.1.4.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.080758176,
+      "shape": [
+        32,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.2.0.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        32
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.2.0.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.076230536,
+      "shape": [
+        32,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.2.1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.2.1.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.075434354,
+      "shape": [
+        64,
+        32,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.2.2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        32
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.2.2.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.087114283,
+      "shape": [
+        32,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.2.3.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.2.3.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.081412078,
+      "shape": [
+        64,
+        32,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.2.4.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        32
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.2.4.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.081945719,
+      "shape": [
+        32,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.3.0.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        32
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.3.0.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.077133051,
+      "shape": [
+        32,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.3.1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.3.1.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.074584447,
+      "shape": [
+        64,
+        32,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.3.2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        32
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.3.2.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.078844837,
+      "shape": [
+        32,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.3.3.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.3.3.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.075832801,
+      "shape": [
+        64,
+        32,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.3.4.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        32
+      ]
+    },
+    "model.head.scratch.output_conv1_aux.3.4.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.081699479,
+      "shape": [
+        32,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.output_conv2.0.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        32
+      ]
+    },
+    "model.head.scratch.output_conv2.0.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        32,
+        32,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.output_conv2.2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        2
+      ]
+    },
+    "model.head.scratch.output_conv2.2.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        2,
+        32,
+        1,
+        1
+      ]
+    },
+    "model.head.scratch.output_conv2_aux.0.0.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        32
+      ]
+    },
+    "model.head.scratch.output_conv2_aux.0.0.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        32,
+        32,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.output_conv2_aux.0.2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        32
+      ]
+    },
+    "model.head.scratch.output_conv2_aux.0.2.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        32
+      ]
+    },
+    "model.head.scratch.output_conv2_aux.0.5.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        7
+      ]
+    },
+    "model.head.scratch.output_conv2_aux.0.5.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        7,
+        32,
+        1,
+        1
+      ]
+    },
+    "model.head.scratch.output_conv2_aux.1.0.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        32
+      ]
+    },
+    "model.head.scratch.output_conv2_aux.1.0.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        32,
+        32,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.output_conv2_aux.1.5.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        7
+      ]
+    },
+    "model.head.scratch.output_conv2_aux.1.5.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        7,
+        32,
+        1,
+        1
+      ]
+    },
+    "model.head.scratch.output_conv2_aux.2.0.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        32
+      ]
+    },
+    "model.head.scratch.output_conv2_aux.2.0.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        32,
+        32,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.output_conv2_aux.2.5.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        7
+      ]
+    },
+    "model.head.scratch.output_conv2_aux.2.5.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        7,
+        32,
+        1,
+        1
+      ]
+    },
+    "model.head.scratch.output_conv2_aux.3.0.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        32
+      ]
+    },
+    "model.head.scratch.output_conv2_aux.3.0.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        32,
+        32,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.output_conv2_aux.3.5.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        7
+      ]
+    },
+    "model.head.scratch.output_conv2_aux.3.5.weight": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        7,
+        32,
+        1,
+        1
+      ]
+    },
+    "model.head.scratch.refinenet1.out_conv.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet1.out_conv.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.0720684,
+      "shape": [
+        64,
+        64,
+        1,
+        1
+      ]
+    },
+    "model.head.scratch.refinenet1.resConfUnit1.conv1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet1.resConfUnit1.conv1.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.097883416,
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.refinenet1.resConfUnit1.conv2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet1.resConfUnit1.conv2.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.096302138,
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.refinenet1.resConfUnit2.conv1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet1.resConfUnit2.conv1.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.119009546,
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.refinenet1.resConfUnit2.conv2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet1.resConfUnit2.conv2.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.106318638,
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.refinenet1_aux.out_conv.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet1_aux.out_conv.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.068501208,
+      "shape": [
+        64,
+        64,
+        1,
+        1
+      ]
+    },
+    "model.head.scratch.refinenet1_aux.resConfUnit1.conv1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet1_aux.resConfUnit1.conv1.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.086651741,
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.refinenet1_aux.resConfUnit1.conv2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet1_aux.resConfUnit1.conv2.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.089923465,
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.refinenet1_aux.resConfUnit2.conv1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet1_aux.resConfUnit2.conv1.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.08976546,
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.refinenet1_aux.resConfUnit2.conv2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet1_aux.resConfUnit2.conv2.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.078634643,
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.refinenet2.out_conv.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet2.out_conv.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.073999751,
+      "shape": [
+        64,
+        64,
+        1,
+        1
+      ]
+    },
+    "model.head.scratch.refinenet2.resConfUnit1.conv1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet2.resConfUnit1.conv1.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.092083356,
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.refinenet2.resConfUnit1.conv2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet2.resConfUnit1.conv2.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.098162994,
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.refinenet2.resConfUnit2.conv1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet2.resConfUnit2.conv1.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.099361514,
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.refinenet2.resConfUnit2.conv2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet2.resConfUnit2.conv2.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.102607183,
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.refinenet2_aux.out_conv.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet2_aux.out_conv.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.068232324,
+      "shape": [
+        64,
+        64,
+        1,
+        1
+      ]
+    },
+    "model.head.scratch.refinenet2_aux.resConfUnit1.conv1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet2_aux.resConfUnit1.conv1.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.083780176,
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.refinenet2_aux.resConfUnit1.conv2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet2_aux.resConfUnit1.conv2.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.081730308,
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.refinenet2_aux.resConfUnit2.conv1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet2_aux.resConfUnit2.conv1.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.089459123,
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.refinenet2_aux.resConfUnit2.conv2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet2_aux.resConfUnit2.conv2.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.081172289,
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.refinenet3.out_conv.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet3.out_conv.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.072533765,
+      "shape": [
+        64,
+        64,
+        1,
+        1
+      ]
+    },
+    "model.head.scratch.refinenet3.resConfUnit1.conv1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet3.resConfUnit1.conv1.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.104456427,
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.refinenet3.resConfUnit1.conv2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet3.resConfUnit1.conv2.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.097141489,
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.refinenet3.resConfUnit2.conv1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet3.resConfUnit2.conv1.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.109332064,
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.refinenet3.resConfUnit2.conv2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet3.resConfUnit2.conv2.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.103599165,
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.refinenet3_aux.out_conv.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet3_aux.out_conv.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.068923488,
+      "shape": [
+        64,
+        64,
+        1,
+        1
+      ]
+    },
+    "model.head.scratch.refinenet3_aux.resConfUnit1.conv1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet3_aux.resConfUnit1.conv1.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.097851513,
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.refinenet3_aux.resConfUnit1.conv2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet3_aux.resConfUnit1.conv2.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.095148961,
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.refinenet3_aux.resConfUnit2.conv1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet3_aux.resConfUnit2.conv1.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.098617984,
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.refinenet3_aux.resConfUnit2.conv2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet3_aux.resConfUnit2.conv2.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.082870584,
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.refinenet4.out_conv.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet4.out_conv.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.07090725,
+      "shape": [
+        64,
+        64,
+        1,
+        1
+      ]
+    },
+    "model.head.scratch.refinenet4.resConfUnit2.conv1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet4.resConfUnit2.conv1.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.093665246,
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.refinenet4.resConfUnit2.conv2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet4.resConfUnit2.conv2.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.092820495,
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.refinenet4_aux.out_conv.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet4_aux.out_conv.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.069303138,
+      "shape": [
+        64,
+        64,
+        1,
+        1
+      ]
+    },
+    "model.head.scratch.refinenet4_aux.resConfUnit2.conv1.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet4_aux.resConfUnit2.conv1.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.105222063,
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.head.scratch.refinenet4_aux.resConfUnit2.conv2.bias": {
+      "kind": "fp32",
+      "relative_weight_l2": 0.0,
+      "shape": [
+        64
+      ]
+    },
+    "model.head.scratch.refinenet4_aux.resConfUnit2.conv2.weight": {
+      "bits": 4,
+      "group_size": 32,
+      "kind": "packed4",
+      "relative_weight_l2": 0.082731327,
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ]
+    }
+  },
+  "original_metadata": {
+    "model.head.scratch.output_conv2_aux.1.2.bias": "model.head.scratch.output_conv2_aux.0.2.bias",
+    "model.head.scratch.output_conv2_aux.1.2.weight": "model.head.scratch.output_conv2_aux.0.2.weight",
+    "model.head.scratch.output_conv2_aux.2.2.bias": "model.head.scratch.output_conv2_aux.0.2.bias",
+    "model.head.scratch.output_conv2_aux.2.2.weight": "model.head.scratch.output_conv2_aux.0.2.weight",
+    "model.head.scratch.output_conv2_aux.3.2.bias": "model.head.scratch.output_conv2_aux.0.2.bias",
+    "model.head.scratch.output_conv2_aux.3.2.weight": "model.head.scratch.output_conv2_aux.0.2.weight"
+  },
+  "profile": "aq4",
+  "schema": "omega-da3-aq-v2",
+  "source_sha256": "364492e38a3a06d221ac75da7f6621ada3f2361cd24fde11ba79091e9f40efcf"
+}

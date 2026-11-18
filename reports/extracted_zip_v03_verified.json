@@ -1,0 +1,12 @@
+{
+  "test_runner_returncode": 0,
+  "test_result": "/opt/pyvenv/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.\n  warnings.warn(\n----------------------------------------------------------------------\nRan 60 tests in 1.323s\n\nOK\n",
+  "checkpoint_verify_returncode": 0,
+  "model_verified": true,
+  "5d_demo_points": 6360,
+  "5d_tsdf_slices": 3,
+  "5d_intermediate_renders": 2,
+  "manifest_file_count": 118,
+  "network_da3_weights_included": false,
+  "extracted_zip_integration": "PASS"
+}

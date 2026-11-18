@@ -1,0 +1,94 @@
+{
+  "method": "two sample photos, isolated processes, relative geometry, no ground truth",
+  "fp32": {
+    "profile": {
+      "model_id": "DA3-SMALL",
+      "profile": "fp32",
+      "artifact_sha256": "364492e38a3a06d221ac75da7f6621ada3f2361cd24fde11ba79091e9f40efcf",
+      "runtime_weights_sha256": "364492e38a3a06d221ac75da7f6621ada3f2361cd24fde11ba79091e9f40efcf",
+      "parent_sha256": "364492e38a3a06d221ac75da7f6621ada3f2361cd24fde11ba79091e9f40efcf",
+      "experimental": false,
+      "execution_precision": "float32",
+      "units": "arbitrary_scale"
+    },
+    "reprojection": {
+      "passed": true,
+      "units": "arbitrary_scale",
+      "interpretation": "relative multi-view consistency, not metric measurement",
+      "thresholds": {
+        "max_relative_error": 0.15,
+        "min_coverage": 0.1,
+        "min_consistency_fraction": 0.8,
+        "min_samples": 20
+      },
+      "pairs": [
+        {
+          "src": 0,
+          "dst": 1,
+          "sampled": 10780,
+          "observed": 7947,
+          "coverage": 0.7371985157699443,
+          "median_relative_residual": 0.0346553670235586,
+          "agreement_fraction": 0.8685038379262615,
+          "occluded": 649,
+          "reason": "PASS",
+          "passed": true
+        }
+      ]
+    },
+    "load_and_infer_seconds": 1.8337913779998871,
+    "peak_rss_kib": 639924,
+    "points": 2707
+  },
+  "int8": {
+    "profile": {
+      "model_id": "DA3-SMALL-INT8-EXPERIMENTAL",
+      "profile": "int8",
+      "artifact_sha256": "364492e38a3a06d221ac75da7f6621ada3f2361cd24fde11ba79091e9f40efcf",
+      "runtime_weights_sha256": null,
+      "parent_sha256": "364492e38a3a06d221ac75da7f6621ada3f2361cd24fde11ba79091e9f40efcf",
+      "experimental": true,
+      "execution_precision": "dynamic_int8_backbone_fp32_heads",
+      "units": "arbitrary_scale",
+      "quantized_linear_payload_sha256": "5bea2e7bf135dd7bb8273b9d761dafd53c2d97d65c53d08a18aa40d2a3b870ba",
+      "linear_modules": 48,
+      "original_weight_bytes": 84934656,
+      "packed_weight_bytes": 21233664,
+      "engine": "x86",
+      "notes": "Weight payload only; excludes biases, packing overhead and activations.",
+      "provenance_verification": "runtime_quantization_from_pinned_fp32"
+    },
+    "reprojection": {
+      "passed": true,
+      "units": "arbitrary_scale",
+      "interpretation": "relative multi-view consistency, not metric measurement",
+      "thresholds": {
+        "max_relative_error": 0.15,
+        "min_coverage": 0.1,
+        "min_consistency_fraction": 0.8,
+        "min_samples": 20
+      },
+      "pairs": [
+        {
+          "src": 0,
+          "dst": 1,
+          "sampled": 10780,
+          "observed": 7889,
+          "coverage": 0.7318181818181818,
+          "median_relative_residual": 0.03978786401654937,
+          "agreement_fraction": 0.8646216250475346,
+          "occluded": 607,
+          "reason": "PASS",
+          "passed": true
+        }
+      ]
+    },
+    "load_and_infer_seconds": 2.3977864779999436,
+    "peak_rss_kib": 639828,
+    "points": 3063
+  },
+  "scale": 0.9278055429458618,
+  "depth_mae_percent": 3.2965288162231445,
+  "max_k_delta_px": 8.53173828125,
+  "chamfer_normalized": 0.02677125281475621
+}

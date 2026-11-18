@@ -1,0 +1,35 @@
+{
+  "source_zip_sha256": "900ebdcbc6fbb1f7fc09afa5b863b42df6613c27a4b415b8cfdfc9af6a4c9532",
+  "tests_passed": 69,
+  "manifest_valid": true,
+  "measured": {
+    "140": {
+      "fp16": {
+        "mae_aligned_percent": 0.036317,
+        "max_k_delta_px": 0.0152435302734375
+      },
+      "aq6": {
+        "mae_aligned_percent": 5.678967,
+        "max_k_delta_px": 5.131134033203125
+      },
+      "aq4": {
+        "mae_aligned_percent": 7.072505,
+        "max_k_delta_px": 11.964813232421875
+      }
+    },
+    "280": {
+      "fp16": {
+        "mae_aligned_percent": 0.030469,
+        "max_k_delta_px": 0.022430419921875
+      },
+      "aq6": {
+        "mae_aligned_percent": 3.490589,
+        "max_k_delta_px": 4.9072113037109375
+      },
+      "aq4": {
+        "mae_aligned_percent": 5.505476,
+        "max_k_delta_px": 33.281402587890625
+      }
+    }
+  }
+}

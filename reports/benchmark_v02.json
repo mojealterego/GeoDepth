@@ -1,0 +1,28 @@
+{
+  "evaluation_domain": "procedural scenes only, no external real-world benchmarks",
+  "held_out_seed_start": 80000,
+  "held_out_scene_count": 128,
+  "v0.1": {
+    "version": "0.1.0",
+    "params": 576770,
+    "benchmark_seconds": 0.568,
+    "log_depth_mae": 0.11367448884993792,
+    "heteroskedastic_nll": -1.5637824833393097,
+    "constant_log_depth_baseline_mae": 0.482071191072464
+  },
+  "v0.2": {
+    "version": "0.2.0",
+    "params": 1295234,
+    "benchmark_seconds": 0.766,
+    "log_depth_mae": 0.10247507318854332,
+    "heteroskedastic_nll": -1.6791639178991318,
+    "constant_log_depth_baseline_mae": 0.482071191072464
+  },
+  "high_res_128px_synthetic": {
+    "tiled_log_depth_mae": 0.11147433519363403,
+    "direct_log_depth_mae": 0.16768537213404974,
+    "scene_count": 24,
+    "note": "no claim that tiles are always more accurate"
+  },
+  "change_percent_v02_vs_v01_on_synthetic_holdout": -9.852180357000751
+}

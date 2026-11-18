@@ -1,0 +1,23 @@
+{
+  "release": "0.7.0",
+  "date": "2026-11-16",
+  "python": "3.13.5",
+  "test_runner": "pytest",
+  "tests_passed": 117,
+  "tests_failed": 0,
+  "baseline_0.6_tests": 98,
+  "new_tests": 19,
+  "validation_scope": "local CPU + synthetic fixture + offline source static checks",
+  "wheel_install": "passed, separately imported from /tmp directory",
+  "original_da3_weights_present": false,
+  "original_da3_inference_tested": false,
+  "upstream_source_zip_sha256": "6d2ba1d07a69f3d260394e49c7545aed8f3cc7df8633469ae79782ee34978d42",
+  "upstream_source_commit_verified": false,
+  "experiment_type": "contract/reprojection tests; synthetic v0.6 OMEGA model retained",
+  "limitations": [
+    "no original DA3 checkpoints",
+    "not a full production-grade 4DGS",
+    "no real-world video benchmarks",
+    "not tested on Android GPU"
+  ]
+}
