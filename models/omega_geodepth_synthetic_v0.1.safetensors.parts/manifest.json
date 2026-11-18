@@ -1,0 +1,50 @@
+{
+  "format": "ordered-raw-parts-v1",
+  "filename": "omega_geodepth_synthetic_v0.1.safetensors",
+  "bytes": 2313464,
+  "sha256": "93bd2c91ab36bb095c7f6bd950bbce1c332834bb27e22f20a6285e77ab349338",
+  "parts": [
+    {
+      "name": "part-000.bin",
+      "bytes": 360000,
+      "git_blob_sha1": "2b22aba8144ed6473ddf7443ad4219a4d5ede675",
+      "sha256": "b1265297c9561ace31ad391f11787d027fc702011bdb4f00cac8498f94f5ea6d"
+    },
+    {
+      "name": "part-001.bin",
+      "bytes": 360000,
+      "git_blob_sha1": "d822fcd67a25acf3dc1cdd794b9b0f8cc64adaff",
+      "sha256": "efd27c5bf6399c6add3714eca3795045059a4ac331c2bd4af84f47c7a383c837"
+    },
+    {
+      "name": "part-002.bin",
+      "bytes": 360000,
+      "git_blob_sha1": "770c9d1ee6b15bff58212db33eb03cd1f01a1e86",
+      "sha256": "805f8ffe5bd0ed75370b9de560fea18bd889c6e15773c23d723d61f34581934a"
+    },
+    {
+      "name": "part-003.bin",
+      "bytes": 360000,
+      "git_blob_sha1": "a07c806104d2ca54f3b9e7b0d1665805a895f8a8",
+      "sha256": "35cc01921d77d26c5a1a882bead91a2adb6b50e5761054d436dd0c1d33071a65"
+    },
+    {
+      "name": "part-004.bin",
+      "bytes": 360000,
+      "git_blob_sha1": "f8bb27f547640fbf3dea6790b17dd66b9d66e349",
+      "sha256": "35f4b8dcb25972af8944097817d3f014e42e24a358aba5ca4e30df5dd95ff511"
+    },
+    {
+      "name": "part-005.bin",
+      "bytes": 360000,
+      "git_blob_sha1": "e8b99c160e038d43f31f3a2f0169a6248a0967ed",
+      "sha256": "27a219318feaab25d5430e341f6e2463c81511ea96e13f6f90b2b6a86f185124"
+    },
+    {
+      "name": "part-006.bin",
+      "bytes": 153464,
+      "git_blob_sha1": "aaff9c16208dd7a1a921faaaaee5bed07682d9d3",
+      "sha256": "0775533d8d8a361f248ecffdd8c63018ad25d4d2e540686e31ac2a45ea5f5eb9"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "format": "ordered-raw-parts-v1",
+  "filename": "omega_geodepth_synthetic_v0.1.torchscript.pt",
+  "bytes": 2336433,
+  "sha256": "aa34155dddd4286dd4d0ac5fad8659481ad340fd42b721a30d342cf0e4a26562",
+  "parts": [
+    {
+      "name": "part-000.bin",
+      "bytes": 360000,
+      "git_blob_sha1": "24792c655cda0a2242a1e41216d74e3151848629",
+      "sha256": "0385b3a3d6141daff864e7431bc2b10e6d5ff9078c1afd62acb0a074cf484e8b"
+    },
+    {
+      "name": "part-001.bin",
+      "bytes": 360000,
+      "git_blob_sha1": "1a7c543f885bac2b8a89faf87588e2d50d6f4ef4",
+      "sha256": "b9b267bef591752bff2c86ebd0098435b9cb91c39829d34e59368a0ad4937a95"
+    },
+    {
+      "name": "part-002.bin",
+      "bytes": 360000,
+      "git_blob_sha1": "6d812c0bbe5e684175aabe16e6dc19c08726c9e3",
+      "sha256": "246b71aa8d8cd8ff5dde82b96c9f8ca977c864eba7ab43c99bbca15ad934123f"
+    },
+    {
+      "name": "part-003.bin",
+      "bytes": 360000,
+      "git_blob_sha1": "714527b94a70de6734e7378888db638e393af6ae",
+      "sha256": "6fd3d79aa4ec14ddd39ae22dab4837a2b25de9b5cb061b1087ad38d843d49ea7"
+    },
+    {
+      "name": "part-004.bin",
+      "bytes": 360000,
+      "git_blob_sha1": "2e1111a239e83a9eecc52dc53dad08651398f807",
+      "sha256": "9ac1233068cff11c7a276a6ad1c73f8b4fc8a8ba8f807c1add553ea0bc34df59"
+    },
+    {
+      "name": "part-005.bin",
+      "bytes": 360000,
+      "git_blob_sha1": "3e0099556a8a5df0d008bf0383a2b8324bf5b9bd",
+      "sha256": "6d979e49dfdc528d7987fbd629736c419bfd68bb061d05af09d337340624d095"
+    },
+    {
+      "name": "part-006.bin",
+      "bytes": 176433,
+      "git_blob_sha1": "4daaef926437e89cd8fe59c2e00251f9f96fe190",
+      "sha256": "68d84160cd6f1bf2897f9e4a7f673e22ba8e441c4766d6ed0daa8ba17fd5d8fe"
+    }
+  ]
+}
