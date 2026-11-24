@@ -55,7 +55,9 @@ def validate_local_artifacts(root: Path, inventory: Path) -> list[Artifact]:
     root = Path(root)
     if root.is_symlink() or not root.is_dir():
         raise ValueError('UNSAFE_MODEL_ROOT')
-    if inventory.is_symlink() or not inventory.is_file() or inventory.stat().st_size > 100_000:
+    if not inventory.is_relative_to(root) or any(p.is_symlink() for p in (inventory, *inventory.parents) if p == root or root in p.parents):
+        raise ValueError('UNSAFE_MODEL_INVENTORY_PATH')
+    if not inventory.is_file() or inventory.stat().st_size > 100_000:
         raise ValueError('INVALID_MODEL_INVENTORY')
     document = json.loads(inventory.read_text(encoding='utf-8'))
     if not isinstance(document, dict) or document.get('schema') != SCHEMA:
@@ -221,7 +223,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument('--release-tag', default='geodepth-da3-models-v0.16.0')
     parser.add_argument('--publish', action='store_true', help='Explicitly create/upload/publish repository Release')
     args = parser.parse_args(argv)
-    root = args.root.resolve()
+    root = args.root.absolute()
     inventory = args.inventory if args.inventory.is_absolute() else root / args.inventory
     artifacts = validate_local_artifacts(root, inventory)
     report: dict[str, Any] = {'local_preflight': 'PASS', 'count': len(artifacts),

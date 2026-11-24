@@ -2,7 +2,6 @@
 import hashlib
 import json
 from pathlib import Path
-from types import SimpleNamespace
 
 import pytest
 
@@ -155,3 +154,32 @@ def test_reject_bad_remote_digest_before_publish(tmp_path):
 def test_empty_token_fails_closed_without_network():
     with pytest.raises(ValueError, match='GITHUB_TOKEN_REQUIRED'):
         GitHubReleaseClient('')
+
+
+def test_symlink_root_rejected_by_cli(tmp_path):
+    original = tmp_path / 'real'
+    original.mkdir()
+    fixture_inventory(original)
+    link = tmp_path / 'link'
+    link.symlink_to(original, target_is_directory=True)
+    with pytest.raises(ValueError, match='UNSAFE_MODEL_ROOT'):
+        main(['--root', str(link)])
+
+
+def test_symlink_manifest_parent_rejected(tmp_path):
+    inv = fixture_inventory(tmp_path)
+    path = tmp_path / 'models'
+    real = tmp_path / 'actual_models'
+    path.rename(real)
+    path.symlink_to(real, target_is_directory=True)
+    with pytest.raises(ValueError, match='UNSAFE_MODEL_INVENTORY_PATH'):
+        validate_local_artifacts(tmp_path, path / 'repository_inventory.json')
+
+
+def test_resume_existing_draft(tmp_path):
+    inv = fixture_inventory(tmp_path)
+    client = FakeReleaseClient(preexisting=True)
+    publish_release(client, validate_local_artifacts(tmp_path, inv),
+                    'geodepth-da3-models-v0.16.0')
+    assert len(client.uploads) == 5
+    assert not any(method == 'POST' and path.endswith('/releases') for method, path, _ in client.calls)

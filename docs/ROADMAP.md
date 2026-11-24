@@ -29,6 +29,6 @@ Każda kolejna iteracja ma być zapisana na main wraz z testami i raportami. Wer
 ### 2026-11-24 — bezpieczna ścieżka publikacji dużych checkpointów
 - IMPLEMENTED: `omega_geodepth/model_release.py` — sprawdza 5 plików DA3 względem `repository_inventory.json`, ogranicza ścieżki, rozmiary i wykrywa symlinki, oblicza strumieniowo SHA-256.
 - IMPLEMENTED: publikacja oryginalnych plików jako GitHub Release assets bez Base64 i dzielenia na tysiące blobów; preflight bez sieci, jawne `--publish`, GitHub `main` HEAD lease, tryb draft i weryfikacja zdalnego `sha256:` przed upublicznieniem.
-- TESTED LOCALLY: 13 testów jednostkowych offline (`pytest -q tests/test_model_release_v17.py`); 0 błędów; sprawdzono składnię `py_compile`.
+- TESTED LOCALLY: 16 testów jednostkowych offline (`pytest -q tests/test_model_release_v17.py`); 0 błędów; sprawdzono składnię `py_compile`.
 - BLOCKED: 5 checkpointów DA3 o łącznej wielkości 810442158 bajtów nie zostało opublikowanych: ich oryginalne bajty nie są dostępne w obecnej sesji; nie przeprowadzono zewnętrznego E2E wysyłki.
 - v0.17 GS-DPT pozostaje OPEN; poniższy moduł dystrybucji nie stanowi implementacji ani treningu GS-DPT.
