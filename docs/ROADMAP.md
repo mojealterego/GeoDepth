@@ -25,3 +25,10 @@ Każda kolejna iteracja ma być zapisana na main wraz z testami i raportami. Wer
 ### Aktualizacja dystrybucji
 - OMEGA v0.1/v0.2 Safetensors i TorchScript: 44 części, wszystkie zapisane w GitHub; instrukcje odtworzenia i sumy SHA-256.
 - DA3 FP32/FP16/AQ4/AQ6: pełne checkpointy oczekują na transfer. Rejestr: models/repository_inventory.json.
+
+### 2026-11-24 — bezpieczna ścieżka publikacji dużych checkpointów
+- IMPLEMENTED: `omega_geodepth/model_release.py` — sprawdza 5 plików DA3 względem `repository_inventory.json`, ogranicza ścieżki, rozmiary i wykrywa symlinki, oblicza strumieniowo SHA-256.
+- IMPLEMENTED: publikacja oryginalnych plików jako GitHub Release assets bez Base64 i dzielenia na tysiące blobów; preflight bez sieci, jawne `--publish`, GitHub `main` HEAD lease, tryb draft i weryfikacja zdalnego `sha256:` przed upublicznieniem.
+- TESTED LOCALLY: 13 testów jednostkowych offline (`pytest -q tests/test_model_release_v17.py`); 0 błędów; sprawdzono składnię `py_compile`.
+- BLOCKED: 5 checkpointów DA3 o łącznej wielkości 810442158 bajtów nie zostało opublikowanych: ich oryginalne bajty nie są dostępne w obecnej sesji; nie przeprowadzono zewnętrznego E2E wysyłki.
+- v0.17 GS-DPT pozostaje OPEN; poniższy moduł dystrybucji nie stanowi implementacji ani treningu GS-DPT.

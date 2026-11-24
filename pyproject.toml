@@ -21,6 +21,7 @@ omega-geodepth-da3-real = "omega_geodepth.da3_real:main"
 omega-geodepth-deformable = "omega_geodepth.deformable_4dgs:main"
 omega-geodepth-quality = "omega_geodepth.quality_v1.__main__:main"
 omega-geodepth-chunks = "omega_geodepth.chunk_graph:main"
+omega-geodepth-model-release = "omega_geodepth.model_release:main"
 
 [project.optional-dependencies]
 da3 = ["huggingface_hub>=0.30,<2"]
