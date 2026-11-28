@@ -1,0 +1,22 @@
+{
+  "base_sha": "d906ce9ae1b6d07c74a08abe75ee9c037e4a12b6",
+  "base_head_blob": "d0859ccb09118b22ec4acb78a61dc0ef612ad853",
+  "source_blob": "9a1bc71126626ab7e938b39703a53aecab04324e",
+  "test_blob": "4e33b14e401f2f54a38c8a50bd189c7b41d3fb00",
+  "environment": {
+    "python": "3.13.5",
+    "torch": "2.10.0+cpu",
+    "safetensors": "0.7.0",
+    "OMP_NUM_THREADS": 1
+  },
+  "command": "OMP_NUM_THREADS=1 python -m pytest -q tests/test_gsdpt_checkpoint.py",
+  "red": "ModuleNotFoundError: omega_geodepth.gsdpt_checkpoint",
+  "green": "8 passed in 1.60s",
+  "compile": "python -m compileall -q omega_geodepth tests (isolated subset), exit 0",
+  "scope": "isolated subset with exact base GaussianHead blob; no full clone (DNS failure)",
+  "limitations": [
+    "trusted destination directory required",
+    "POSIX O_NOFOLLOW and hard-link support required",
+    "no real DA3 or full regression"
+  ]
+}

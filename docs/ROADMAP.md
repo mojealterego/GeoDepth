@@ -40,3 +40,6 @@ Każda kolejna iteracja ma być zapisana na main wraz z testami i raportami. Wer
 ### OMEGA GeoDepth v4 — Activation-Aware Quantization
 - IMPLEMENTED / TESTED LOCALLY: referencyjna kwantyzacja grupowa 4/6/8 bitów z wagą błędu opartą o diagonalny drugi moment aktywacji; `omega_geodepth/da3_quant/activation_v4.py`, 6 testów CPU, w tym limit pamięci po paddingu. Raport `reports/v17/activation_v4.json`.
 - OPEN: kalibracja na prawdziwych aktywacjach DA3, pakowanie bitowe, zachowanie warstw geometrycznych, pełne checkpointy oraz porównawcza walidacja jakości głębi. Nie opublikowano nowego modelu.
+
+### v0.17 — zapis i odczyt głowicy
+- IMPLEMENTED / TESTED LOCALLY: `omega_geodepth/gsdpt_checkpoint.py`, zapis bez nadpisywania, ścisły kontrakt tensorów, limit 1 MiB, SHA-256 przed deserializacją, odrzucenie symlinków. 8 testów CPU na izolowanym podzbiorze, raport `reports/v17/gsdpt_checkpoint.json`. Wymagany zaufany katalog i POSIX. Pełna regresja, rzeczywista inferencja DA3 oraz wytrenowany checkpoint na realnych danych pozostają OPEN/BLOCKED.
