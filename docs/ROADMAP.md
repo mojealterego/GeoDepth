@@ -36,3 +36,7 @@ Każda kolejna iteracja ma być zapisana na main wraz z testami i raportami. Wer
 ### v0.17 — eksperymentalna głowica Gaussian
 - IMPLEMENTED / TESTED LOCALLY: `omega_geodepth/gsdpt.py`, 6 testów CPU, kontrolowany trening na syntetycznej scenie z rozłączną kamerą walidacyjną. Raport `reports/v17/gsdpt_synthetic.json`.
 - Nie jest to pełny GS-DPT: integracja z cechami DA3, rzeczywiste dane NVS, zapis wytrenowanej głowicy, pełna regresja i ocena jakości pozostają OPEN. Checkpointy DA3 pozostają BLOCKED.
+
+### OMEGA GeoDepth v4 — Activation-Aware Quantization
+- IMPLEMENTED / TESTED LOCALLY: referencyjna kwantyzacja grupowa 4/6/8 bitów z wagą błędu opartą o diagonalny drugi moment aktywacji; `omega_geodepth/da3_quant/activation_v4.py`, 5 testów CPU. Raport `reports/v17/activation_v4.json`.
+- OPEN: kalibracja na prawdziwych aktywacjach DA3, pakowanie bitowe, zachowanie warstw geometrycznych, pełne checkpointy oraz porównawcza walidacja jakości głębi. Nie opublikowano nowego modelu.
