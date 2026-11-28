@@ -195,12 +195,18 @@ class DA3RealCPU:
 
     def inference(self, images: Sequence[np.ndarray], *, process_res:int=140,
                   camera_poses_c2w:np.ndarray|None=None, camera_intrinsics:np.ndarray|None=None,
-                  pose_decoder:str="token", audit_depth_rays:bool=False) -> DA3Output:
+                  pose_decoder:str="token", audit_depth_rays:bool=False,
+                  export_backbone:bool=False) -> DA3Output:
         import torch
         if pose_decoder not in ("token","ray","fast_ray") or not isinstance(audit_depth_rays,bool):
             raise ValueError("DA3_INVALID_POSE_DECODER")
         if not 1<=len(images)<=8 or not 112<=process_res<=504:
             raise ValueError('DA3_RESOURCE_LIMIT')
+        if not isinstance(export_backbone,bool):
+            raise ValueError('DA3_INVALID_BACKBONE_EXPORT_FLAG')
+        if export_backbone and self.profile_info['profile']!='fp32':
+            raise ValueError('DA3_BACKBONE_EXPORT_REQUIRES_FP32')
+        feature_grid=None
         exts, intr=validate_camera_conditions(camera_poses_c2w,camera_intrinsics,len(images))
         validated=[]
         from PIL import Image
@@ -234,7 +240,11 @@ class DA3RealCPU:
                         if pose_decoder=='ray':
                             torch.random.default_generator.manual_seed(42)
                             if devices:torch.cuda.manual_seed(42)
-                        output=self.net(tensors,ext_tensor,intr_tensor,[],False,pose_decoder=='ray','middle')
+                        if export_backbone:
+                            from .da3_features import forward_with_backbone
+                            output,feature_grid=forward_with_backbone(self.net,tensors,ext_tensor,intr_tensor,self.base_model_id,pose_decoder=='ray')
+                        else:
+                            output=self.net(tensors,ext_tensor,intr_tensor,[],False,pose_decoder=='ray','middle')
                 finally:
                     if hook is not None:hook.remove()
             pred=self.output_processor(output)
@@ -251,6 +261,10 @@ class DA3RealCPU:
             rgb=(tensors[0]*std+mean).clamp(0,1).permute(0,2,3,1)
             pred.processed_images=(rgb*255).round().to(torch.uint8).cpu().numpy()
         result=replace(normalize_da3_prediction(pred,model_id=self.base_model_id,weights_sha256=self.digest),model_id=self.model_id,pose_conditioned=exts is not None,pose_decoder=pose_decoder)
+        if feature_grid is not None:
+            if result.depth_z.shape != (feature_grid.shape[0],14*feature_grid.shape[1],14*feature_grid.shape[2]):
+                raise ValueError('DA3_BACKBONE_DEPTH_ALIGNMENT_MISMATCH')
+            result=replace(result,backbone_features=feature_grid)
         if audit_depth_rays or pose_decoder=="fast_ray":
             from .ray_consistency import audit_rays
             conf=captured['conf']

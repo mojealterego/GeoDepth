@@ -1,0 +1,24 @@
+{
+  "base_sha": "9025e479ec03f8e3f64ba57be364f9f0c0ea2c94",
+  "source_blob": "672b751d4996cc69c8f5a11e242d6fc5598e144d",
+  "test_blob": "536a150ef7a396ba223d790f975f34e7024e798c",
+  "environment": {
+    "python": "3.13.5",
+    "torch": "2.10.0+cpu",
+    "numpy": "2.3.5",
+    "OMP_NUM_THREADS": 1
+  },
+  "red": "ModuleNotFoundError: omega_geodepth.da3_features",
+  "command": "OMP_NUM_THREADS=1 python -m pytest -q tests/test_da3_features.py",
+  "green": "10 passed in 1.82s",
+  "subset_regression": "30 passed in 2.97s",
+  "compile": "python -m compileall -q omega_geodepth tests scripts (local subset)",
+  "scope": "native export helper exercised with a synthetic torch.nn.Module; actual GaussianHead and bridge; runtime wiring in da3_real.py not executed locally",
+  "upstream_reference": "https://github.com/ByteDance-Seed/Depth-Anything-3/blob/main/src/depth_anything_3/model/da3.py",
+  "limitations": [
+    "pinned upstream archive and actual weights unavailable",
+    "full repository clone fails DNS",
+    "no real DA3 inference or trained feature-conditioned checkpoint",
+    "FP32 only, no holdout views in input"
+  ]
+}

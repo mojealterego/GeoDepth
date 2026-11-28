@@ -51,3 +51,8 @@ Każda kolejna iteracja ma być zapisana na main wraz z testami i raportami. Wer
 ### v0.17 — reprodukowalny checkpoint syntetyczny
 - IMPLEMENTED / TESTED LOCALLY: `scripts/reproduce_gsdpt.py`, 40 iteracji, osobna kamera holdout, rzeczywisty plik `artifacts/v0.17-experimental/gsdpt_synthetic.safetensors`, identyczny render po ponownym odczycie. Raport `reports/v17/gsdpt_reproduce.json`.
 - 20/20 testów izolowanego podzbioru (8 checkpoint, 11 bridge, 1 reprodukcja). Nie jest to checkpoint DA3 ani głowica wytrenowana na realnych obrazach. Pełna regresja i walidacja NVS na rzeczywistych danych pozostają otwarte.
+
+### v0.17 — natywny eksport cech backbone
+- IMPLEMENTED: opcjonalny eksport warstwy 11 w DA3RealCPU FP32; mapowanie patch 14×14 do próbkowanych obserwacji głębi. Small 389 / Base 773 kanały wejściowe głowicy, limit 504 px i 8 widoków.
+- TESTED LOCALLY: 10 testów helpera i mostu na kontrolowanym module PyTorch; 30/30 testów izolowanego podzbioru. Zmiany w runtime nie zostały uruchomione lokalnie. Raport `reports/v17/da3_features.json`.
+- BLOCKED: rzeczywisty E2E DA3, trening głowicy na natywnych cechach, pełna regresja. Instrukcja `docs/DA3_BACKBONE_PL.md`.

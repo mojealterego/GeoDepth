@@ -156,6 +156,7 @@ class DA3Output:
     pose_conditioned:bool=False
     pose_decoder:str="token"
     ray_audit:dict|None=None
+    backbone_features:np.ndarray|None=None  # N,H/14,W/14,C; opt-in layer 11
 
 
 def normalize_da3_prediction(prediction:Any,*,model_id:str,weights_sha256:str)->DA3Output:
