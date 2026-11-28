@@ -43,3 +43,7 @@ Każda kolejna iteracja ma być zapisana na main wraz z testami i raportami. Wer
 
 ### v0.17 — zapis i odczyt głowicy
 - IMPLEMENTED / TESTED LOCALLY: `omega_geodepth/gsdpt_checkpoint.py`, zapis bez nadpisywania, ścisły kontrakt tensorów, limit 1 MiB, SHA-256 przed deserializacją, odrzucenie symlinków. 8 testów CPU na izolowanym podzbiorze, raport `reports/v17/gsdpt_checkpoint.json`. Wymagany zaufany katalog i POSIX. Pełna regresja, rzeczywista inferencja DA3 oraz wytrenowany checkpoint na realnych danych pozostają OPEN/BLOCKED.
+
+### v0.17 — adapter DA3Output → GaussianHead
+- IMPLEMENTED / TESTED LOCALLY: `omega_geodepth/gsdpt_bridge.py`, deterministyczne próbkowanie maksymalnie 512 obserwacji, promienie z uwzględnieniem skew, transformacja c2w, zachowanie jednostek względnych, pomijanie nieprawidłowej głębi. 11 nowych testów, 19 łącznie z checkpointem; raport `reports/v17/gsdpt_bridge.json`.
+- Testy na syntetycznym kontrakcie DA3Output; to adapter RGB/ray po inferencji, nie ekstraktor cech backbone. Rzeczywista integracja i trening DA3 nadal BLOCKED; pełna regresja NOT RUN.

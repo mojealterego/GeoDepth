@@ -1,0 +1,19 @@
+{
+  "base_sha": "fb6f273dc94fc8466a6ce7ab47b187dca774183f",
+  "source_blob": "9610c26f815c275f4da97cfc718a941a55c78e87",
+  "test_blob": "85bfd5ae9326697bd2c18870666267d8030bb40d",
+  "environment": {
+    "python": "3.13.5",
+    "torch": "2.10.0+cpu",
+    "OMP_NUM_THREADS": 1
+  },
+  "command": "OMP_NUM_THREADS=1 python -m pytest -q tests/test_gsdpt_bridge.py tests/test_gsdpt_checkpoint.py",
+  "red": "ModuleNotFoundError: omega_geodepth.gsdpt_bridge",
+  "green": "19 passed in 1.76s (11 bridge + 8 checkpoint)",
+  "scope": "synthetic structural DA3Output fixtures; actual GaussianHead and renderer; not actual DA3 inference",
+  "limitations": [
+    "no backbone features",
+    "no real model",
+    "no full regression"
+  ]
+}
