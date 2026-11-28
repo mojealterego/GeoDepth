@@ -1,13 +1,14 @@
 {
-  "base_sha": "dd77918105f5b2ab1b2f14a5767fc979e56bbce0",
+  "base_sha": "c105bf1ecc4469c3550f966e20949674a909a261",
   "scope": "reference layer calibration and dequantization, synthetic linear fixtures",
   "python": "3.13.5",
   "torch": "2.10.0+cpu",
-  "command": "OMP_NUM_THREADS=1 python -m pytest -q tests/test_activation_quant_v4.py",
-  "result": "5 passed in 1.02s",
-  "source_blob": "78a5e8b4ff9d23c20b8b81da1b16061abcbb0dd4",
-  "test_blob": "ea663ede365c01e7080ecdb2b0ad6c34897775d0",
+  "command": "OMP_NUM_THREADS=1 python -m pytest -q tests (isolated two new test files only)",
+  "result": "12 passed in 1.82s (6 GS-DPT, 6 quantization)",
+  "source_blob": "7411bad9441565f9e7c7148c1506500a689580aa",
+  "test_blob": "ea89931d5dd7f6c27fdbbe2e86910d63160975ab",
   "packed_checkpoint": "NOT_IMPLEMENTED",
   "real_da3": "BLOCKED",
-  "full_regression": "NOT_RUN"
+  "full_regression": "NOT_RUN",
+  "additional_guard": "Reject oversized padded tensors before padding; regression test executed after fix."
 }

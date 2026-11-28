@@ -24,3 +24,8 @@ def test_nonfinite(bad):
 
 def test_shape_validation():
     with pytest.raises(ValueError): quantize_linear(torch.ones(2,3),torch.ones(1,2))
+
+
+def test_padded_resource_limit():
+    with pytest.raises(ValueError,match='resource'):
+        quantize_linear(torch.ones(65537,1),torch.ones(1,1),group_size=256)

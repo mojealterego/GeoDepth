@@ -28,6 +28,8 @@ def quantize_linear(weight, activations, *, bits=4, group_size=64):
     if not bool(torch.isfinite(w).all()) or not bool(torch.isfinite(x).all()):
         raise ValueError('nonfinite calibration or weights')
     n=w.shape[1]; pad=(-n)%group_size; limit=(1<<(bits-1))-1
+    if w.shape[0]*(n+pad)>16_777_216:
+        raise ValueError('padded resource limit')
     # Normalize before squaring to avoid overflow. Diagonal input covariance proxy.
     x=x/x.abs().max().clamp_min(torch.finfo(x.dtype).tiny)
     importance=x.square().mean(0).clamp_min(1e-8)
