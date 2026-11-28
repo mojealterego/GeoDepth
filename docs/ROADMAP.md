@@ -32,3 +32,7 @@ Każda kolejna iteracja ma być zapisana na main wraz z testami i raportami. Wer
 - TESTED LOCALLY: 16 testów jednostkowych offline (`pytest -q tests/test_model_release_v17.py`); 0 błędów; sprawdzono składnię `py_compile`.
 - BLOCKED: 5 checkpointów DA3 o łącznej wielkości 810442158 bajtów nie zostało opublikowanych: ich oryginalne bajty nie są dostępne w obecnej sesji; nie przeprowadzono zewnętrznego E2E wysyłki.
 - v0.17 GS-DPT pozostaje OPEN; poniższy moduł dystrybucji nie stanowi implementacji ani treningu GS-DPT.
+
+### v0.17 — eksperymentalna głowica Gaussian
+- IMPLEMENTED / TESTED LOCALLY: `omega_geodepth/gsdpt.py`, 6 testów CPU, kontrolowany trening na syntetycznej scenie z rozłączną kamerą walidacyjną. Raport `reports/v17/gsdpt_synthetic.json`.
+- Nie jest to pełny GS-DPT: integracja z cechami DA3, rzeczywiste dane NVS, zapis wytrenowanej głowicy, pełna regresja i ocena jakości pozostają OPEN. Checkpointy DA3 pozostają BLOCKED.

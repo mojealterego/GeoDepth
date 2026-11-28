@@ -1,0 +1,19 @@
+{
+  "base_sha": "a39d1a31b8fa221221eb59a1aa4b7ce21d7f722e",
+  "scope": "experimental feature-to-Gaussian baseline; synthetic fixture generated with same renderer; not DA3 or independent renderer",
+  "python": "3.13.5",
+  "torch": "2.10.0+cpu",
+  "command": "OMP_NUM_THREADS=1 python -m pytest -q tests/test_gsdpt_v17.py",
+  "result": "6 passed in 1.76s",
+  "seed": 17,
+  "steps": 40,
+  "source_blob": "d0859ccb09118b22ec4acb78a61dc0ef612ad853",
+  "test_blob": "9dfa8684fa54a1a71c5f6c1e9a8eef3e41cb2b52",
+  "train_before": 0.04755548760294914,
+  "train_after": 0.0031297197565436363,
+  "holdout_before": 0.0652235746383667,
+  "holdout_after": 0.0051342155784368515,
+  "full_regression": "NOT_RUN",
+  "real_da3": "BLOCKED",
+  "production": "NOT_VERIFIED"
+}
