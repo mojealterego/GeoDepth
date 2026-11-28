@@ -47,3 +47,7 @@ Każda kolejna iteracja ma być zapisana na main wraz z testami i raportami. Wer
 ### v0.17 — adapter DA3Output → GaussianHead
 - IMPLEMENTED / TESTED LOCALLY: `omega_geodepth/gsdpt_bridge.py`, deterministyczne próbkowanie maksymalnie 512 obserwacji, promienie z uwzględnieniem skew, transformacja c2w, zachowanie jednostek względnych, pomijanie nieprawidłowej głębi. 11 nowych testów, 19 łącznie z checkpointem; raport `reports/v17/gsdpt_bridge.json`.
 - Testy na syntetycznym kontrakcie DA3Output; to adapter RGB/ray po inferencji, nie ekstraktor cech backbone. Rzeczywista integracja i trening DA3 nadal BLOCKED; pełna regresja NOT RUN.
+
+### v0.17 — reprodukowalny checkpoint syntetyczny
+- IMPLEMENTED / TESTED LOCALLY: `scripts/reproduce_gsdpt.py`, 40 iteracji, osobna kamera holdout, rzeczywisty plik `artifacts/v0.17-experimental/gsdpt_synthetic.safetensors`, identyczny render po ponownym odczycie. Raport `reports/v17/gsdpt_reproduce.json`.
+- 20/20 testów izolowanego podzbioru (8 checkpoint, 11 bridge, 1 reprodukcja). Nie jest to checkpoint DA3 ani głowica wytrenowana na realnych obrazach. Pełna regresja i walidacja NVS na rzeczywistych danych pozostają otwarte.

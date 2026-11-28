@@ -1,0 +1,25 @@
+{
+  "base_sha": "7893a795fa0c5957cd4b56daa45c657368bc11a7",
+  "train_before": 0.04755548760294914,
+  "train_after": 0.0031297202222049236,
+  "holdout_before": 0.0652235597372055,
+  "holdout_after": 0.005134216509759426,
+  "sha256": "6eed0fb024200e0b5bef313e8231f4e3a164b43bcadf2d87ffd83abe11ebfdf8",
+  "reload_exact": true,
+  "seed": 17,
+  "steps": 40,
+  "scope": "synthetic RGB/ray head; same renderer for targets; no DA3 weights",
+  "source_blob": "618811f9456d6aead7844dc099017a47ed29645c",
+  "test_blob": "f0ba29cc28b259ba6ca42ee373280cf1ddb47791",
+  "checkpoint_blob": "34fb708bb13ad31720025b099471e3711f60abc6",
+  "environment": {
+    "python": "3.13.5",
+    "torch": "2.10.0+cpu",
+    "safetensors": "0.7.0",
+    "OMP_NUM_THREADS": 1
+  },
+  "test_command": "OMP_NUM_THREADS=1 python -m pytest -q tests (isolated three new test files)",
+  "test_result": "20 passed in 3.00s",
+  "reproduce_command": "OMP_NUM_THREADS=1 python -m scripts.reproduce_gsdpt --output artifacts/gsdpt_synthetic.safetensors",
+  "full_regression": "NOT_RUN"
+}
